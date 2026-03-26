@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ menuItems, modulesItems }) => {
     <footer className=" mt-auto mb-0">
       <section className="bg-white bg-no-repeat bg-cover bg-center relative  overflow-hidden">
         <div
-          className="py-8 sm:py-16 pb-12 space-y-8 sm:space-y-16 container mx-auto max-w-7xl relative w-full px-4 sm:px-12.5 bg-center bg-no-repeat bg-cover
+          className="py-8 sm:py-16 pb-12 space-y-8 sm:space-y-16 container mx-auto max-w-7xl  relative w-full bg-center bg-no-repeat bg-cover
      "
         >
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-7.5 md:gap-18">
@@ -101,7 +101,7 @@ const Footer: React.FC<FooterProps> = ({ menuItems, modulesItems }) => {
               >
                 Stay up to date
               </h2>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <input
                   type="email"
                   className="text-base text-[#717680] outline-0 bg-white border border-[#D5D7DA] rounded-lg  py-2.5 px-3.5 "
