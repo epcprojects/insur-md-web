@@ -47,6 +47,7 @@ const Page = () => {
           imageAlt={"Person Standing"}
         />
       </div>
+      <div className="rounded-xl bg-[#F5F5F5] w-full h-40"></div>
     </div>
   );
 };

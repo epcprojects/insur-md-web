@@ -5,11 +5,13 @@ const Logo = ({
   fill2 = "#4BB8B2",
   fill3 = "#109383",
   fill4 = "#31D3B7",
+  width = "194",
+  height = "50",
 }) => {
   return (
     <svg
-      width="194"
-      height="50"
+      width={width}
+      height={height}
       viewBox="0 0 194 50"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

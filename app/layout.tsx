@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -44,6 +44,22 @@ const menuItems = [
     label: "For Reinsurers",
     href: "/reinsurers",
   },
+  {
+    label: "Use Cases",
+    href: "/use-cases",
+  },
+  {
+    label: "Physician Network & Clinical Governance",
+    href: "/physician-network-clinical-governance",
+  },
+  {
+    label: "Security & Compliance",
+    href: "/security-compliance",
+  },
+  {
+    label: "Applicant Experience",
+    href: "/applicant-experience",
+  },
 ];
 
 export default function RootLayout({
@@ -61,6 +77,7 @@ export default function RootLayout({
           <Header menuItems={menuItems} />
         </div>
         {children}
+        <Footer menuItems={menuItems} modulesItems={menuItems} />
       </body>
     </html>
   );
