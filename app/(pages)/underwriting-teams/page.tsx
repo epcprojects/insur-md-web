@@ -1,9 +1,62 @@
+"use client";
+import { HeroSection } from "@/app/components";
+import { images } from "@/app/ui";
+import { RightUpArrow } from "@/public/icons";
 import React from "react";
 
 const Page = () => {
   return (
-    <div className=" min-h-dvh p-4">
-      <div className="rounded-xl bg-[#CFF9FE] w-full h-40"></div>
+    <div className=" min-h-dvh  p-4">
+      <div className="rounded-[30px] pb-14 pt-24  bg-light-skyblue w-full">
+        <HeroSection
+          heading={
+            <>
+              Built for the people who actually{" "}
+              <span
+                className="font-playfair text-white inline-block mr-1 italic rounded-full
+          [background:linear-gradient(170deg,#2CE_41.33%,#0E7090_102.06%)]
+[box-shadow:inset_0_-1.441px_7.351px_0_#2CE,0_1.441px_24.649px_0_rgba(34,204,238,0.50)]
+          before:content-[''] before:pl-5 after:content-[''] after:pr-5"
+              >
+                carry
+              </span>{" "}
+              the{" "}
+              <span
+                className="font-playfair text-white inline-block mr-1 italic rounded-full
+          [background:linear-gradient(170deg,#2CE_41.33%,#0E7090_102.06%)]
+[box-shadow:inset_0_-1.441px_7.351px_0_#2CE,0_1.441px_24.649px_0_rgba(34,204,238,0.50)]
+          before:content-[''] before:pl-5 after:content-[''] after:pr-5"
+              >
+                risk
+              </span>
+            </>
+          }
+          descriptionOne={
+            "InsurMD is designed with underwriting reality in mind. Not theoretical workflows. Not surface-level data feeds. Real-world underwriting requires context, defensibility, and speed — often all at once."
+          }
+          descriptionTwo={
+            "This page focuses on how InsurMD supports underwriting teams directly, from frontline underwriters to chief risk officers and reinsurance partners."
+          }
+          buttons={[
+            {
+              label: "Request a Demo",
+              icon: <RightUpArrow />,
+              onClick: () => {},
+              variant: "custom",
+              bgClass:
+                "[background:linear-gradient(170deg,#22CCEE_41.33%,#0E7090_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#22CCEE,0_1.441px_24.649px_0_rgba(34,204,238,0.50)]",
+            },
+            {
+              label: "Partner with InsurMD",
+              icon: <RightUpArrow />,
+              onClick: () => {},
+              variant: "secondary",
+            },
+          ]}
+          image={images.forunderwritingteamsimages.mackbookimage}
+          imageAlt={""}
+        />
+      </div>
     </div>
   );
 };

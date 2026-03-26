@@ -1,11 +1,12 @@
 import React, { ReactNode } from "react";
 
-type ThemeButtonVariant = "primary" | "secondary";
+type ThemeButtonVariant = "primary" | "secondary" | "custom";
 type ThemeButtonProps = {
   label: string;
   icon: ReactNode;
   variant: ThemeButtonVariant;
   onClick: () => void;
+  bgClasses?: string;
 };
 type VariantStyle = {
   button?: string;
@@ -22,11 +23,11 @@ const baseStyles = {
   `,
 };
 
-const variantStyles: Record<ThemeButtonVariant, VariantStyle> = {
+const variantStyles: Record<Exclude<ThemeButtonVariant, "custom">, VariantStyle> = {
   primary: {
     iconWrapper: `
-    [background:linear-gradient(170deg,theme(colors.teal)_41.33%,theme(colors.dark-teal)_102.06%)]
-[box-shadow:inset_0_-1.441px_7.351px_0_theme(colors.teal),0_1.441px_24.649px_0_rgba(46,211,183,0.50)]
+      [background:linear-gradient(170deg,theme(colors.teal)_41.33%,theme(colors.dark-teal)_102.06%)]
+      [box-shadow:inset_0_-1.441px_7.351px_0_theme(colors.teal),0_1.441px_24.649px_0_rgba(46,211,183,0.50)]
     `,
   },
   secondary: {
@@ -41,8 +42,14 @@ export const ThemeButton = ({
   icon,
   variant,
   onClick,
+  bgClasses,
 }: ThemeButtonProps) => {
-  const styles = variantStyles[variant];
+
+  const iconWrapperVariantClass =
+    variant === "custom"
+      ? (bgClasses ?? "")
+      : (variantStyles[variant]?.iconWrapper ?? "");
+
   return (
     <div
       onClick={onClick}
@@ -50,7 +57,7 @@ export const ThemeButton = ({
     >
       {label}
       <div
-        className={`${baseStyles.iconWrapper} ${styles.iconWrapper}  flex items-center justify-center`}
+        className={`${baseStyles.iconWrapper} ${iconWrapperVariantClass} flex items-center justify-center`}
       >
         <span className="transition-transform duration-600 group-hover:rotate-45">
           {icon}

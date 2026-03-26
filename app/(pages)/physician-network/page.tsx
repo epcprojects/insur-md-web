@@ -11,22 +11,23 @@ const Page = () => {
         <HeroSection
           heading={
             <>
-              The clinical infrastructure layer for{" "}
+              Clinical credibility{" "}
               <span
                 className="font-playfair text-white inline-block mr-1 italic rounded-full
-                                       [background:linear-gradient(170deg,#15B79E_41.33%,#125D56_102.06%)]
-          [box-shadow:inset_0_-1.441px_7.351px_0_#2ED3B7,0_1.441px_24.649px_0_rgba(46,211,183,0.50)]
-                                       before:content-[''] before:pl-3 after:content-[''] after:pr-5"
+                                                            [background:linear-gradient(170deg,#15B79E_41.33%,#125D56_102.06%)]
+                               [box-shadow:inset_0_-1.441px_7.351px_0_#2ED3B7,0_1.441px_24.649px_0_rgba(46,211,183,0.50)]
+                                                            before:content-[''] before:pl-3 after:content-[''] after:pr-5"
               >
-                modern underwriting
-              </span>
+                starts
+              </span>{" "}
+              with real physicians
             </>
           }
           descriptionOne={
-            "InsurMD is a physician-led clinical intelligence platform designed to transform how medical insight enters the life insurance ecosystem. At its core, the platform orchestrates identity, authorization, clinical interpretation, and structured delivery into a single, cohesive infrastructure layer."
+            "At the core of InsurMD is a physician-led operating model. Every clinical workflow on the platform is grounded in licensed medical oversight, ensuring that healthcare data is handled with the rigor, context, and responsibility it demands."
           }
           descriptionTwo={
-            "Where legacy workflows rely on fragmented record chasing and manual synthesis, InsurMD delivers a unified clinical pipeline built for speed, clarity, and scale."
+            "This is not a thin clinical layer placed on top of data workflows. It is a purpose-built physician network supported by structured clinical governance."
           }
           buttons={[
             {
