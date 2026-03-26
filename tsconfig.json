@@ -19,7 +19,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+        "@/components": [
+        "./src/app/components/index.ts"
+      ],
+      "@/icons": [
+        "./public/icons/index.ts"
+      ]
     }
   },
   "include": [
