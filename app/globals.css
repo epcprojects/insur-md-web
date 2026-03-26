@@ -11,6 +11,15 @@
   --font-manrope: var(--font-manrope);
   --font-playfair: var(--font-playfair);
   --color-ceramic: #CCFBEF;
+  --color-teal: #15B79E;
+  --color-dark-teal: #125D56;
+  --color-gray-950: #0A0D12;
+  --color-dark: #252B37;
+  --color-light: #535862;
+  --color-bright-skyblue: #22CCEE;
+  --color-dark-skyblue: #0E7090;
+  --text-headingfont: 3.625rem;
+  --color-light-skyblue: #CFF9FE;
 }
 
 
