@@ -13,10 +13,10 @@ const Page = () => {
             <>
               Where InsurMD creates{" "}
               <span
-                className="font-playfair text-white inline-block mr-1 italic rounded-full
+                className="font-playfair text-white inline-block rounded-full
                                                             [background:linear-gradient(170deg,#15B79E_41.33%,#125D56_102.06%)]
                                [box-shadow:inset_0_-1.441px_7.351px_0_#2ED3B7,0_1.441px_24.649px_0_rgba(46,211,183,0.50)]
-                                                            before:content-[''] before:pl-3 after:content-[''] after:pr-5"
+                                                             px-5 pb-2 w-fit mt-2"
               >
                 immediate
               </span>{" "}
@@ -47,7 +47,6 @@ const Page = () => {
           imageAlt={"Person Standing"}
         />
       </div>
-      <div className="rounded-xl bg-[#F5F5F5] w-full h-40"></div>
     </div>
   );
 };

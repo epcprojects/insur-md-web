@@ -27,6 +27,11 @@
 
 }
 
+html {
+  overflow: hidden auto !important;
+  padding-right: 0px !important;
+}
+
 
 body {
   background: var(--background);
@@ -36,4 +41,35 @@ body {
 
 .btnShadow {
   box-shadow: 0 -1.441px 7.351px 0 #2CE inset, 0 1.441px 24.649px 0 rgba(34, 204, 238, 0.50);
+}
+
+/* .............. */
+.faq-arrow {
+  display: inline-flex;
+  transform: rotate(-18deg); /* closed: up-right */
+  transition: transform 500ms ease;
+}
+
+/* Trigger is a button with data-state */
+button[data-state="open"] .faq-arrow {
+  transform: rotate(45deg); /* open: down-right */
+}
+
+.faq-anim {
+  overflow: hidden;
+}
+.faq-anim[data-state="open"] {
+  animation: faqDown 300ms ease-out;
+}
+.faq-anim[data-state="closed"] {
+  animation: faqUp 300ms ease-out;
+}
+
+@keyframes faqDown {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes faqUp {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
 }

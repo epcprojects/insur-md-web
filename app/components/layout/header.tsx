@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
   };
 
   return (
-    <div className="sm:px-4 xl:px-8 w-full fixed top-2">
+    <div className="sm:px-4 xl:px-8 w-full fixed top-2 z-100">
       <nav className="flex relative  sm:mt-4 items-center px-4 sm:ps-6 py-3 pe-4 mx-auto justify-between lg:flex-row flex-row-reverse w-full">
         <Link href="/" className="relative order-1 lg:order-0">
           <Logo
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
           />
         </Link>
 
-        <div className="px-8 py-4 min-h-14.5 rounded-full xl:flex hidden bg-white">
+        <div className="px-8 py-4 min-h-14.5 rounded-full xl:flex hidden bg-white shadow-sm">
           <HeaderMenuNavItems
             items={menuItems}
             activeColor={theme.logo.fill3}

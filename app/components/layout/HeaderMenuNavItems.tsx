@@ -3,6 +3,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export interface MenuItem {
   label: string;
@@ -23,10 +24,11 @@ function HeaderMenuNavItems({
   const isMoreActive = moreItems.some(
     (item) => pathname === item.href || pathname.startsWith(`${item.href}/`),
   );
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="relative flex items-center gap-3 md:gap-4">
-      <ul className="flex-row items-center justify-center grow hidden gap-3 sm:gap-4 rtl:flex-row-reverse md:flex">
+      <ul className="flex-row items-center justify-center grow hidden gap-3 sm:gap-3 rtl:flex-row-reverse md:flex">
         {items.slice(0, 7).map((item) => {
           const isActive =
             item.href === "/"
@@ -41,11 +43,17 @@ function HeaderMenuNavItems({
                 style={{
                   color: isActive ? activeColor : "#000000",
                 }}
+                onMouseEnter={(e) => {
+                  if (!isActive) e.currentTarget.style.color = activeColor;
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) e.currentTarget.style.color = "#000000";
+                }}
               >
-                <span className="inline-flex items-center gap-2">
+                <span className="inline-flex items-center gap-2 relative ps-3">
                   {isActive && (
                     <span
-                      className="inline-block h-1.5 w-[6.5px] rounded-full"
+                      className="inline-block absolute h-1.5 w-1.5 shrink-0 rounded-full left-0"
                       style={{ backgroundColor: activeColor }}
                     />
                   )}

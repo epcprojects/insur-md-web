@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Footer, Header } from "./components";
+import { FaqsSection, Footer, Header } from "./components";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -11,6 +11,7 @@ const manrope = Manrope({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  style: "italic",
 });
 
 export const metadata: Metadata = {
@@ -72,12 +73,20 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${playfair.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-dvh flex flex-col">
         <div className="flex items-center justify-center ">
           <Header menuItems={menuItems} />
         </div>
         {children}
-        <Footer menuItems={menuItems} modulesItems={menuItems} />
+        <div className="mt-auto mb-0">
+          <div className="mx-auto max-w-7xl px-4 md:px-8">
+            <h2 className="text-center font-extrabold text-[52px] text-neutral-900 mb-4 md:mb-6">
+              Frequent Asked Question?
+            </h2>
+            <FaqsSection />
+          </div>
+          <Footer menuItems={menuItems} modulesItems={menuItems} />
+        </div>
       </body>
     </html>
   );
