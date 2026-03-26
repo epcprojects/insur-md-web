@@ -1,2 +1,3 @@
 import { howitworksimages } from "./howitworks";
-export const images = {howitworksimages}
+import { forunderwritingteamsimages } from "./forunderwritingteams";
+export const images = {howitworksimages,forunderwritingteamsimages}
