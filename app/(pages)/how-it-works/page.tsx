@@ -6,8 +6,8 @@ import React from "react";
 
 const Page = () => {
   return (
-    <div className=" min-h-dvh p-4">
-      <div className="rounded-[30px]  bg-ceramic w-full ">
+    <div className=" min-h-dvh  p-4">
+      <div className="rounded-[30px]  bg-teal-50 w-full ">
         <HeroSection
           heading={
             <>

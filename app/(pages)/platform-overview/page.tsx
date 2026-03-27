@@ -14,8 +14,7 @@ const Page = () => {
               The clinical infrastructure layer for{" "}
               <span
                 className="font-playfair w-fit text-white inline-block rounded-full
-                                       [background:linear-gradient(170deg,#15B79E_41.33%,#125D56_102.06%)]
-          [box-shadow:inset_0_-1.441px_7.351px_0_#2ED3B7,0_1.441px_24.649px_0_rgba(46,211,183,0.50)]
+                                       [background:linear-gradient(170deg,#15B79E_41.33%,#125D56_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#2ED3B7,0_1.441px_24.649px_0_rgba(46,211,183,0.50)]
                                       px-5 pb-2  "
               >
                 modern
@@ -43,8 +42,8 @@ const Page = () => {
               variant: "secondary",
             },
           ]}
-          image={images.howitworksimages.PersonStandingImage}
-          imageAlt={"Person Standing"}
+          image={images.platformoverviewimages.PlatformOverviewImage}
+          imageAlt={"Platform Overview"}
         />
       </div>
     </div>
