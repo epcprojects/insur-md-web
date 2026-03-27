@@ -27,11 +27,11 @@ const CTASection = ({
   onSecondaryClick,
 }: CTASectionProps) => {
   return (
-    <div className="container mx-auto max-w-7xl p-8 md:p-16 bg-linear-to-br relative rounded-3xl from-[#F5F7FA] to-[#C3CFE2]">
+    <div className="container mx-auto max-w-7xl pt-8 px-4  md:p-16 bg-linear-to-br space-y-4 relative rounded-3xl from-[#F5F7FA] to-[#C3CFE2]">
       <div className="grid grid-cols-12">
         <div className="col-span-12 md:col-span-7 space-y-10">
           <div className="space-y-2">
-            <h2 className="font-extrabold text-black text-[64px] leading-[120%]">
+            <h2 className="font-extrabold text-black text-4xl md:text-[64px] leading-[120%]">
               {title.split(highlightText || "").map((part, i, arr) => (
                 <span key={i}>
                   {part}
@@ -48,7 +48,7 @@ const CTASection = ({
             <p className="text-base md:text-2xl">{description2}</p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center flex-col md:flex-row gap-4">
             <ThemeButton
               label={primaryBtnLabel}
               icon={<RightUpArrow />}
@@ -70,7 +70,7 @@ const CTASection = ({
       <Image
         alt="cta-image"
         src={image}
-        className="absolute inset-e-0 bottom-0"
+        className="md:absolute inset-e-0 bottom-0"
       />
     </div>
   );

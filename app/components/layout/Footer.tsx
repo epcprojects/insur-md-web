@@ -23,6 +23,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ menuItems, modulesItems }) => {
   const pathname = usePathname();
+  const isMobile = useIsMobile();
 
   const isModulesPage = pathname.startsWith("/modules");
   const prefix = isModulesPage ? "/" : "/modules";
@@ -32,22 +33,25 @@ const Footer: React.FC<FooterProps> = ({ menuItems, modulesItems }) => {
     <footer className=" mt-auto mb-0">
       <section className="bg-white bg-no-repeat bg-cover bg-center relative  overflow-hidden">
         <div
-          className="py-8 sm:py-16 pb-12 space-y-8 sm:space-y-16 container mx-auto max-w-7xl  relative w-full bg-center bg-no-repeat bg-cover
+          className="py-8 sm:py-16 pb-12 space-y-8 sm:space-y-16 container px-4 md:px-8 mx-auto max-w-7xl  relative w-full bg-center bg-no-repeat bg-cover
      "
         >
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-7.5 md:gap-18">
-            <div>
-              <Link href="/" className="relative order-1 lg:order-0">
+            <div className="space-y-4">
+              <Link
+                href="/"
+                className="relative inline-block order-1 lg:order-0"
+              >
                 <Logo
-                  height="80"
-                  width="240"
+                  height={isMobile ? "42" : "80"}
+                  width={isMobile ? "160" : "240"}
                   fill1={theme.logo.fill1}
                   fill2={theme.logo.fill2}
                   fill3={theme.logo.fill3}
                   fill4={theme.logo.fill4}
                 />
               </Link>
-              <h2 className="text-light font-normal text-lg">
+              <h2 className="text-light font-normal text-base md:text-lg">
                 Where healthcare meets underwriting intelligence
               </h2>
             </div>

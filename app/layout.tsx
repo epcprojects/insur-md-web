@@ -80,7 +80,7 @@ export default function RootLayout({
         {children}
         <div className="mt-auto mb-0">
           <div className="mx-auto max-w-7xl px-4 md:px-8">
-            <h2 className="text-center font-extrabold text-[52px] text-neutral-900 mb-4 md:mb-6">
+            <h2 className="text-center font-extrabold text-4xl md:text-[52px] text-neutral-900 mb-4 md:mb-6">
               Frequent Asked Question?
             </h2>
             <FaqsSection />

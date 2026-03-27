@@ -47,7 +47,7 @@ body {
 /* .............. */
 .faq-arrow {
   display: inline-flex;
-  transform: rotate(-18deg); /* closed: up-right */
+  transform: rotate(-17deg); /* closed: up-right */
   transition: transform 500ms ease;
 }
 

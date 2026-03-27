@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Logo, MenuIcon } from "@/public/icons";
 import HeaderMenuNavItems from "./HeaderMenuNavItems";
 import { defaultTheme, headerThemeByPath } from "@/app/constants/menuItems";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 
 interface MenuItemType {
   label: string;
@@ -19,6 +20,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ menuItems }) => {
   const pathname = usePathname();
+  const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const theme = headerThemeByPath[pathname] ?? defaultTheme;
@@ -43,14 +45,16 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
   };
 
   return (
-    <div className="sm:px-4 xl:px-8 w-full fixed top-2 z-100">
-      <nav className="flex relative items-center px-4 sm:ps-6 py-3 pe-4 mx-auto justify-between lg:flex-row flex-row-reverse w-full">
+    <div className="sm:px-4 xl:px-8 w-full fixed top-0 md:top-2 z-100">
+      <nav className="flex relative items-center px-4 sm:ps-6 py-2 bg-white md:bg-transparent md:py-3 pe-4 mx-auto justify-between lg:flex-row flex-row-reverse w-full">
         <Link href="/" className="relative order-1 lg:order-0">
           <Logo
             fill1={theme.logo.fill1}
             fill2={theme.logo.fill2}
             fill3={theme.logo.fill3}
             fill4={theme.logo.fill4}
+            height={isMobile ? "32" : "50"}
+            width={isMobile ? "120" : "194"}
           />
         </Link>
 
@@ -62,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
         </div>
 
         <div className="flex items-center flex-row-reverse xl:flex-row gap-3">
-          <div className="flex xl:hidden relative">
+          {/* <div className="flex xl:hidden relative">
             <button
               type="button"
               className="inline-flex items-center justify-center w-8 h-8 md:h-11 md:w-11 bg-black/40 rounded-full text-black"
@@ -91,11 +95,12 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
           <button
-            className="px-5 py-[13.33px] cursor-pointer h-14.5 rounded-full transition-all duration-300"
+            className="px-3 md:px-5 md:py-[13.33px] cursor-pointer h-10 md:h-14.5 rounded-full transition-all duration-300"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={handleMenuButtonClick}
             style={{
               background: isHovered
                 ? `linear-gradient(170deg, ${theme.menuButton.hoverFrom} -70%, ${theme.menuButton.hoverTo} 100%)`
@@ -121,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
           onClick={handleBackdropClick}
         />
 
-        <div className="fixed inset-y-0 gap-4 flex flex-col left-0 z-20 min-w-xs p-4 px-4 overflow-y-auto bg-white md:px-6 md:py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-y-0 gap-4 flex flex-col left-0 z-20 min-w-xs py-1.5 px-4 overflow-y-auto bg-white md:px-6 md:py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between pt-1.5">
             <Link href="/" onClick={closeMenu}>
               <span className="sr-only">Your Company</span>
@@ -130,6 +135,8 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
                 fill2={theme.logo.fill2}
                 fill3={theme.logo.fill3}
                 fill4={theme.logo.fill4}
+                height={isMobile ? "32" : "50"}
+                width={isMobile ? "120" : "194"}
               />
             </Link>
 
@@ -160,14 +167,6 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
           <div className="flow-root">
             <div className="divide-y divide-gray-500/10">
               <div className="border-b-0 flex flex-col gap-2.5">
-                <Link
-                  onClick={closeMenu}
-                  href="/"
-                  className="flex items-center gap-1.5 p-1.5 text-base font-normal leading-7 text-neutral-800 hover:bg-gray-100"
-                >
-                  Home
-                </Link>
-
                 {menuItems.map((item) => (
                   <Link
                     onClick={closeMenu}

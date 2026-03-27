@@ -127,3 +127,77 @@ export const highlightCards = [
     bgColor: "#125D56",
   },
 ];
+
+type BulletItem = {
+  label: string;
+  color: string; // main accent color
+};
+
+export const teamBulletItems: BulletItem[] = [
+  {
+    label: "Longitudinal medical record aggregation",
+    color: "#2ED3B7",
+  },
+  {
+    label: "Physician-led clinical summary",
+    color: "#15B79E",
+  },
+  {
+    label: "Diagnoses and condition timelines",
+    color: "#0E9384",
+  },
+  {
+    label: "Medication reconciliation",
+    color: "#107569",
+  },
+  {
+    label: "Gaps-in-care analysis",
+    color: "#125D56",
+  },
+  {
+    label: "Risk flags and structured annotations",
+    color: "#134E48",
+  },
+];
+
+export const securityBulletItems: BulletItem[] = [
+  {
+    label: "HIPAA-aligned infrastructure",
+    color: "#2ED3B7",
+  },
+  {
+    label: "End-to-end encryption",
+    color: "#15B79E",
+  },
+  {
+    label: "Explicit patient authorization workflows",
+    color: "#0E9384",
+  },
+  {
+    label: "Full audit trails",
+    color: "#107569",
+  },
+  {
+    label: "Secure data handling across retrieval and delivery",
+    color: "#125D56",
+  },
+];
+
+export const applicantBulletItems: BulletItem[] = [
+  {
+    label: "One secure mobile experience",
+    color: "#2ED3B7",
+  },
+  {
+    label: "One physician interaction",
+    color: "#15B79E",
+  },
+  {
+    label: "One unified medical history",
+    color: "#0E9384",
+  },
+  {
+    label: "One accelerated path to coverage",
+    color: "#107569",
+  },
+];
