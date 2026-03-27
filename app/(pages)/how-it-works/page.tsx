@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { HeroSection, ProcessStepComponent } from "@/app/components";
+import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
 import { ProcessStep, useProcessStepsConfig } from "@/app/constants/howitWorks";
 
 import { images } from "@/app/ui";
@@ -11,34 +12,23 @@ import React from "react";
 
 const Page = () => {
   const steps = useProcessStepsConfig();
-    const renderStep = (step: ProcessStep, idx: number) => {
+     const renderStepContent = (step: ProcessStep) => {
     switch (step.variant) {
       case "A":
-        return (
-          <div key={idx} className="py-4 lg:py-16">
-            <ProcessStepComponent variant="A" items={[step]} />
-          </div>
-        );
+        return <ProcessStepComponent variant="A" items={[step]} />;
       case "B":
-        return (
-          <div key={idx} className="py-4 lg:py-16">
-            <ProcessStepComponent variant="B" items={[step]} />
-          </div>
-        );
+        return <ProcessStepComponent variant="B" items={[step]} />;
       case "C":
-        return (
-          <div key={idx} className="py-4 lg:py-16">
-            <ProcessStepComponent variant="C" items={[step]} />
-          </div>
-        );
+        return <ProcessStepComponent variant="C" items={[step]} />;
       case "custom":
-        return (
-          <div key={idx} className="py-4 lg:py-16">
-            <ProcessStepComponent variant="custom" items={[step]} />
-          </div>
-        );
+        return <ProcessStepComponent variant="custom" items={[step]} />;
     }
   };
+
+  const accordionItems = steps.map((step) => ({
+    content: <div className="py-4 lg:py-16">{renderStepContent(step)}</div>,
+  }));
+  
   return (
     <>
       <div className=" min-h-dvh  p-4">
@@ -87,9 +77,7 @@ const Page = () => {
           />
         </div>
       </div>
-    <div>
-      {steps.map((step, idx) => renderStep(step, idx))}
-    </div>
+    <HowItWorksAccordion items={accordionItems} />
     </>
   );
 };
