@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
 
   return (
     <div className="sm:px-4 xl:px-8 w-full fixed top-2 z-100">
-      <nav className="flex relative  sm:mt-4 items-center px-4 sm:ps-6 py-3 pe-4 mx-auto justify-between lg:flex-row flex-row-reverse w-full">
+      <nav className="flex relative items-center px-4 sm:ps-6 py-3 pe-4 mx-auto justify-between lg:flex-row flex-row-reverse w-full">
         <Link href="/" className="relative order-1 lg:order-0">
           <Logo
             fill1={theme.logo.fill1}
