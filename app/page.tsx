@@ -7,6 +7,7 @@ import {
   DonutIcon,
   EnterpriseDeployment,
   FilterIcon,
+  InsureMDIcon,
   MachineReadableIcon,
   MedicalRecordIcon,
   RightUpArrow,
@@ -177,9 +178,153 @@ export default function Home() {
       </div>
 
       <div className="m-5">
+        <div className="bg-linear-[170deg] from-dark-teal  to-teal rounded-[30px] w-full py-24 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto max-w-7xl gap-16">
+            <div className="flex flex-col space-y-8">
+              <div className="space-y-2">
+                <h2 className="text-white font-semibold text-[54px] leading-[120%] ">
+                  In Plain Terms
+                </h2>
+                <p className="text-2xl text-white leading-[140%]">
+                  All delivered through one orchestrated experience.
+                </p>
+              </div>
+
+              <div className="w-fit">
+                <ThemeButton
+                  icon={<RightUpArrow />}
+                  label="Request a Demo"
+                  onClick={() => {}}
+                  variant="primary"
+                  borderClr="border-gray-200"
+                />
+              </div>
+            </div>
+
+            <div className="rounded-3xl p-5 md:p-10 bg-black/30 space-y-7.5">
+              <div className="bg-white h-25 w-25 rounded-[28px] flex items-center justify-center">
+                <InsureMDIcon />
+              </div>
+
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h2 className="text-white text-[28px] font-bold ">
+                    Transforming Underwriting into a Unified Clinical
+                    Intelligence Pipeline
+                  </h2>
+                  <p className="text-lg font-normal text-white">
+                    Delivers verified data, aggregated histories, and
+                    physician-led insights in one seamless, end-to-end
+                    experience.
+                  </p>
+                </div>
+
+                <div>
+                  <ul className="space-y-4">
+                    <li className="bg-black/20 rounded-2xl py-4 px-6 flex items-center gap-4 text-white text-base md:text-lg">
+                      <InsureMDIcon
+                        width="18"
+                        height="24"
+                        fill3="#A7A9AC"
+                        fill2="#E6E7E8"
+                        fill1="white"
+                      />{" "}
+                      Verified patient authorization
+                    </li>
+
+                    <li className="bg-black/20 rounded-2xl py-4 px-6 flex items-center gap-4 text-white text-base md:text-lg">
+                      <InsureMDIcon
+                        width="18"
+                        height="24"
+                        fill3="#A7A9AC"
+                        fill2="#E6E7E8"
+                        fill1="white"
+                      />{" "}
+                      Aggregated medical histories
+                    </li>
+
+                    <li className="bg-black/20 rounded-2xl py-4 px-6 flex items-center gap-4 text-white text-base md:text-lg">
+                      <InsureMDIcon
+                        width="18"
+                        height="24"
+                        fill3="#A7A9AC"
+                        fill2="#E6E7E8"
+                        fill1="white"
+                      />{" "}
+                      Physician-led interpretation
+                    </li>
+
+                    <li className="bg-black/20 rounded-2xl py-4 px-6 flex items-center gap-4 text-white text-base md:text-lg">
+                      <InsureMDIcon
+                        width="18"
+                        height="24"
+                        fill3="#A7A9AC"
+                        fill2="#E6E7E8"
+                        fill1="white"
+                      />{" "}
+                      Structured, underwriting-ready outputs
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="m-5">
         <div className="bg-[#F5F5F4] rounded-[30px] w-full pt-24 ">
           <div className="container mx-auto max-w-7xl">
-            <h2 className="text-[54px] leading-[140%] text-center tracking-[-0.03em] px-10">
+            <div className="space-y-4.5 -mb-8">
+              <h2 className="text-center text-greenish-cyan uppercase font-semibold text-xl">
+                The Core Insight
+              </h2>
+              <h3 className="text-[54px] font-semibold leading-[140%] text-center tracking-[-0.03em] px-40">
+                Clinical{" "}
+                <span className="text-[#107569] font-extrabold">clarity</span>{" "}
+                must originate from clinical authority
+              </h3>
+
+              <div className="space-y-6">
+                <p className="text-black text-lg font-normal text-center">
+                  For decades, underwriting innovation has been constrained by
+                  fragmented healthcare data and disconnected workflows.
+                  Carriers have invested heavily in automation, digital
+                  journeys, and predictive models — yet decision velocity still
+                  slows when clinical insight is indirect or incomplete.
+                </p>
+                <p className="text-black text-lg font-normal text-center">
+                  The industry has historically tried to accelerate around this
+                  constraint. InsurMD resolves it by placing licensed physicians
+                  at the center of the process from the very beginning.
+                </p>
+                <p className="text-black text-lg font-normal text-center">
+                  When clinical workflows are initiated and guided by
+                  physicians, the downstream data becomes more cohesive,
+                  interpretable, and actionable.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center">
+                <ThemeButton
+                  icon={<RightUpArrow />}
+                  label="Request a Demo"
+                  onClick={() => {}}
+                  variant="primary"
+                  borderClr="border-gray-200"
+                />
+              </div>
+            </div>
+
+            <Image alt="" src={images.landingImages.dashboardMockup} />
+          </div>
+        </div>
+      </div>
+
+      <div className="m-5">
+        <div className="bg-[#F5F5F4] rounded-[30px] w-full pt-24 ">
+          <div className="container mx-auto max-w-7xl">
+            <h2 className="text-[54px] font-semibold leading-[140%] text-center tracking-[-0.03em] px-10">
               Built for modern life{" "}
               <span className="text-[#4BB8B2] font-extrabold">insurers</span>,{" "}
               <span className="text-[#107569] font-extrabold">reinsurers</span>,
@@ -270,11 +415,9 @@ export default function Home() {
           <div className="container mx-auto max-w-7xl space-y-16">
             <div className="space-y-12">
               <div className="flex flex-col items-center justify-center gap-5">
-                <Image
-                  alt=""
-                  src={images.landingImages.insureMdIcon}
-                  className="drop-shadow"
-                />
+                <div className="bg-white h-25 w-25 rounded-[28px] flex items-center justify-center">
+                  <InsureMDIcon />
+                </div>
                 <h2 className="text-white text-2xl font-normal text-center">
                   The InsurMD Solution
                 </h2>
@@ -500,6 +643,15 @@ export default function Home() {
                   />
                 </div>
               </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <ThemeButton
+                label="Request a Demo"
+                icon={<RightUpArrow />}
+                variant="primary"
+                onClick={() => {}}
+              />
             </div>
           </div>
         </div>

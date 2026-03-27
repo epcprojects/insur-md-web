@@ -11,6 +11,7 @@ import CheckListIcon from "./CheckListIcon";
 import UnderWritingPlatformIcon from "./UnderWritingPlatformIcon";
 import EnterpriseDeployment from "./EnterpriseDeployment";
 import FilterIcon from "./FilterIcon";
+import InsureMDIcon from "./InsureMDIcon";
 
 export {
   Logo,
@@ -26,4 +27,5 @@ export {
   UnderWritingPlatformIcon,
   EnterpriseDeployment,
   FilterIcon,
+  InsureMDIcon,
 };
