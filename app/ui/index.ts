@@ -8,4 +8,18 @@ import { usecasesimages } from "./usecases";
 import { clinicalpageimages } from "./clinicalimages";
 import { applicantexperienceimages } from "./applicantexperienceimages";
 import { platformoverviewimages } from "./platformoverviewimages";
-export const images = {platformoverviewimages,insuremdimages,howitworksimages,forunderwritingteamsimages,securityandcomplianceimages,apiimages,reinsurersimages,usecasesimages,clinicalpageimages,applicantexperienceimages}
+import { landingImages } from "./landingImages";
+
+export const images = {
+  platformoverviewimages,
+  insuremdimages,
+  howitworksimages,
+  forunderwritingteamsimages,
+  securityandcomplianceimages,
+  apiimages,
+  reinsurersimages,
+  usecasesimages,
+  clinicalpageimages,
+  applicantexperienceimages,
+  landingImages,
+};
