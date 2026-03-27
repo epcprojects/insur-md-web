@@ -43,7 +43,7 @@ const Page = () => {
               variant: "secondary",
             },
           ]}
-          image={images.howitworksimages.PersonStandingImage}
+          image={images.clinicalpageimages.ClinicalGovernanceImage}
           imageAlt={"Person Standing"}
         />
       </div>

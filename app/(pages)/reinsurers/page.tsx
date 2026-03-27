@@ -7,14 +7,14 @@ import React from "react";
 const Page = () => {
   return (
     <div className=" min-h-dvh p-4">
-      <div className="rounded-[30px] bg-light-blue w-full">
+      <div className="rounded-[30px] bg-white-smoke w-full">
         <HeroSection
           heading={
             <>
               A clearer{" "}
               <span
                 className="font-playfair text-white inline-block rounded-full
-                          [background:linear-gradient(170deg,#2970FF_41.33%,#0040C1_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#2970FF,0_1.441px_24.649px_0_rgba(41,112,255,0.50)]
+                          [background:linear-gradient(170deg,#36BFFA_41.33%,#0086C9_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#36BFFA,0_1.441px_24.649px_0_rgba(54,191,250,0.50)]
                             px-5 pb-2 w-fit mt-2"
               >
                 clinical layer
@@ -44,8 +44,8 @@ const Page = () => {
               variant: "secondary",
             },
           ]}
-          image={images.howitworksimages.PersonStandingImage}
-          imageAlt={"Person Standing"}
+          image={images.reinsurersimages.LayersImage}
+          imageAlt={"Layers Image"}
         />
       </div>
     </div>

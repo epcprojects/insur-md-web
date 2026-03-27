@@ -7,7 +7,7 @@ import React from "react";
 const Page = () => {
   return (
     <div className=" min-h-dvh  p-4">
-      <div className="rounded-[30px] pb-14 pt-24  bg-light-skyblue w-full">
+      <div className="rounded-[30px]   bg-light-skyblue w-full">
         <HeroSection
           heading={
             <>
