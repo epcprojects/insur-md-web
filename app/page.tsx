@@ -23,7 +23,6 @@ import {
   featuresList,
   highlightCards,
   securityBulletItems,
-  steps,
   teamBulletItems,
 } from "./constants/landing";
 
@@ -66,7 +65,7 @@ export default function Home() {
   return (
     <main className="mb-8 md:mb-16 ">
       <div className="">
-        <div className=" from-[#ACCBEE] to-[#E7F0FD] bg-linear-to-t w-full relative">
+        <div className=" from-[#ACCBEE] to-[#E7F0FD] bg-linear-to-t w-full flex flex-col relative">
           <div className="py-12 md:py-24 pt-24 md:pt-49 mx-auto container px-4 md:px-8 max-w-7xl z-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
               <div className="space-y-7 md:space-y-14.5">
@@ -108,7 +107,7 @@ export default function Home() {
           <Image
             alt=""
             src={images.landingImages.landingMockup}
-            className="absolute inset-e-0 bottom-0 md:block hidden"
+            className="md:absolute inset-e-0 bottom-0 "
           />
         </div>
       </div>
@@ -892,8 +891,8 @@ export default function Home() {
           highlightText="underwriting"
           description1="The future of life insurance isn’t slower, heavier, or more manual. It’s connected, clinical, and instantaneous."
           description2="Partner with InsurMD to deliver faster decisions, stronger data, and a radically better applicant journey."
-          primaryBtnLabel="Schedule a Carrier Demo"
-          secondaryBtnLabel="Talk to Partnerships"
+          primaryBtnLabel="Schedule a Demo"
+          secondaryBtnLabel="Request Partnership"
           image={images.landingImages.underWritingMockup}
           onPrimaryClick={() => {}}
           onSecondaryClick={() => {}}

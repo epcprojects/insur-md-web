@@ -25,8 +25,6 @@ const Footer: React.FC<FooterProps> = ({ menuItems, modulesItems }) => {
   const pathname = usePathname();
   const isMobile = useIsMobile();
 
-  const isModulesPage = pathname.startsWith("/modules");
-  const prefix = isModulesPage ? "/" : "/modules";
   const theme = headerThemeByPath[pathname] ?? defaultTheme;
 
   return (
@@ -89,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ menuItems, modulesItems }) => {
                 {modulesItems.slice(6).map((item) => (
                   <li key={item.label}>
                     <Link
-                      href={`${prefix}${item.href}`}
+                      href={`${item.href}`}
                       className={`nav-link cursor-pointer hover:underline underline-offset-2 hover:text-[${theme.logo.fill3}] text-gray-700 font-normal text-base whitespace-nowrap`}
                     >
                       {item.label}

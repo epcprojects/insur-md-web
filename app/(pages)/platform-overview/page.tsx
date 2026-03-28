@@ -82,8 +82,8 @@ const Page = () => {
           highlightText="Bottom"
           description1="InsurMD represents a shift from fragmented medical workflows to unified clinical infrastructure."
           description2="By combining physician-led interpretation, structured clinical intelligence, and enterprise-ready integration, the platform enables life insurers to operate with greater speed, clarity, and confidence."
-          primaryBtnLabel="Schedule a Carrier Demo"
-          secondaryBtnLabel="Talk to Partnerships"
+          primaryBtnLabel="Schedule a Demo"
+          secondaryBtnLabel="Request Partnership"
           image={images.landingImages.designMockup2}
           onPrimaryClick={() => {}}
           onSecondaryClick={() => {}}

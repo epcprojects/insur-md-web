@@ -187,8 +187,8 @@ const Page = () => {
           highlightText="underwriting"
           description1="The future of life insurance isn’t slower, heavier, or more manual. It’s connected, clinical, and instantaneous."
           description2="Partner with InsurMD to deliver faster decisions, stronger data, and a radically better applicant journey."
-          primaryBtnLabel="Schedule a Carrier Demo"
-          secondaryBtnLabel="Talk to Partnerships"
+          primaryBtnLabel="Schedule a Demo"
+          secondaryBtnLabel="Request Partnership"
           image={images.landingImages.designMockup2}
           onPrimaryClick={() => {}}
           onSecondaryClick={() => {}}

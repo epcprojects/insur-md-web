@@ -182,8 +182,8 @@ const Page = () => {
           highlightText="Unifying"
           description1="Across all use cases, InsurMD delivers the same fundamental value: clinically grounded clarity delivered at modern speed."
           description2="Whether deployed to accelerate decisions, improve confidence, reduce operational burden, or enhance applicant experience, the platform consistently transforms how clinical insight enters the underwriting process."
-          primaryBtnLabel="Schedule a Carrier Demo"
-          secondaryBtnLabel="Talk to Partnerships"
+          primaryBtnLabel="Schedule a Demo"
+          secondaryBtnLabel="Request Partnership"
           image={images.landingImages.designMockup2}
           onPrimaryClick={() => {}}
           onSecondaryClick={() => {}}

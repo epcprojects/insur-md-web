@@ -3,6 +3,7 @@ import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { FaqsSection, Footer, Header } from "./components";
 import SmoothScroll from "./constants/SmoothScroll";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Insure md",
+  title: "InsurMD",
   description: "Insurance underwriting, reinvented for the real world.",
 };
 
@@ -97,19 +98,20 @@ export default function RootLayout({
       </head>
       <body className="min-h-dvh flex flex-col">
         <SmoothScroll>
-        <div className="flex items-center justify-center ">
-          <Header menuItems={menuItems} />
-        </div>
-        {children}
-        <div className="mt-auto mb-0">
-          <div className="mx-auto max-w-7xl px-4 md:px-8">
-            <h2 className="text-center font-extrabold text-4xl md:text-[52px] text-neutral-900 mb-4 md:mb-6">
-              Frequent Asked Question?
-            </h2>
-            <FaqsSection />
+          <ScrollToTop />
+          <div className="flex items-center justify-center ">
+            <Header menuItems={menuItems} />
           </div>
-          <Footer menuItems={menuItems} modulesItems={menuItems} />
-        </div>
+          {children}
+          <div className="mt-auto mb-0">
+            <div className="mx-auto max-w-7xl px-4 md:px-8">
+              <h2 className="text-center font-extrabold text-4xl md:text-[52px] text-neutral-900 mb-4 md:mb-6">
+                Frequent Asked Question?
+              </h2>
+              <FaqsSection />
+            </div>
+            <Footer menuItems={menuItems} modulesItems={menuItems} />
+          </div>
         </SmoothScroll>
       </body>
     </html>

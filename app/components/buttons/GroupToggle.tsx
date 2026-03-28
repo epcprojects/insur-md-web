@@ -18,7 +18,7 @@ type GroupToggleProps = {
 export default function GroupToggle({
   options = [
     { label: "Underwriting Teams", value: "teams" },
-    { label: "applicants", value: "applicants" },
+    { label: "Applicants", value: "applicants" },
     { label: "Security & Compliance", value: "security" },
   ],
   value,
