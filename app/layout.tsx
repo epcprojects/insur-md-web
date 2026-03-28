@@ -74,7 +74,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${playfair.variable} antialiased`}
     >
       <body className="min-h-dvh flex flex-col">
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center  ">
           <Header menuItems={menuItems} />
         </div>
         {children}
