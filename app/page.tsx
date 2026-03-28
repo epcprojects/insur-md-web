@@ -99,13 +99,17 @@ export default function Home() {
                   <ThemeButton
                     label={"Request a Demo"}
                     icon={<RightUpArrow />}
-                    onClick={() => {}}
+                    onClick={() => {
+                      setIsModalOpen(true);
+                    }}
                     variant={"primary"}
                   />
                   <ThemeButton
                     label={"Partner with InsurMD"}
                     icon={<RightUpArrow />}
-                    onClick={() => {}}
+                    onClick={() => {
+                      setIsModalOpen(true);
+                    }}
                     variant={"primary"}
                   />
                 </div>
@@ -318,7 +322,9 @@ export default function Home() {
               <ThemeButton
                 icon={<RightUpArrow />}
                 label="Request a Demo"
-                onClick={() => {}}
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
                 variant="primary"
                 borderClr="border-gray-200"
               />
@@ -462,7 +468,9 @@ export default function Home() {
                 variant="primary"
                 bodyBgClasses="text-white! bg-black/80"
                 wrapperClasses=""
-                onClick={() => {}}
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
               />
             </div>
           </div>
@@ -775,7 +783,9 @@ export default function Home() {
                   label="Request a Demo"
                   icon={<RightUpArrow />}
                   variant="primary"
-                  onClick={() => {}}
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
                 />
               </div>
             </div>
@@ -902,8 +912,12 @@ export default function Home() {
           primaryBtnLabel="Schedule a Demo"
           secondaryBtnLabel="Request Partnership"
           image={images.landingImages.underWritingMockup}
-          onPrimaryClick={() => {}}
-          onSecondaryClick={() => {}}
+          onPrimaryClick={() => {
+            setIsModalOpen(true);
+          }}
+          onSecondaryClick={() => {
+            setIsModalOpen(true);
+          }}
         />
       </div>
     </main>

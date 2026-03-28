@@ -77,7 +77,7 @@ export default function SubscribeForm({ theme }: Props) {
         />
 
         <button
-          type="button"
+          type="submit"
           onClick={handleSubscribe}
           disabled={loading}
           className="cursor-pointer rounded-full py-2.5 px-6 drop-shadow text-white font-semibold text-lg disabled:opacity-60 disabled:cursor-not-allowed"
