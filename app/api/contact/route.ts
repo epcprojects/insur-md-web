@@ -13,6 +13,7 @@ export async function POST(req: Request) {
     const email = String(body.email ?? "").trim();
     const phone = String(body.phone ?? "").trim();
     const message = String(body.message ?? "").trim();
+    const reason = String(body.reason ?? "").trim();
 
     // Server-side validation
     const errors: Record<string, string> = {};
@@ -78,6 +79,7 @@ export async function POST(req: Request) {
       recipientName: firstName,
       email: email,
       message: message,
+      reason: reason,
       phone: phone,
     });
 

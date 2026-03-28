@@ -81,7 +81,14 @@ import UnderWritingPlatformIcon from "./UnderWritingPlatformIcon";
 import EnterpriseDeployment from "./EnterpriseDeployment";
 import FilterIcon from "./FilterIcon";
 import InsureMDIcon from "./InsureMDIcon";
+import { ModalCrossIcon } from "./ModalCrossIcon";
+import AlertIcon from "./AlertIcon";
+import CheckIcon from "./CheckIcon";
+
 export {
+  ModalCrossIcon,
+  AlertIcon,
+  CheckIcon,
   SecretUserIcon,
   DesktopIcon,
   PaperPlaneIcon,

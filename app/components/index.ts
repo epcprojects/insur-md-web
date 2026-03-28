@@ -6,6 +6,7 @@ import FaqsSection from "./sections/FAQ";
 import { ProcessStepComponent } from "./sections/ProcessStepComponent";
 import CTASection from "./sections/CTASection";
 import GroupToggle from "./buttons/GroupToggle";
+import SubscribeForm from "./SubscribeForm";
 
 export {
   ThemeButton,
@@ -16,4 +17,5 @@ export {
   CTASection,
   GroupToggle,
   ProcessStepComponent,
+  SubscribeForm,
 };

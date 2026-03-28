@@ -4,6 +4,7 @@ import "./globals.css";
 import { FaqsSection, Footer, Header } from "./components";
 import SmoothScroll from "./constants/SmoothScroll";
 import ScrollToTop from "./hooks/ScrollToTop";
+import CustomToastContainer from "./components/ToastContainer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -98,10 +99,12 @@ export default function RootLayout({
       </head>
       <body className="min-h-dvh flex flex-col">
         <SmoothScroll>
+          <CustomToastContainer />
           <ScrollToTop />
           <div className="flex items-center justify-center ">
             <Header menuItems={menuItems} />
           </div>
+
           {children}
           <div className="mt-auto mb-0">
             <div className="mx-auto max-w-7xl px-4 md:px-8">

@@ -29,6 +29,7 @@ import {
 import { ReactNode, useState } from "react";
 import { useIsMobile } from "./hooks/useIsMobile";
 import HowItWorksAccordion2 from "./components/AccordionComponents/HowItWorksAccordion2";
+import SignInModal from "./components/modals/SignInModal";
 
 type ListItem = {
   label: string;
@@ -61,9 +62,16 @@ const listItems: ListItem[] = [
 export default function Home() {
   const [tab, setTab] = useState("teams");
   const isMobile = useIsMobile();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <main className="mb-8 md:mb-16 ">
+      <SignInModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+        }}
+      />
       <div className="">
         <div className=" from-[#ACCBEE] to-[#E7F0FD] bg-linear-to-t w-full flex flex-col relative">
           <div className="py-12 md:py-24 pt-24 md:pt-49 mx-auto container px-4 md:px-8 max-w-7xl z-20">

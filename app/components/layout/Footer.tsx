@@ -9,6 +9,7 @@ import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { images } from "@/app/ui";
 import { Logo } from "@/public/icons";
 import { defaultTheme, headerThemeByPath } from "@/app/constants/menuItems";
+import SubscribeForm from "../SubscribeForm";
 interface MenuItemType {
   label: string;
   href: string;
@@ -103,19 +104,8 @@ const Footer: React.FC<FooterProps> = ({ menuItems, modulesItems }) => {
               >
                 Stay up to date
               </h2>
-              <div className="flex items-center gap-2 flex-wrap">
-                <input
-                  type="email"
-                  className="text-base text-[#717680] outline-0 bg-white border border-[#D5D7DA] rounded-lg  py-2.5 px-3.5 "
-                  placeholder="Enter your email"
-                />
-                <button
-                  className={`cursor-pointer rounded-full py-2.5 px-6 drop-shadow text-white font-semibold text-lg`}
-                  style={{ backgroundColor: theme.logo.fill3 }}
-                >
-                  Subscribe
-                </button>
-              </div>
+
+              <SubscribeForm theme={theme} />
             </div>
           </div>
         </div>

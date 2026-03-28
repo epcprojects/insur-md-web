@@ -1,7 +1,8 @@
 type NewMessageEmailParams = {
   recipientName: string;
-  email: string; 
-  message? : string
+  email: string;
+  message?: string;
+  reason?: string;
   phone?: string;
 };
 
@@ -16,15 +17,14 @@ const escapeHtml = (str: string) =>
 export function newContactMessageTemplate(params: NewMessageEmailParams) {
   const recipientName = escapeHtml(params.recipientName);
   const email = escapeHtml(params.email);
-    const message = escapeHtml(params?.message ?? "");
-    const phone = escapeHtml(params?.phone ?? "");
-
+  const message = escapeHtml(params?.message ?? "");
+  const phone = escapeHtml(params?.phone ?? "");
 
   return `<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>AuditLab</title>
+  <title>InsurMD</title>
   <meta name="viewport" content="initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,7 +117,7 @@ export function newContactMessageTemplate(params: NewMessageEmailParams) {
                                                         <td class="whitebutton text-center" width="100%" align="center"
                                                           style="font-family:'Poppins',sans-serif;font-size:22px;line-height:26px;font-weight:700;color:#000;text-align:center;padding-top:10px">
                                                          <a href="https://audit-lab.vercel.app/" target="_blank"><img
-                                      src="https://audit-lab.vercel.app/images/logoBlack.svg"
+                                      src="https://insur-md-web.vercel.app/images/logo.svg"
                                       alt="image" align="center" width="180"></a>
                                                         </td>
                                                       </tr>
@@ -168,6 +168,17 @@ export function newContactMessageTemplate(params: NewMessageEmailParams) {
                                                           : ""
                                                       }
 
+                                                        ${
+                                                          params.reason?.trim()
+                                                            ? `<tr>
+       <td class="whitebutton text-center" width="100%" align="center"
+         style="font-family:'Poppins',sans-serif;font-size:16px;line-height:22px;font-weight:500;color:#000;text-align:center;padding-top:10px">
+         Reason: ${escapeHtml(params.reason.trim())} 
+       </td>
+     </tr>`
+                                                            : ""
+                                                        }
+
                                                     </tbody>
                                                   </table>
                                                 </td>
@@ -192,29 +203,13 @@ export function newContactMessageTemplate(params: NewMessageEmailParams) {
                                           <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
                                             <tbody>
 
-                                              <tr>
-                                                <td class="whitebutton text-center" width="100%" align="center"
-                                                  style="font-family:'Poppins',sans-serif;font-size:14px;line-height:16px;font-weight:500;color:#FFFFFF;text-align:center;padding-top:30px;">
-                                                  <a href="tel:(888) 890-8143" style="text-decoration:none;color:#FFFFFF;">
-                                                    Phone: (888) 890-8143
-                                                  </a>
-                                                </td>
-                                              </tr>
-
-                                              <tr>
-                                                <td class="whitebutton text-center" width="100%" align="center"
-                                                  style="font-family:'Poppins',sans-serif;font-size:14px;line-height:16px;font-weight:500;color:#FFFFFF;text-align:center;padding-top:5px;padding-bottom:20px;">
-                                                  <a href="mailto:info@auditlabpro.com" style="text-decoration:none;color:#FFFFFF;">
-                                                    Email: info@auditlabpro.com
-                                                  </a>
-                                                </td>
-                                              </tr>
+                                             
 
 
                                               <tr>
                                                 <td class="whitebutton text-center" width="100%" align="center"
                                                   style="font-family:'Poppins',sans-serif;font-size:14px;line-height:16px;font-weight:400;color:#FFFFFF;text-align:center;padding-top:15px;">
-                                                  © 2025, AuditLab
+                                                  © ${new Date().getFullYear()}, InsurMD
                                                 </td>
                                               </tr>
 

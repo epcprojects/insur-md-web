@@ -36,9 +36,11 @@ import physicianMockup from "../../public/images/physicianMockup.png";
 import medicalRecordListMockup from "../../public/images/medicalRecordListMockup.png";
 import interpretationMockup from "../../public/images/interpretationMockup.png";
 import careIntelligenceMockup from "../../public/images/careIntelligenceMockup.png";
+import logo from "../../public/images/logo.svg";
 
 export const landingImages = {
   dashboardMockup,
+  logo,
   designMockup2,
   careIntelligenceMockup,
   interpretationMockup,
