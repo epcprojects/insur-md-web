@@ -24,7 +24,7 @@ const HowItWorksAccordion = ({ items }: HowItWorksAccordionProps) => {
           trigger: ".accordions",
           pin: true,
           pinSpacing: false,
-          start: "top 10%",
+          start: "top 4%",
           end: "bottom 0px",
           scrub: 0.5, 
           markers: false,

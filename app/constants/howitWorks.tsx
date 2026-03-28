@@ -47,13 +47,13 @@ const iconHeight = isMobile ? "30" : undefined;
       variant: "A" as const,
       ...SHARED,
       numberText: "01",
-      leftHeading: "Carrier Referral & Case Initiation",
+      leftHeading: "Referral & Case Initiation",
       leftSubheading: "Underwriting begins with a structured handoff",
       rightSideIcon: <EnergyIcon width={iconWidth} height={iconHeight} />,
       rightAboveDiv: {
         title: "Referrals can be initiated through:",
         description:
-          "Every InsurMD case starts with a clean referral from the carrier, MGA, or reinsurer.",
+          "Every InsurMD case starts with a clean referral from the carrier, BGA, or reinsurer.",
         items: [
           { icon: gp, label: "API-based case creation" },
           { icon: gp, label: "Secure portal uploads" },

@@ -105,7 +105,7 @@ const GridItems = ({
     {items.map((item, idx, arr) => (
       <div
         key={idx}
-        className={`rounded-2xl flex flex-row items-center gap-4 bg-white py-4  px-4 lg:px-6 ${
+        className={`rounded-2xl flex flex-row ${item.title ? "items-start" : "items-center"} gap-4 bg-white py-4  px-4 lg:px-6 ${
   gridClass.includes("lg:grid-cols-2") &&
   arr.length % 2 !== 0 &&
   idx === arr.length - 1

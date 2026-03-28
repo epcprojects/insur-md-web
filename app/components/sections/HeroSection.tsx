@@ -31,7 +31,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="lg:pb-24 pt-24 lg:pt-49">
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10  max-w-7xl   mx-auto px-8">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 items-end gap-10  max-w-7xl   mx-auto px-8">
         <div className="flex flex-col gap-6">
           <h2 className="text-4xl lg:text-start text-center lg:text-headingfont font-extrabold leading-[110%] tracking-[-0.03em] text-black">
             {heading}
@@ -69,7 +69,7 @@ export default function HeroSection({
           )}
         </div>
         <div>
-          <Image src={image} alt={imageAlt} className="h-full" />
+          <Image src={image} alt={imageAlt} className="" />
         </div>
       </div>
     </section>
