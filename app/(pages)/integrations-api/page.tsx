@@ -56,7 +56,7 @@ const Page = () => {
               </>
             }
             descriptionOne={
-              "InsurMD is not designed to sit beside your stack — it’s built to integrate into it. Modern carriers operate across a complex mesh of underwriting platforms, policy admin systems, data warehouses, and partner ecosystems. InsurMD is engineered to connect cleanly across that landscape."
+              "InsurMD is not designed to sit beside your stack — it’s built to integrate into it. Modern insurance companies operate across a complex mesh of underwriting platforms, policy admin systems, data warehouses, and partner ecosystems. InsurMD is engineered to connect cleanly across that landscape."
             }
             descriptionTwo={
               "Whether deployed as a pilot or scaled across enterprise programs, the platform is built for seamless interoperability."

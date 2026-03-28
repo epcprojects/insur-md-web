@@ -359,7 +359,7 @@ export default function Home() {
               <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-15">
                 <div className="space-y-2">
                   <h2 className="text-black text-xl md:text-[28px] leading-normal font-bold">
-                    Structured delivery to carriers
+                    Structured delivery to insurance companies
                   </h2>
                   <p className="text-neutral-800 font-normal text-base md:text-xl ">
                     Receive normalized medical records, physician assessments,
