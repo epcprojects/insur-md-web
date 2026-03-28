@@ -115,7 +115,7 @@ export default function Home() {
       <div className="m-4 md:m-5">
         <div className="bg-[#F5F5F4] rounded-[30px] w-full pt-8 md:pt-24 ">
           <div className="container mx-auto max-w-7xl px-4 md:px-8">
-            <h2 className="text-3xl md:text-[54px] font-semibold md:leading-[140%] text-center tracking-[-0.03em] md:px-10">
+            <h2 className="text-3xl md:text-[54px] font-medium md:leading-[140%] text-center tracking-[-0.03em] md:px-10">
               Built for modern life{" "}
               <span className="text-[#4BB8B2] font-extrabold">insurers</span>,{" "}
               <span className="text-[#107569] font-extrabold">reinsurers</span>,

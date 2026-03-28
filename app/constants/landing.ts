@@ -3,7 +3,7 @@ import { images } from "../ui";
 export const steps = [
   {
     id: "01",
-    title: "The applicant is referred to InsurMD by the carrier",
+    title: "The applicant is referred to InsurMD by the life insurance company",
     image: images.landingImages.clarityStepOne,
   },
   {
