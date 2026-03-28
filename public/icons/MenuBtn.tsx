@@ -90,8 +90,8 @@ const MenuBtn = ({ startClr = "#15B79E", endClr = "#125D56" }) => {
           y2="85.489"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color={startClr} />
-          <stop offset="1" stop-color={endClr} />
+          <stop stopColor={startClr} />
+          <stop offset="1" stopColor={endClr} />
         </linearGradient>
       </defs>
     </svg>

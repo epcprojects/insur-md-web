@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { FaqsSection, Footer, Header } from "./components";
+import SmoothScroll from "./constants/SmoothScroll";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -95,7 +96,8 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="min-h-dvh flex flex-col">
-        <div className="flex items-center justify-center  ">
+        <SmoothScroll>
+        <div className="flex items-center justify-center ">
           <Header menuItems={menuItems} />
         </div>
         {children}
@@ -108,6 +110,7 @@ export default function RootLayout({
           </div>
           <Footer menuItems={menuItems} modulesItems={menuItems} />
         </div>
+        </SmoothScroll>
       </body>
     </html>
   );

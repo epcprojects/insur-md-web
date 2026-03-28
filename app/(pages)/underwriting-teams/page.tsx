@@ -1,11 +1,32 @@
 "use client";
-import { HeroSection } from "@/app/components";
+import { HeroSection, ProcessStepComponent } from "@/app/components";
+import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
+import { ProcessStep, useUnderwritingTeamsStepsConfig } from "@/app/constants/underwritingteams";
 import { images } from "@/app/ui";
 import { RightUpArrow } from "@/public/icons";
 import React from "react";
 
 const Page = () => {
+   const steps = useUnderwritingTeamsStepsConfig();
+  
+    const renderStepContent = (step: ProcessStep) => {
+      switch (step.variant) {
+        case "A":
+          return <ProcessStepComponent variant="A" items={[step]} />;
+        case "B":
+          return <ProcessStepComponent variant="B" items={[step]} />;
+        case "C":
+          return <ProcessStepComponent variant="C" items={[step]} />;
+        case "custom":
+          return <ProcessStepComponent variant="custom" items={[step]} />;
+      }
+    };
+  
+    const accordionItems = steps.map((step) => ({
+      content: <div className="py-4 lg:py-16">{renderStepContent(step)}</div>,
+    }));
   return (
+    <>
     <div className=" min-h-dvh  p-4">
       <div className="rounded-[30px]   bg-light-skyblue w-full">
         <HeroSection
@@ -58,6 +79,8 @@ const Page = () => {
         />
       </div>
     </div>
+ <HowItWorksAccordion items={accordionItems} />
+    </>
   );
 };
 

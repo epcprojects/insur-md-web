@@ -7,8 +7,7 @@ type ThemeButtonProps = {
   variant: ThemeButtonVariant;
   onClick: () => void;
   bgClasses?: string;
-  borderClr?: string;
-  bodyBgClasses?: string;
+  wrapperClasses?: string;
 };
 type VariantStyle = {
   button?: string;
@@ -17,11 +16,11 @@ type VariantStyle = {
 
 const baseStyles = {
   button: `
-    py-2 pr-2 pl-5 hover:cursor-pointer
-    text-gray-950 text-lg font-semibold leading-[26px] border backdrop-blur-[73.93px]
+    bg-white py-2 pr-2 pl-5 hover:cursor-pointer
+    text-gray-950 text-base lg:text-lg font-semibold leading-[26px] backdrop-blur-[73.93px]
   `,
   iconWrapper: `
-    py-[13.33px] px-5 rounded-full
+   py-2 lg:py-[13.33px] px-3 lg:px-5 rounded-full
   `,
 };
 
@@ -46,6 +45,7 @@ export const ThemeButton = ({
   label,
   icon,
   variant,
+  wrapperClasses,
   onClick,
   bgClasses,
   borderClr = "border-white",
@@ -55,11 +55,11 @@ export const ThemeButton = ({
     variant === "custom"
       ? (bgClasses ?? "")
       : (variantStyles[variant]?.iconWrapper ?? "");
-
+ const wrapperVariantClass = variant === "custom" ? (wrapperClasses ?? "") : "";
   return (
     <div
       onClick={onClick}
-      className={`flex ${baseStyles.button} ${borderClr} ${bodyBgClasses} group flex-row items-center gap-[11.15px] rounded-full`}
+      className={`flex ${baseStyles.button} ${wrapperVariantClass} group flex-row items-center justify-between gap-[11.15px] rounded-full`}
     >
       {label}
       <div
