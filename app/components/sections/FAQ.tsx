@@ -59,7 +59,7 @@ const FaqsSection: React.FC = () => {
           <Accordion.Trigger className="w-full py-3 md:py-5 cursor-pointer">
             <Accordion.Header>
               <div className="flex items-center justify-between">
-                <h4 className="text-base font-medium md:text-3xl text-black">
+                <h4 className="text-base font-medium text-start md:text-3xl text-black">
                   {item.question}
                 </h4>
 

@@ -24,7 +24,10 @@ const baseStyles = {
   `,
 };
 
-const variantStyles: Record<Exclude<ThemeButtonVariant, "custom">, VariantStyle> = {
+const variantStyles: Record<
+  Exclude<ThemeButtonVariant, "custom">,
+  VariantStyle
+> = {
   primary: {
     iconWrapper: `
       [background:linear-gradient(170deg,theme(colors.teal)_41.33%,theme(colors.dark-teal)_102.06%)]
@@ -45,8 +48,9 @@ export const ThemeButton = ({
   wrapperClasses,
   onClick,
   bgClasses,
+  borderClr = "border-white",
+  bodyBgClasses = "bg-white",
 }: ThemeButtonProps) => {
-
   const iconWrapperVariantClass =
     variant === "custom"
       ? (bgClasses ?? "")
