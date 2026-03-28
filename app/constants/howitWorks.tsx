@@ -15,9 +15,14 @@ import {
   ServerIcon,
   GreenPointIcon,
 } from "@/public/icons";
-import { ProcessStepItemVariantA, ProcessStepItemVariantB, ProcessStepItemVariantC, ProcessStepItemVariantCustom } from "../components/sections/ProcessStepComponent";
+import {
+  ProcessStepItemVariantA,
+  ProcessStepItemVariantB,
+  ProcessStepItemVariantC,
+  ProcessStepItemVariantCustom,
+} from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
- 
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -36,9 +41,10 @@ const SHARED = {
 
 export const useProcessStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
-const iconWidth = isMobile ? "30" : undefined;
-const iconHeight = isMobile ? "30" : undefined;
+  const iconWidth = isMobile ? "30" : undefined;
+  const iconHeight = isMobile ? "30" : undefined;
 
   const gp = <GreenPointIcon />;
 
@@ -58,11 +64,15 @@ const iconHeight = isMobile ? "30" : undefined;
           { icon: gp, label: "API-based case creation" },
           { icon: gp, label: "Secure portal uploads" },
           { icon: gp, label: "Batch submission pipelines" },
-          { icon: gp, label: "Embedded referral triggers inside underwriting platforms" },
+          {
+            icon: gp,
+            label: "Embedded referral triggers inside underwriting platforms",
+          },
         ],
       },
       secondDiv: {
-        title: "At intake, InsurMD generates a unique case envelope containing:",
+        title:
+          "At intake, InsurMD generates a unique case envelope containing:",
         description:
           "This ensures downstream data retrieval and clinical interpretation align with your underwriting model from day one.",
         items: [
@@ -73,6 +83,7 @@ const iconHeight = isMobile ? "30" : undefined;
           { icon: gp, label: "Jurisdictional handling rules" },
         ],
       },
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -97,6 +108,7 @@ const iconHeight = isMobile ? "30" : undefined;
           session — dramatically improving completion rates.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "C" as const,
@@ -113,9 +125,13 @@ const iconHeight = isMobile ? "30" : undefined;
           { icon: gp, label: "Nationwide provider queries" },
           { icon: gp, label: "Health information exchange retrieval" },
           { icon: gp, label: "Health system record pulls" },
-          { icon: gp, label: "Pharmacy and medication data (where applicable)" },
+          {
+            icon: gp,
+            label: "Pharmacy and medication data (where applicable)",
+          },
         ],
       },
+      onClick: () => openModal(),
       secondSection: {
         description: "All consent events are:",
         items: [
@@ -127,8 +143,8 @@ const iconHeight = isMobile ? "30" : undefined;
       },
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This authorization layer is the foundation that enables rapid, compliant
-          data access at scale.
+          This authorization layer is the foundation that enables rapid,
+          compliant data access at scale.
         </p>
       ),
     },
@@ -147,9 +163,13 @@ const iconHeight = isMobile ? "30" : undefined;
           { icon: gp, label: "Nationwide provider queries" },
           { icon: gp, label: "Health information exchange retrieval" },
           { icon: gp, label: "Health system record pulls" },
-          { icon: gp, label: "Pharmacy and medication data (where applicable)" },
+          {
+            icon: gp,
+            label: "Pharmacy and medication data (where applicable)",
+          },
         ],
       },
+      onClick: () => openModal(),
       secondSection: {
         description: "All consent events are:",
         items: [
@@ -161,8 +181,8 @@ const iconHeight = isMobile ? "30" : undefined;
       },
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This authorization layer is the foundation that enables rapid, compliant
-          data access at scale.
+          This authorization layer is the foundation that enables rapid,
+          compliant data access at scale.
         </p>
       ),
     },
@@ -190,6 +210,7 @@ const iconHeight = isMobile ? "30" : undefined;
           truth.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -214,6 +235,7 @@ const iconHeight = isMobile ? "30" : undefined;
           reasoning, not just algorithmic summarization.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -221,7 +243,9 @@ const iconHeight = isMobile ? "30" : undefined;
       numberText: "07",
       leftHeading: "Gaps-in-Care & Risk Contextualization",
       leftSubheading: "Identifying what's missing — not just what's present",
-      rightSideIcon: <MagnifyingGlassIcon width={iconWidth} height={iconHeight} />,
+      rightSideIcon: (
+        <MagnifyingGlassIcon width={iconWidth} height={iconHeight} />
+      ),
       sectionTitle: "Absence Signal Analysis",
       sectionDescription:
         "Traditional record workflows surface historical data but often miss absence signals. InsurMD identifies and evaluates critical gaps that may impact underwriting decisions.",
@@ -238,6 +262,7 @@ const iconHeight = isMobile ? "30" : undefined;
           not just retrospective data.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -259,9 +284,11 @@ const iconHeight = isMobile ? "30" : undefined;
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          Outputs are tailored to carrier preferences and underwriting workflows.
+          Outputs are tailored to carrier preferences and underwriting
+          workflows.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -285,6 +312,7 @@ const iconHeight = isMobile ? "30" : undefined;
           for underwriting and data engineering teams.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -304,9 +332,11 @@ const iconHeight = isMobile ? "30" : undefined;
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This acceleration compounds across high-volume underwriting environments.
+          This acceleration compounds across high-volume underwriting
+          environments.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -316,7 +346,8 @@ const iconHeight = isMobile ? "30" : undefined;
       leftSubheading: "Every decision backed by provenance",
       rightSideIcon: <ShieldIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Lifecycle Traceability",
-      sectionDescription: "Maintains full traceability across the case lifecycle.",
+      sectionDescription:
+        "Maintains full traceability across the case lifecycle.",
       items: [
         { icon: gp, label: "Consent lineage" },
         { icon: gp, label: "Retrieval source tracking" },
@@ -330,6 +361,7 @@ const iconHeight = isMobile ? "30" : undefined;
           requirement in regulated insurance contexts.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -354,6 +386,7 @@ const iconHeight = isMobile ? "30" : undefined;
           requirement in regulated insurance contexts.
         </p>
       ),
+      onClick: () => openModal(),
     },
   ];
 };

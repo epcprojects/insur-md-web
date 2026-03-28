@@ -6,6 +6,7 @@ import {
   ThemeButton,
 } from "@/app/components";
 import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
+import { useDemoModal } from "@/app/components/DemoModalProvider";
 import {
   ProcessStep,
   useUnderwritingTeamsStepsConfig,
@@ -36,7 +37,7 @@ const Page = () => {
   }));
 
   const isMobile = useIsMobile();
-
+  const { openModal } = useDemoModal();
   return (
     <>
       <div className="p-4">
@@ -74,7 +75,9 @@ const Page = () => {
               {
                 label: "Request a Demo",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "custom",
                 bgClass:
                   "[background:linear-gradient(170deg,#22CCEE_41.33%,#0E7090_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#22CCEE,0_1.441px_24.649px_0_rgba(34,204,238,0.50)]",
@@ -82,7 +85,9 @@ const Page = () => {
               {
                 label: "Partner with InsurMD",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "secondary",
               },
             ]}
@@ -110,7 +115,9 @@ const Page = () => {
                 <ThemeButton
                   icon={<RightUpArrow />}
                   label="Request a Demo"
-                  onClick={() => {}}
+                  onClick={() => {
+                    openModal();
+                  }}
                   variant="custom"
                   borderClr="border-black/40"
                   wrapperClasses=""
@@ -218,8 +225,12 @@ const Page = () => {
           secondaryBtnVariant="custom"
           secondaryBtnBgClasses="[background:linear-gradient(170deg,#22CCEE,#0E7090)] [box-shadow:inset_0_-1.441px_7.351px_0_#22CCEE,0_1.441px_24.649px_0_rgba(30,204,238,0.50)]"
           image={images.landingImages.designMockup2}
-          onPrimaryClick={() => {}}
-          onSecondaryClick={() => {}}
+          onPrimaryClick={() => {
+            openModal();
+          }}
+          onSecondaryClick={() => {
+            openModal();
+          }}
         />
       </div>
     </>

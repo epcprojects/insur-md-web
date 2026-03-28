@@ -112,7 +112,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ isOpen, onClose }) => {
       onClick={handleClose}
     >
       <div
-        className="mx-4 relative flex w-full max-w-130 flex-col gap-3 overflow-hidden rounded-2xl bg-linear-to-br from-[#F5F7FA] to-[#C3CFE2] p-5 shadow-xl md:gap-6 md:p-10"
+        className="mx-4 relative flex w-full max-w-130 flex-col gap-3 overflow-hidden rounded-2xl bg-linear-to-t from-[#ACCBEE] to-[#E7F0FD] p-5 shadow-xl md:gap-6 md:p-10"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex flex-col items-center justify-center">
@@ -128,9 +128,9 @@ const SignInModal: React.FC<SignInModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-center text-lg font-bold text-gray-900 md:text-xl">
+          {/* <h2 className="text-center text-lg font-bold text-gray-900 md:text-xl">
             Request a Demo
-          </h2>
+          </h2> */}
 
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex flex-1 flex-col gap-1">

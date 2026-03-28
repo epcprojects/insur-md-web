@@ -5,6 +5,7 @@ import {
   ProcessStepComponent,
 } from "@/app/components";
 import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
+import { useDemoModal } from "@/app/components/DemoModalProvider";
 import {
   ProcessStep,
   useApplicantExperienceStepsConfig,
@@ -32,6 +33,7 @@ const Page = () => {
   const accordionItems = steps.map((step) => ({
     content: <div className="py-4 lg:py-16">{renderStepContent(step)}</div>,
   }));
+  const { openModal } = useDemoModal();
   return (
     <>
       <div className="p-4">
@@ -60,13 +62,17 @@ const Page = () => {
               {
                 label: "Request a Demo",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "primary",
               },
               {
                 label: "Partner with InsurMD",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "secondary",
               },
             ]}
@@ -91,8 +97,12 @@ const Page = () => {
           secondaryBtnVariant="custom"
           secondaryBtnBgClasses="[background:linear-gradient(170deg,#22CCEE,#0E7090)] [box-shadow:inset_0_-1.441px_7.351px_0_#22CCEE,0_1.441px_24.649px_0_rgba(30,204,238,0.50)]"
           image={images.landingImages.designMockup2}
-          onPrimaryClick={() => {}}
-          onSecondaryClick={() => {}}
+          onPrimaryClick={() => {
+            openModal();
+          }}
+          onSecondaryClick={() => {
+            openModal();
+          }}
         />
       </div>
     </>

@@ -21,6 +21,7 @@ import {
   ProcessStepItemVariantCustom,
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -39,7 +40,7 @@ const SHARED = {
 
 export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
-
+  const { openModal } = useDemoModal();
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
 
@@ -53,8 +54,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       leftHeading: "A Physician-Led Platform by Design",
       leftSubheading: "Clinical workflows anchored in licensed expertise",
       rightSideIcon: <UserShieldIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "A Physician-Led Platform Grounded in Clinical Expertise",
+      sectionTitle: "A Physician-Led Platform Grounded in Clinical Expertise",
       sectionDescription:
         "Embeds qualified clinicians into every case to ensure insights are based on real medical reasoning, not just data processing.",
       items: [
@@ -65,9 +65,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This ensures underwriting insights are grounded in real medical reasoning rather than purely algorithmic summarization.
+          This ensures underwriting insights are grounded in real medical
+          reasoning rather than purely algorithmic summarization.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -76,7 +78,8 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       leftHeading: "Purpose-Built Physician Network",
       leftSubheading: "Designed for modern clinical workflows",
       rightSideIcon: <GlobeIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Purpose-Built Physician Network for Modern Clinical Workflows",
+      sectionTitle:
+        "Purpose-Built Physician Network for Modern Clinical Workflows",
       sectionDescription:
         "Curated network enables efficient, technology-driven collaboration while maintaining strong clinical integrity.",
       items: [
@@ -87,9 +90,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This allows physicians to operate efficiently within a modern, data-rich environment while preserving clinical integrity.
+          This allows physicians to operate efficiently within a modern,
+          data-rich environment while preserving clinical integrity.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -109,9 +114,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       These guardrails help ensure the clinical layer remains credible and trusted by carriers and partners alike.
+          These guardrails help ensure the clinical layer remains credible and
+          trusted by carriers and partners alike.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -119,22 +126,35 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "04",
       leftHeading: "Structured Clinical Methodologies",
       leftSubheading: "Consistency across a distributed network",
-      rightSideIcon: <ProjectIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56"/>,
-      sectionTitle: "Structured Clinical Methodologies for Consistent Interpretation",
+      rightSideIcon: (
+        <ProjectIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
+      sectionTitle:
+        "Structured Clinical Methodologies for Consistent Interpretation",
       sectionDescription:
         "Applies standardized frameworks to ensure reliable, nuanced clinical insights across all cases.",
       items: [
         { icon: gp, label: "Longitudinal health evaluation " },
         { icon: gp, label: "Clinical timeline reconstruction" },
         { icon: gp, label: "Condition contextualization " },
-        { icon: gp, label: "Responsible interpretation of historical findings" },
-         { icon: gp, label: "Clear clinical summarization practices" },
+        {
+          icon: gp,
+          label: "Responsible interpretation of historical findings",
+        },
+        { icon: gp, label: "Clear clinical summarization practices" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This balance of structure and clinical judgment enables both consistency and nuance.
+          This balance of structure and clinical judgment enables both
+          consistency and nuance.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -142,7 +162,14 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "05",
       leftHeading: "Clinical Governance Framework",
       leftSubheading: "Oversight that scales with the platform",
-      rightSideIcon: <ClipboardCheckIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56"/>,
+      rightSideIcon: (
+        <ClipboardCheckIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
       sectionTitle: "Clinical Governance That Scales with Platform Growth",
       sectionDescription:
         "Ensures consistent quality, accountability, and alignment across the physician network as operations expand.",
@@ -154,9 +181,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This governance layer ensures the physician network operates cohesively even as the platform scales.
+          This governance layer ensures the physician network operates
+          cohesively even as the platform scales.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -164,8 +193,9 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "06",
       leftHeading: "Physician-In-The-Loop Intelligence",
       leftSubheading: "Where human expertise meets modern infrastructure",
-      rightSideIcon: <CycleIcon width={iconWidth} height={iconHeight}  />,
-      sectionTitle: "Physician-in-the-Loop Intelligence for Modern Clinical Workflows",
+      rightSideIcon: <CycleIcon width={iconWidth} height={iconHeight} />,
+      sectionTitle:
+        "Physician-in-the-Loop Intelligence for Modern Clinical Workflows",
       sectionDescription:
         "Combines clinical expertise with structured systems to enhance analysis while preserving human judgment in decision-making.",
       items: [
@@ -176,9 +206,10 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Technology amplifies physicians — it does not replace them.
+          Technology amplifies physicians — it does not replace them.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -186,7 +217,14 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "07",
       leftHeading: "Responsible Clinical Interpretation",
       leftSubheading: "Context matters in healthcare data",
-      rightSideIcon: <MedicalBookIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56" />,
+      rightSideIcon: (
+        <MedicalBookIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
       sectionTitle:
         "Responsible Clinical Interpretation with Contextual Understanding",
       sectionDescription:
@@ -199,9 +237,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This ensures outputs reflect clinical reality rather than raw data artifacts.
+          This ensures outputs reflect clinical reality rather than raw data
+          artifacts.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -209,10 +249,9 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "08",
       leftHeading: "Alignment With Regulated Environments",
       leftSubheading: "Built for healthcare-adjacent use cases",
-      rightSideIcon: (
-        <ShieldIcon width={iconWidth} height={iconHeight} />
-      ),
-      sectionTitle: "Aligned with Regulated Healthcare and Insurance Environments",
+      rightSideIcon: <ShieldIcon width={iconWidth} height={iconHeight} />,
+      sectionTitle:
+        "Aligned with Regulated Healthcare and Insurance Environments",
       sectionDescription:
         "Ensures responsible handling of medical data through clinician involvement, clear provenance, and transparent interpretation.",
       items: [
@@ -223,9 +262,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This alignment supports trust across carriers, partners, and applicants.
+          This alignment supports trust across carriers, partners, and
+          applicants.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -233,7 +274,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "09",
       leftHeading: "Clinical Quality at Scale",
       leftSubheading: "Designed to grow without dilution",
-      rightSideIcon: <LayerIcon width={iconWidth} height={iconHeight}/>,
+      rightSideIcon: <LayerIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Maintaining Clinical Quality at Scale Without Compromise",
       sectionDescription:
         "Uses structured frameworks and continuous refinement to preserve consistency and credibility as the platform grows.",
@@ -241,13 +282,14 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Structured clinical playbooks " },
         { icon: gp, label: "Ongoing framework refinement " },
         { icon: gp, label: "Platform-supported consistency" },
-         { icon: gp, label: "Feedback-informed evolution" },
+        { icon: gp, label: "Feedback-informed evolution" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
           This enables growth without sacrificing credibility.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -255,7 +297,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "10",
       leftHeading: "Collaboration With Carrier Medical Teams",
       leftSubheading: "Complementing existing clinical leadership",
-      rightSideIcon: <HandShakeIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <HandShakeIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Seamless Collaboration with Carrier Medical Leadership",
       sectionDescription:
         "Provides clear summaries, structured narratives, and transparent insights to support alignment with internal clinical teams.",
@@ -267,9 +309,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This supports better collaboration between InsurMD physicians and carrier-side medical leadership.
+          This supports better collaboration between InsurMD physicians and
+          carrier-side medical leadership.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -277,7 +321,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       numberText: "11",
       leftHeading: "Clinical Transparency & Traceability",
       leftSubheading: "Clear lineage from physician to output",
-      rightSideIcon: <UserShieldIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <UserShieldIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Clinical Transparency with End-to-End Traceability",
       sectionDescription:
         "Ensures every output is linked to physician involvement, supporting governance, review processes, and trusted decision-making.",
@@ -292,34 +336,39 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Traceable clinical authorship reinforces trust in the platform’s outputs.
+          Traceable clinical authorship reinforces trust in the platform’s
+          outputs.
         </p>
       ),
+      onClick: () => openModal(),
     },
-     {
+    {
       variant: "custom" as const,
       ...SHARED,
       numberText: "12",
       leftHeading: "A More Human Clinical Layer",
       leftSubheading: "Restoring clinical presence in digital underwriting",
-      rightSideIcon: <HeartIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <HeartIcon width={iconWidth} height={iconHeight} />,
       rightTitle: "Bringing Human Clinical Expertise into Modern Underwriting",
       rightSubtitle:
         "As underwriting becomes increasingly digital, maintaining authentic clinical involvement becomes more important — not less. InsurMD ensures that speed and automation do not come at the expense of human medical oversight.",
-      
+
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         By embedding physicians directly into a modern infrastructure layer, InsurMD restores a human clinical dimension to accelerated underwriting environments.
+          By embedding physicians directly into a modern infrastructure layer,
+          InsurMD restores a human clinical dimension to accelerated
+          underwriting environments.
         </p>
       ),
+      onClick: () => openModal(),
     },
-     {
+    {
       variant: "B" as const,
       ...SHARED,
       numberText: "13",
       leftHeading: "The Clinical Foundation of InsurMD",
       leftSubheading: "Built on a Strong Clinical Core",
-      rightSideIcon: <CubesIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <CubesIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "The Clinical Foundation Behind InsurMD",
       sectionDescription:
         "Combines physician expertise, structured methodologies, and governance-driven design to deliver fast, clinically grounded underwriting insights.",
@@ -334,10 +383,12 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        InsurMD delivers clinical intelligence that is both modern and medically grounded. This is what makes faster underwriting possible without losing clinical credibility.
+          InsurMD delivers clinical intelligence that is both modern and
+          medically grounded. This is what makes faster underwriting possible
+          without losing clinical credibility.
         </p>
       ),
+      onClick: () => openModal(),
     },
-   
   ];
 };

@@ -5,6 +5,7 @@ import {
   ThemeButton,
 } from "@/app/components";
 import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
+import { useDemoModal } from "@/app/components/DemoModalProvider";
 import {
   ProcessStep,
   useSecurityComplianceStepsConfig,
@@ -35,7 +36,7 @@ const Page = () => {
   }));
 
   const isMobile = useIsMobile();
-
+  const { openModal } = useDemoModal();
   return (
     <>
       <div className=" p-4">
@@ -64,7 +65,9 @@ const Page = () => {
               {
                 label: "Request a Demo",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "custom",
                 bgClass:
                   "[background:linear-gradient(170deg,#B692F6_41.33%,#53389E_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#B692F6,0_1.441px_24.649px_0_rgba(182,146,246,0.70)]",
@@ -72,7 +75,9 @@ const Page = () => {
               {
                 label: "Partner with InsurMD",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "secondary",
               },
             ]}
@@ -100,7 +105,9 @@ const Page = () => {
                 <ThemeButton
                   icon={<RightUpArrow />}
                   label="Request a Demo"
-                  onClick={() => {}}
+                  onClick={() => {
+                    openModal();
+                  }}
                   variant="custom"
                   borderClr="border-black/40"
                   wrapperClasses=""

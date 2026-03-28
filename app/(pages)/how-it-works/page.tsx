@@ -7,6 +7,7 @@ import {
   ThemeButton,
 } from "@/app/components";
 import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
+import { useDemoModal } from "@/app/components/DemoModalProvider";
 import { ProcessStep, useProcessStepsConfig } from "@/app/constants/howitWorks";
 import { useIsMobile } from "@/app/hooks/useIsMobile";
 
@@ -35,6 +36,7 @@ const Page = () => {
 
   const isMobile = useIsMobile();
 
+  const { openModal } = useDemoModal();
   return (
     <>
       <div className=" p-4">
@@ -68,13 +70,17 @@ const Page = () => {
               {
                 label: "Request a Demo",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "primary",
               },
               {
                 label: "Partner with InsurMD",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "secondary",
               },
             ]}
@@ -101,7 +107,9 @@ const Page = () => {
                 <ThemeButton
                   icon={<RightUpArrow />}
                   label="Request a Demo"
-                  onClick={() => {}}
+                  onClick={() => {
+                    openModal();
+                  }}
                   variant="primary"
                   borderClr="border-gray-200"
                 />
@@ -190,8 +198,12 @@ const Page = () => {
           primaryBtnLabel="Schedule a Demo"
           secondaryBtnLabel="Request Partnership"
           image={images.landingImages.designMockup2}
-          onPrimaryClick={() => {}}
-          onSecondaryClick={() => {}}
+          onPrimaryClick={() => {
+            openModal();
+          }}
+          onSecondaryClick={() => {
+            openModal();
+          }}
         />
       </div>
     </>

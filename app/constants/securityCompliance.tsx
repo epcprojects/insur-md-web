@@ -22,6 +22,7 @@ import {
   ProcessStepItemVariantCustom,
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -40,6 +41,7 @@ const SHARED = {
 
 export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
@@ -54,8 +56,7 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       leftHeading: "A Healthcare-Grade Security Foundation",
       leftSubheading: "Designed with protected health information in mind",
       rightSideIcon: <HospitalIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "Healthcare-Grade Security Across the Data Lifecycle",
+      sectionTitle: "Healthcare-Grade Security Across the Data Lifecycle",
       sectionDescription:
         "Ensures PHI is securely handled across ingestion, processing, and delivery—protecting data at every stage.",
       items: [
@@ -67,9 +68,11 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-      This ensures sensitive medical data is protected not only at rest and in transit, but also throughout active use.
+          This ensures sensitive medical data is protected not only at rest and
+          in transit, but also throughout active use.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -77,7 +80,14 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "02",
       leftHeading: "HIPAA-Aligned Architecture",
       leftSubheading: "Privacy built into system design",
-      rightSideIcon: <UserShieldIcon width={iconWidth} height={iconHeight}  gradientFrom="#B692F6" gradientTo="#53389E"/>,
+      rightSideIcon: (
+        <UserShieldIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#B692F6"
+          gradientTo="#53389E"
+        />
+      ),
       sectionTitle: "Privacy-First Architecture with HIPAA Alignment",
       sectionDescription:
         "Implements strict access controls, authorization, and monitoring to ensure secure and compliant handling of PHI.",
@@ -90,9 +100,11 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-      All PHI access is gated by explicit patient authorization and tightly scoped permissions.
+          All PHI access is gated by explicit patient authorization and tightly
+          scoped permissions.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -112,9 +124,11 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-     This multi-layer encryption strategy minimizes exposure across both internal and external boundaries.
+          This multi-layer encryption strategy minimizes exposure across both
+          internal and external boundaries.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -122,7 +136,14 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "04",
       leftHeading: "Explicit Patient Authorization Controls",
       leftSubheading: "Consent as a first-class primitive",
-      rightSideIcon: <UserCheckIcon width={iconWidth} height={iconHeight}  gradientFrom="#B692F6" gradientTo="#53389E" />,
+      rightSideIcon: (
+        <UserCheckIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#B692F6"
+          gradientTo="#53389E"
+        />
+      ),
       sectionTitle: "Structured Outputs That Reduce Manual Effort",
       sectionDescription:
         "InsurMD delivers organized clinical artifacts, eliminating the need to review lengthy, unstructured records.",
@@ -131,13 +152,15 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Jurisdiction-aware authorization templates" },
         { icon: gp, label: "Time-stamped consent lineage" },
         { icon: gp, label: "Revocation-aware handling" },
-          { icon: gp, label: "Audit-ready authorization records" },
+        { icon: gp, label: "Audit-ready authorization records" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This creates a verifiable trust chain from patient permission to underwriting consumption.
+          This creates a verifiable trust chain from patient permission to
+          underwriting consumption.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -145,7 +168,9 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "05",
       leftHeading: "Comprehensive Auditability",
       leftSubheading: "Every action leaves a trail",
-      rightSideIcon: <ClipboardListIcon width={iconWidth} height={iconHeight} />,
+      rightSideIcon: (
+        <ClipboardListIcon width={iconWidth} height={iconHeight} />
+      ),
       sectionTitle: "Complete Traceability Across Every Platform Action",
       sectionDescription:
         "Maintains detailed logs for consent, data processing, and outputs to support audits and governance.",
@@ -154,13 +179,15 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Record retrieval metadata " },
         { icon: gp, label: "Data transformations" },
         { icon: gp, label: "Clinical review touchpoints" },
-         { icon: gp, label: "Output generation and delivery logs" },
+        { icon: gp, label: "Output generation and delivery logs" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         These logs support internal governance, external audits, and regulatory defensibility.
+          These logs support internal governance, external audits, and
+          regulatory defensibility.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -168,7 +195,7 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "06",
       leftHeading: "Secure Clinical Review Workflows",
       leftSubheading: "Protecting data during active interpretation",
-      rightSideIcon: <UserLockIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <UserLockIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Secure Clinical Review Environments for Sensitive Data",
       sectionDescription:
         "Protects PHI during active analysis with isolated workspaces, strict access controls, and secure session management.",
@@ -180,9 +207,11 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       This ensures data remains protected even during its most sensitive lifecycle stage — human interpretation.
+          This ensures data remains protected even during its most sensitive
+          lifecycle stage — human interpretation.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -190,9 +219,15 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "07",
       leftHeading: "Data Minimization Principles",
       leftSubheading: "Exposure reduction by design",
-      rightSideIcon: <ClockIcon width={iconWidth} height={iconHeight} gradientFrom="#B692F6" gradientTo="#53389E"/>,
-      sectionTitle:
-        "Data Minimization to Reduce Exposure Risk",
+      rightSideIcon: (
+        <ClockIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#B692F6"
+          gradientTo="#53389E"
+        />
+      ),
+      sectionTitle: "Data Minimization to Reduce Exposure Risk",
       sectionDescription:
         "Limits unnecessary data access and propagation through scoped retrieval, tailored outputs, and controlled data handling.",
       items: [
@@ -203,9 +238,11 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-     Minimizing exposure surface area is one of the most effective ways to reduce systemic risk.
+          Minimizing exposure surface area is one of the most effective ways to
+          reduce systemic risk.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -213,9 +250,7 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "08",
       leftHeading: "Secure Data Delivery to Carriers",
       leftSubheading: "Enterprise-ready handoff mechanisms",
-      rightSideIcon: (
-        <PaperPlaneIcon width={iconWidth} height={iconHeight}  />
-      ),
+      rightSideIcon: <PaperPlaneIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Secure Data Delivery Aligned with Carrier Requirements",
       sectionDescription:
         "Supports encrypted APIs, secure transfers, and configurable delivery methods to match carrier security and governance needs.",
@@ -227,9 +262,11 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       Delivery methods are configurable to match each carrier’s internal security posture and data governance policies.
+          Delivery methods are configurable to match each carrier’s internal
+          security posture and data governance policies.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -237,22 +274,24 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "09",
       leftHeading: "Infrastructure Security Practices",
       leftSubheading: "Built for resilience and isolation",
-      rightSideIcon: <DesktopIcon width={iconWidth} height={iconHeight}/>,
-      sectionTitle: "Infrastructure Security Built for Resilience and Isolation",
+      rightSideIcon: <DesktopIcon width={iconWidth} height={iconHeight} />,
+      sectionTitle:
+        "Infrastructure Security Built for Resilience and Isolation",
       sectionDescription:
         "Implements segmented networks, least-privilege access, and continuous monitoring to reduce risk and ensure stability.",
       items: [
         { icon: gp, label: "Network segmentation" },
         { icon: gp, label: "Principle-of-least-privilege access models" },
         { icon: gp, label: "Environment isolation across deployment tiers" },
-         { icon: gp, label: "Continuous monitoring and alerting" },
-         { icon: gp, label: "Hardened service boundaries" },
+        { icon: gp, label: "Continuous monitoring and alerting" },
+        { icon: gp, label: "Hardened service boundaries" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         These controls reduce blast radius and support operational resilience.
+          These controls reduce blast radius and support operational resilience.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -260,7 +299,14 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "10",
       leftHeading: "Vendor & Dependency Governance",
       leftSubheading: "A controlled ecosystem approach",
-      rightSideIcon: <HandShakeIcon width={iconWidth} height={iconHeight} gradientFrom="#B692F6" gradientTo="#53389E"  />,
+      rightSideIcon: (
+        <HandShakeIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#B692F6"
+          gradientTo="#53389E"
+        />
+      ),
       sectionTitle: "Governed ecosystem across vendors and dependencies",
       sectionDescription:
         "Applies strict evaluation, monitoring, and integration standards to maintain a consistent security baseline across third-party components.",
@@ -272,9 +318,11 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This helps maintain a consistent security baseline across the broader platform ecosystem.
+          This helps maintain a consistent security baseline across the broader
+          platform ecosystem.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -282,7 +330,7 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       numberText: "11",
       leftHeading: "Privacy by Design",
       leftSubheading: "Aligning technology with patient trust",
-      rightSideIcon: <SecretUserIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <SecretUserIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Privacy-First Design Aligned with Patient Trust",
       sectionDescription:
         "Embeds transparency, consent, and controlled data usage into every product decision to protect sensitive information.",
@@ -297,17 +345,26 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This ensures the applicant experience reflects the sensitivity of the data being handled.
+          This ensures the applicant experience reflects the sensitivity of the
+          data being handled.
         </p>
       ),
+      onClick: () => openModal(),
     },
-       {
+    {
       variant: "B" as const,
       ...SHARED,
       numberText: "12",
       leftHeading: "Enterprise Governance Support",
       leftSubheading: "Enabling carrier risk teams",
-      rightSideIcon: <BuildingIcon width={iconWidth} height={iconHeight} gradientFrom="#B692F6" gradientTo="#53389E" />,
+      rightSideIcon: (
+        <BuildingIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#B692F6"
+          gradientTo="#53389E"
+        />
+      ),
       sectionTitle: "Supporting Enterprise Risk and Governance Processes",
       sectionDescription:
         "Enables security reviews, audit readiness, and alignment with internal compliance frameworks for smoother onboarding.",
@@ -316,23 +373,34 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
           icon: gp,
           label: "Security reviews by carrier risk teams",
         },
-        { icon: gp, label: "Architecture transparency for technical evaluators" },
+        {
+          icon: gp,
+          label: "Architecture transparency for technical evaluators",
+        },
         { icon: gp, label: "Audit readiness for regulated partners" },
         { icon: gp, label: "Alignment with internal compliance frameworks" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       This reduces friction during procurement and partnership onboarding.
+          This reduces friction during procurement and partnership onboarding.
         </p>
       ),
+      onClick: () => openModal(),
     },
-       {
+    {
       variant: "B" as const,
       ...SHARED,
       numberText: "13",
       leftHeading: "Continuous Security Evolution",
       leftSubheading: "Security as an ongoing discipline",
-      rightSideIcon: <CycleIcon width={iconWidth} height={iconHeight} gradientFrom="#B692F6" gradientTo="#53389E" />,
+      rightSideIcon: (
+        <CycleIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#B692F6"
+          gradientTo="#53389E"
+        />
+      ),
       sectionTitle: "Security That Evolves with Emerging Threats",
       sectionDescription:
         "Continuously improves controls, monitoring, and infrastructure to adapt to evolving security risks.",
@@ -347,12 +415,10 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       Security is treated as a living system, not a static milestone.
+          Security is treated as a living system, not a static milestone.
         </p>
       ),
+      onClick: () => openModal(),
     },
-
-    
-   
   ];
 };

@@ -5,6 +5,7 @@ import {
   ProcessStepComponent,
 } from "@/app/components";
 import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
+import { useDemoModal } from "@/app/components/DemoModalProvider";
 import {
   ProcessStep,
   useReinsurersStepsConfig,
@@ -32,6 +33,9 @@ const Page = () => {
   const accordionItems = steps.map((step) => ({
     content: <div className="py-4 lg:py-16">{renderStepContent(step)}</div>,
   }));
+
+  const { openModal } = useDemoModal();
+
   return (
     <>
       <div className="p-4">
@@ -60,7 +64,9 @@ const Page = () => {
               {
                 label: "Request a Demo",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "custom",
                 bgClass:
                   "[background:linear-gradient(170deg,#36BFFA_41.33%,#0086C9_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#36BFFA,0_1.441px_24.649px_0_rgba(54,191,250,0.50)]",
@@ -68,7 +74,9 @@ const Page = () => {
               {
                 label: "Partner with InsurMD",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "secondary",
               },
             ]}
@@ -93,8 +101,12 @@ const Page = () => {
           secondaryBtnVariant="custom"
           secondaryBtnBgClasses="[background:linear-gradient(170deg,#2970FF,#0040C1)] [box-shadow:inset_0_-1.441px_7.351px_0_#2970FF,0_1.441px_24.649px_0_rgba(41,212,155,0.50)]"
           image={images.landingImages.designMockup2}
-          onPrimaryClick={() => {}}
-          onSecondaryClick={() => {}}
+          onPrimaryClick={() => {
+            openModal();
+          }}
+          onSecondaryClick={() => {
+            openModal();
+          }}
         />
       </div>
     </>

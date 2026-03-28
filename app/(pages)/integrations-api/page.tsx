@@ -6,6 +6,7 @@ import {
   ThemeButton,
 } from "@/app/components";
 import HowItWorksAccordion from "@/app/components/AccordionComponents/HowItWorksAccordion";
+import { useDemoModal } from "@/app/components/DemoModalProvider";
 import {
   ProcessStep,
   useIntegrationApiStepsConfig,
@@ -36,6 +37,7 @@ const Page = () => {
   }));
 
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   return (
     <>
@@ -65,7 +67,9 @@ const Page = () => {
               {
                 label: "Request a Demo",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "custom",
                 bgClass:
                   "[background:linear-gradient(170deg,#FD6F8E_41.33%,#C01048_102.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#FD6F8E,0_1.441px_24.649px_0_rgba(253,111,142,0.50)]",
@@ -73,7 +77,9 @@ const Page = () => {
               {
                 label: "Partner with InsurMD",
                 icon: <RightUpArrow />,
-                onClick: () => {},
+                onClick: () => {
+                  openModal();
+                },
                 variant: "secondary",
               },
             ]}
@@ -100,7 +106,9 @@ const Page = () => {
                 <ThemeButton
                   icon={<RightUpArrow />}
                   label="Request a Demo"
-                  onClick={() => {}}
+                  onClick={() => {
+                    openModal();
+                  }}
                   variant="custom"
                   borderClr="border-black/40"
                   wrapperClasses=""
@@ -208,8 +216,12 @@ const Page = () => {
           secondaryBtnVariant="custom"
           secondaryBtnBgClasses="[background:linear-gradient(170deg,#FD6F8E.33%,#C01048.06%)] [box-shadow:inset_0_-1.441px_7.351px_0_#FD6F8E,0_1.441px_24.649px_0_rgba(253,111,142,0.50)]"
           image={images.landingImages.designMockup2}
-          onPrimaryClick={() => {}}
-          onSecondaryClick={() => {}}
+          onPrimaryClick={() => {
+            openModal();
+          }}
+          onSecondaryClick={() => {
+            openModal();
+          }}
         />
       </div>
     </>

@@ -21,6 +21,7 @@ import {
   ProcessStepItemVariantCustom,
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -39,6 +40,7 @@ const SHARED = {
 
 export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
@@ -52,9 +54,15 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       numberText: "01",
       leftHeading: "Underwriting Has a Data Problem — Not a Talent Problem",
       leftSubheading: "Great underwriters are constrained by incomplete inputs",
-      rightSideIcon: <DatabaseIcon width={iconWidth} height={iconHeight} gradientFrom="#22CCEE"  gradientTo="#0E7090"/>,
-      sectionTitle:
-        "Data-Driven Friction",
+      rightSideIcon: (
+        <DatabaseIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#22CCEE"
+          gradientTo="#0E7090"
+        />
+      ),
+      sectionTitle: "Data-Driven Friction",
       sectionDescription:
         "Underwriting delays are driven by data quality and timing issues.",
       items: [
@@ -62,19 +70,21 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Delayed APS returns" },
         { icon: gp, label: "Contradictory provider documentation" },
         { icon: gp, label: "Unstructured charts requiring manual synthesis" },
-         { icon: gp, label: "Limited clinical context behind diagnoses" },
+        { icon: gp, label: "Limited clinical context behind diagnoses" },
       ],
       bottomContent: (
         <div className="flex flex-col gap-4">
-            <p className="text-black font-normal text-lg leading-[160%]">
-          The result is slower cycle times and avoidable uncertainty, even in experienced teams.
-        </p>
-         <p className="text-black font-normal text-lg leading-[160%]">
-         InsurMD addresses the root issue: the signal layer underwriting depends on.
-        </p>
+          <p className="text-black font-normal text-lg leading-[160%]">
+            The result is slower cycle times and avoidable uncertainty, even in
+            experienced teams.
+          </p>
+          <p className="text-black font-normal text-lg leading-[160%]">
+            InsurMD addresses the root issue: the signal layer underwriting
+            depends on.
+          </p>
         </div>
-        
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -82,22 +92,31 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       numberText: "02",
       leftHeading: "Clinical Context, Not Just Records",
       leftSubheading: "Moving beyond document retrieval",
-      rightSideIcon: <UserDoctorIcon width={iconWidth} height={iconHeight}  gradientFrom="#22CCEE"  gradientTo="#0E7090" />,
+      rightSideIcon: (
+        <UserDoctorIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#22CCEE"
+          gradientTo="#0E7090"
+        />
+      ),
       sectionTitle: "From Documents to Clinical Interpretation",
       sectionDescription:
         "InsurMD goes beyond raw documents by delivering physician-led interpretation that helps underwriters clearly understand each case.",
       items: [
         { icon: gp, label: "Condition stability vs. progression" },
         { icon: gp, label: "Clinical severity in real-world context" },
-        { icon: gp, label: "Treatment adherence signals"},
-        { icon: gp, label: "Cross-condition interactions"},
-        { icon: gp, label: "Material findings that may be buried in charts"},
+        { icon: gp, label: "Treatment adherence signals" },
+        { icon: gp, label: "Cross-condition interactions" },
+        { icon: gp, label: "Material findings that may be buried in charts" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This transforms underwriting from document review into informed decision-making.
+          This transforms underwriting from document review into informed
+          decision-making.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -105,7 +124,14 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       numberText: "03",
       leftHeading: "Longitudinal Medical Clarity",
       leftSubheading: "One timeline instead of scattered encounters",
-      rightSideIcon: <ShieldIcon width={iconWidth} height={iconHeight} gradientFrom="#22CCEE"  gradientTo="#0E7090" />,
+      rightSideIcon: (
+        <ShieldIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#22CCEE"
+          gradientTo="#0E7090"
+        />
+      ),
       sectionTitle: "Reconstructing Longitudinal Clinical History",
       sectionDescription:
         "InsurMD organizes fragmented records into a clear, longitudinal clinical view for faster underwriting assessment.",
@@ -114,13 +140,15 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "How they evolved over time" },
         { icon: gp, label: "Intervals of stability vs. escalation" },
         { icon: gp, label: "Treatment milestones" },
-         { icon: gp, label: "Care continuity patterns" },
+        { icon: gp, label: "Care continuity patterns" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       This longitudinal framing is especially valuable for complex or high-face-value cases.
+          This longitudinal framing is especially valuable for complex or
+          high-face-value cases.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -137,14 +165,16 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Condition tables with timelines" },
         { icon: gp, label: "Medication reconciliations" },
         { icon: gp, label: "Highlighted abnormalities" },
-         { icon: gp, label: "Risk annotations" },
-          { icon: gp, label: "Source-linked documentation" },
+        { icon: gp, label: "Risk annotations" },
+        { icon: gp, label: "Source-linked documentation" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Everything is organized to accelerate comprehension without removing access to underlying records.
+          Everything is organized to accelerate comprehension without removing
+          access to underlying records.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -164,9 +194,11 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This enables underwriting teams to move faster without expanding risk exposure due to incomplete data.
+          This enables underwriting teams to move faster without expanding risk
+          exposure due to incomplete data.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -183,13 +215,15 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Care adherence patterns" },
         { icon: gp, label: "Early-stage comorbidities" },
         { icon: gp, label: "Gaps in follow-up care" },
-          { icon: gp, label: "Medication volatility" },
+        { icon: gp, label: "Medication volatility" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         These insights can support both conservative and accelerated underwriting strategies.
+          These insights can support both conservative and accelerated
+          underwriting strategies.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -197,9 +231,10 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       numberText: "07",
       leftHeading: "Decision Confidence in Regulated Environments",
       leftSubheading: "Built for explainability",
-      rightSideIcon: <ClipboardCheckIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "Audit-Ready Outputs with Full Traceability",
+      rightSideIcon: (
+        <ClipboardCheckIcon width={iconWidth} height={iconHeight} />
+      ),
+      sectionTitle: "Audit-Ready Outputs with Full Traceability",
       sectionDescription:
         "InsurMD ensures every insight is traceable, supporting clear justification and auditability in underwriting decisions.",
       items: [
@@ -210,9 +245,11 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This level of transparency supports governance, internal review, and regulatory defensibility.
+          This level of transparency supports governance, internal review, and
+          regulatory defensibility.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -221,7 +258,12 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       leftHeading: "Designed for Modern Underwriting Models",
       leftSubheading: "Flexible enough for multiple risk philosophies",
       rightSideIcon: (
-        <ProjectIcon width={iconWidth} height={iconHeight}  gradientFrom="#22CCEE"  gradientTo="#0E7090"/>
+        <ProjectIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#22CCEE"
+          gradientTo="#0E7090"
+        />
       ),
       sectionTitle: "Flexible Outputs Across Underwriting Models",
       sectionDescription:
@@ -235,9 +277,11 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        Outputs can be configured to align with the level of clinical depth required by each program.
+          Outputs can be configured to align with the level of clinical depth
+          required by each program.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -245,21 +289,25 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       numberText: "09",
       leftHeading: "Empowering Frontline Underwriters",
       leftSubheading: "Reducing cognitive load where it matters most",
-      rightSideIcon: <UsersIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <UsersIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Empowering Underwriters to Scale with Consistency",
       sectionDescription:
         "Reduces manual effort so underwriters can handle more cases, focus on decisions, and maintain consistent evaluations.",
       items: [
-        { icon: gp, label: "Focus on decision quality instead of document parsing" },
+        {
+          icon: gp,
+          label: "Focus on decision quality instead of document parsing",
+        },
         { icon: gp, label: "Handle more cases without burnout" },
         { icon: gp, label: "Escalate fewer files for additional data" },
-          { icon: gp, label: "Maintain consistency across evaluations" },
+        { icon: gp, label: "Maintain consistency across evaluations" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This improves both throughput and decision uniformity.
+          This improves both throughput and decision uniformity.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -275,14 +323,22 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Shorter time-to-decision across the book" },
         { icon: gp, label: "Improved applicant conversion rates" },
         { icon: gp, label: "Reduced APS dependency costs" },
-         { icon: gp, label: "Better insight into population-level risk patterns" },
-          { icon: gp, label: "Stronger alignment with digital distribution models" },
+        {
+          icon: gp,
+          label: "Better insight into population-level risk patterns",
+        },
+        {
+          icon: gp,
+          label: "Stronger alignment with digital distribution models",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         In competitive markets, underwriting speed and data quality directly influence growth.
+          In competitive markets, underwriting speed and data quality directly
+          influence growth.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -290,7 +346,7 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       numberText: "11",
       leftHeading: "Reinsurance Alignment",
       leftSubheading: "Shared clarity across the risk stack",
-      rightSideIcon: <UsersSettingIcon width={iconWidth} height={iconHeight}/>,
+      rightSideIcon: <UsersSettingIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Aligned Risk Communication Across Stakeholders",
       sectionDescription:
         "Enables faster reviews, clearer communication, and reduced back-and-forth across carrier and reinsurance teams.",
@@ -305,17 +361,26 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This shared clinical layer reduces friction across the underwriting ecosystem.
+          This shared clinical layer reduces friction across the underwriting
+          ecosystem.
         </p>
       ),
+      onClick: () => openModal(),
     },
-      {
+    {
       variant: "B" as const,
       ...SHARED,
       numberText: "12",
       leftHeading: "Built for Continuous Improvement",
       leftSubheading: "Shared clarity across the risk stack",
-      rightSideIcon: <CycleIcon width={iconWidth} height={iconHeight} gradientFrom="#22CCEE"  gradientTo="#0E7090"/>,
+      rightSideIcon: (
+        <CycleIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#22CCEE"
+          gradientTo="#0E7090"
+        />
+      ),
       sectionTitle: "Designed for Continuous Underwriting Evolution",
       sectionDescription:
         "Enables ongoing refinement of outputs, models, and insights as underwriting strategies evolve over time.",
@@ -330,9 +395,10 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        The platform becomes more valuable as underwriting strategies evolve.
+          The platform becomes more valuable as underwriting strategies evolve.
         </p>
       ),
+      onClick: () => openModal(),
     },
   ];
 };

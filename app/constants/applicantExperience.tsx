@@ -21,6 +21,7 @@ import {
   ProcessStepItemVariantCustom,
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -39,6 +40,7 @@ const SHARED = {
 
 export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
@@ -53,8 +55,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       leftHeading: "From Uncertainty to Clarity",
       leftSubheading: "Replacing opacity with guided progression",
       rightSideIcon: <CompassIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "From Uncertainty to Underwriting Clarity",
+      sectionTitle: "From Uncertainty to Underwriting Clarity",
       sectionDescription:
         "Replaces opaque processes with guided onboarding, clear touchpoints, and faster resolution for applicants.",
       items: [
@@ -65,9 +66,10 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       Clarity transforms how underwriting feels.
+          Clarity transforms how underwriting feels.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -75,7 +77,14 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       numberText: "02",
       leftHeading: "A Mobile-First Experience",
       leftSubheading: "Built for how people interact today",
-      rightSideIcon: <UsersIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E"  gradientTo="#125D56"/>,
+      rightSideIcon: (
+        <UsersIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
       sectionTitle: "A Mobile-First, User-Centric Experience",
       sectionDescription:
         "Streamlines applicant engagement with secure, guided workflows and intuitive mobile and web interfaces.",
@@ -87,9 +96,11 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This modern interface removes friction without oversimplifying the seriousness of the process.
+          This modern interface removes friction without oversimplifying the
+          seriousness of the process.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -109,9 +120,10 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       Transparency builds trust at every step.
+          Transparency builds trust at every step.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -119,7 +131,14 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       numberText: "04",
       leftHeading: "Physician-Connected, Not Faceless",
       leftSubheading: "Human clinical presence in a digital process",
-      rightSideIcon: <UserDoctorIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E"  gradientTo="#125D56" />,
+      rightSideIcon: (
+        <UserDoctorIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
       sectionTitle: "Physician-Connected, Human-Centered Underwriting",
       sectionDescription:
         "Embeds real physicians into the digital process, providing context, credibility, and a humanized experience.",
@@ -131,9 +150,10 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        Technology enables the journey, but medicine grounds it.
+          Technology enables the journey, but medicine grounds it.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -153,9 +173,10 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Respectful design improves engagement.
+          Respectful design improves engagement.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -163,7 +184,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       numberText: "06",
       leftHeading: "Faster Paths to Resolution",
       leftSubheading: "Speed that applicants can feel",
-      rightSideIcon: <RunningIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <RunningIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Faster, Clearer Paths to Resolution",
       sectionDescription:
         "Compresses workflows into a coordinated clinical pipeline, reducing waiting, uncertainty, and accelerating policy progression.",
@@ -175,9 +196,11 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Time is one of the most valuable experience improvements InsurMD delivers.
+          Time is one of the most valuable experience improvements InsurMD
+          delivers.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -186,8 +209,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       leftHeading: "Reduced Administrative Burden",
       leftSubheading: "Less paperwork, more progress",
       rightSideIcon: <LeafIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "Reduced Administrative Burden for Applicants",
+      sectionTitle: "Reduced Administrative Burden for Applicants",
       sectionDescription:
         "Minimizes forms, duplication, and follow-ups, streamlining information capture and communication for a lighter, efficient process.",
       items: [
@@ -198,9 +220,10 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       The experience becomes lighter without becoming less rigorous.
+          The experience becomes lighter without becoming less rigorous.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -209,7 +232,12 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       leftHeading: "Confidence Through Structure",
       leftSubheading: "A journey that feels intentional",
       rightSideIcon: (
-        <ShieldIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E"  gradientTo="#125D56" />
+        <ShieldIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
       ),
       sectionTitle: "Confidence Through Structured Clinical Journeys",
       sectionDescription:
@@ -222,9 +250,10 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-       Structure builds emotional confidence.
+          Structure builds emotional confidence.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -232,7 +261,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       numberText: "09",
       leftHeading: "Stronger Alignment With Modern Expectations",
       leftSubheading: "Matching how consumers expect services to work",
-      rightSideIcon: <EnergyIcon width={iconWidth} height={iconHeight}/>,
+      rightSideIcon: <EnergyIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Modernizing Underwriting to Meet Applicant Expectations",
       sectionDescription:
         "Delivers fast, transparent, and guided underwriting experiences that boost completion, sentiment, and brand perception.",
@@ -240,13 +269,14 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Higher completion rates " },
         { icon: gp, label: "Better applicant sentiment " },
         { icon: gp, label: "Stronger brand perception for carriers" },
-         { icon: gp, label: "Improved referral confidence" },
+        { icon: gp, label: "Improved referral confidence" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
           Modern experiences shape modern brands.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -254,7 +284,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       numberText: "10",
       leftHeading: "Built for Sensitive Moments",
       leftSubheading: "Respect during important decisions",
-      rightSideIcon: <HandMedicalIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <HandMedicalIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Designed for Sensitive and Meaningful Moments",
       sectionDescription:
         "Ensures clear, respectful, and human-centered interactions that reduce friction during important life decisions.",
@@ -269,6 +299,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
           Sensitivity matters in moments that matter.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -276,7 +307,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       numberText: "11",
       leftHeading: "Better Outcomes for Everyone",
       leftSubheading: "When applicant experience improves, everything improves",
-      rightSideIcon: <PeopleArrowsIcon width={iconWidth} height={iconHeight}  />,
+      rightSideIcon: <PeopleArrowsIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Driving Better Outcomes Across the Ecosystem",
       sectionDescription:
         "Enhances applicant experience, increases engagement, and delivers more complete, trusted underwriting outcomes.",
@@ -291,28 +322,32 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Experience quality compounds across the lifecycle.
+          Experience quality compounds across the lifecycle.
         </p>
       ),
+      onClick: () => openModal(),
     },
-     {
+    {
       variant: "custom" as const,
       ...SHARED,
       numberText: "12",
       leftHeading: "A New Standard for Underwriting Experience",
-      leftSubheading: "Delivers clear, trusted journeys through guided, physician-led workflows.",
-      rightSideIcon: <StarIcon width={iconWidth} height={iconHeight}  />,
+      leftSubheading:
+        "Delivers clear, trusted journeys through guided, physician-led workflows.",
+      rightSideIcon: <StarIcon width={iconWidth} height={iconHeight} />,
       rightTitle: "Setting a New Standard for Underwriting Experience",
       rightSubtitle:
         "InsurMD represents a shift from slow, opaque underwriting journeys to experiences that are guided, transparent, and clinically grounded.",
-      
+
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         By combining modern interfaces, physician-connected workflows, and structured progression, InsurMD helps transform one of the most challenging parts of life insurance into an experience defined by clarity and trust.
+          By combining modern interfaces, physician-connected workflows, and
+          structured progression, InsurMD helps transform one of the most
+          challenging parts of life insurance into an experience defined by
+          clarity and trust.
         </p>
       ),
+      onClick: () => openModal(),
     },
-    
-   
   ];
 };

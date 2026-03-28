@@ -22,6 +22,7 @@ import {
   ProcessStepItemVariantCustom,
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -40,6 +41,7 @@ const SHARED = {
 
 export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
@@ -54,8 +56,7 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       leftHeading: "API-First by Design",
       leftSubheading: "Integration is not an afterthought",
       rightSideIcon: <PlugIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "API-First Integration for Embedded Underwriting Workflows",
+      sectionTitle: "API-First Integration for Embedded Underwriting Workflows",
       sectionDescription:
         "Enables seamless integration of clinical intelligence into workflows through APIs for case management, automation, and structured delivery.",
       items: [
@@ -63,13 +64,15 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Referral automation" },
         { icon: gp, label: "Status tracking and orchestration" },
         { icon: gp, label: "Structured output delivery" },
-         { icon: gp, label: "Program-level configuration" },
+        { icon: gp, label: "Program-level configuration" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This allows InsurMD to function as a composable infrastructure layer within modern underwriting environments.
+          This allows InsurMD to function as a composable infrastructure layer
+          within modern underwriting environments.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -78,19 +81,37 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       leftHeading: "Flexible Integration Models",
       leftSubheading: "Adaptable to different carrier maturity levels",
       rightSideIcon: <ExchangeIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Flexible Integration Models for Different Deployment Needs",
+      sectionTitle:
+        "Flexible Integration Models for Different Deployment Needs",
       sectionDescription:
         "Supports API, hybrid, and low-lift approaches—allowing teams to start quickly and scale integration over time.",
       items: [
-        { icon: gp, label: "Fully embedded orchestration inside underwriting platforms or digital application flows.",title:"Deep API integrations" },
-        { icon: gp, label: "API-driven workflows combined with secure portals for human-in-the-loop processes.",title:"Hybrid deployments" },
-        { icon: gp, label: "Secure delivery channels that enable rapid pilots without heavy engineering investment." ,title:"Low-lift onboarding"},
+        {
+          icon: gp,
+          label:
+            "Fully embedded orchestration inside underwriting platforms or digital application flows.",
+          title: "Deep API integrations",
+        },
+        {
+          icon: gp,
+          label:
+            "API-driven workflows combined with secure portals for human-in-the-loop processes.",
+          title: "Hybrid deployments",
+        },
+        {
+          icon: gp,
+          label:
+            "Secure delivery channels that enable rapid pilots without heavy engineering investment.",
+          title: "Low-lift onboarding",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This flexibility allows teams to start quickly and deepen integration over time.
+          This flexibility allows teams to start quickly and deepen integration
+          over time.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -107,14 +128,16 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Identity and onboarding status" },
         { icon: gp, label: "Authorization milestones" },
         { icon: gp, label: "Retrieval progress indicators" },
-         { icon: gp, label: "Clinical review checkpoints" },
-          { icon: gp, label: "Output readiness events" },
+        { icon: gp, label: "Clinical review checkpoints" },
+        { icon: gp, label: "Output readiness events" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This visibility enables underwriting operations teams to maintain full situational awareness across active cases.
+          This visibility enables underwriting operations teams to maintain full
+          situational awareness across active cases.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -131,13 +154,15 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Normalized clinical tables" },
         { icon: gp, label: "Metadata-rich document bundles" },
         { icon: gp, label: "Annotated medical records" },
-         { icon: gp, label: "Carrier-specific schema mappings" },
+        { icon: gp, label: "Carrier-specific schema mappings" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This enables seamless ingestion into underwriting engines, data pipelines, and analytics environments.
+          This enables seamless ingestion into underwriting engines, data
+          pipelines, and analytics environments.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -145,7 +170,14 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       numberText: "05",
       leftHeading: "Designed for Underwriting Systems",
       leftSubheading: "Integration with real-world carrier stacks",
-      rightSideIcon: <LayerIcon width={iconWidth} height={iconHeight} gradientFrom="#FD6F8E"  gradientTo="#C01048" />,
+      rightSideIcon: (
+        <LayerIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#FD6F8E"
+          gradientTo="#C01048"
+        />
+      ),
       sectionTitle: "Designed to Integrate with Existing Underwriting Systems",
       sectionDescription:
         "Works seamlessly with current platforms and tools, adapting to existing workflows without requiring operational changes.",
@@ -158,9 +190,11 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          Rather than forcing workflow change, InsurMD adapts to existing operational patterns.
+          Rather than forcing workflow change, InsurMD adapts to existing
+          operational patterns.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -168,8 +202,16 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       numberText: "06",
       leftHeading: "Event-Driven Workflows",
       leftSubheading: "Enabling modern orchestration patterns",
-      rightSideIcon: <EnergyIcon width={iconWidth} height={iconHeight} gradientFrom="#FD6F8E"  gradientTo="#C01048" />,
-      sectionTitle: "Event-Driven Integration for Real-Time Workflow Orchestration",
+      rightSideIcon: (
+        <EnergyIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#FD6F8E"
+          gradientTo="#C01048"
+        />
+      ),
+      sectionTitle:
+        "Event-Driven Integration for Real-Time Workflow Orchestration",
       sectionDescription:
         "Enables automated actions, dynamic routing, and real-time updates through lifecycle events and webhook notifications.",
       items: [
@@ -180,9 +222,11 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Event-driven integration helps carriers reduce manual coordination overhead.
+          Event-driven integration helps carriers reduce manual coordination
+          overhead.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -203,9 +247,11 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This ensures outputs align with your decisioning frameworks rather than forcing transformation downstream.
+          This ensures outputs align with your decisioning frameworks rather
+          than forcing transformation downstream.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -214,7 +260,12 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       leftHeading: "Secure Integration Layers",
       leftSubheading: "Enterprise-grade connectivity",
       rightSideIcon: (
-        <NetworkWired width={iconWidth} height={iconHeight} gradientFrom="#FD6F8E"  gradientTo="#C01048" />
+        <NetworkWired
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#FD6F8E"
+          gradientTo="#C01048"
+        />
       ),
       sectionTitle: "Secure Integration Layers for Enterprise Connectivity",
       sectionDescription:
@@ -228,9 +279,11 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This allows carriers to integrate confidently within regulated environments.
+          This allows carriers to integrate confidently within regulated
+          environments.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -246,13 +299,15 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "High referral volumes" },
         { icon: gp, label: "Parallel case processing" },
         { icon: gp, label: "Multi-program deployments" },
-          { icon: gp, label: "Horizontal scaling across regions" },
+        { icon: gp, label: "Horizontal scaling across regions" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         The platform is designed to grow alongside distribution expansion and underwriting automation initiatives.
+          The platform is designed to grow alongside distribution expansion and
+          underwriting automation initiatives.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -260,7 +315,14 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       numberText: "10",
       leftHeading: "Rapid Pilot-to-Production Path",
       leftSubheading: "Start small, scale intentionally",
-      rightSideIcon: <RocketIcon width={iconWidth} height={iconHeight}  gradientFrom="#FD6F8E"  gradientTo="#C01048"/>,
+      rightSideIcon: (
+        <RocketIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#FD6F8E"
+          gradientTo="#C01048"
+        />
+      ),
       sectionTitle: "Seamless Transition from Pilot to Full Deployment",
       sectionDescription:
         "Enables quick pilots with controlled testing and gradual integration to reduce risk and validate value early.",
@@ -268,13 +330,15 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Fast sandbox provisioning" },
         { icon: gp, label: "Controlled pilot cohorts" },
         { icon: gp, label: "Output validation loops" },
-         { icon: gp, label: "Gradual integration deepening" },
+        { icon: gp, label: "Gradual integration deepening" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This reduces integration risk while allowing stakeholders to validate value early.
+          This reduces integration risk while allowing stakeholders to validate
+          value early.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -282,7 +346,14 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       numberText: "11",
       leftHeading: "Collaboration with Technical Teams",
       leftSubheading: "Built for real enterprise onboarding",
-      rightSideIcon: <HandShakeIcon width={iconWidth} height={iconHeight} gradientFrom="#FD6F8E"  gradientTo="#C01048" />,
+      rightSideIcon: (
+        <HandShakeIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#FD6F8E"
+          gradientTo="#C01048"
+        />
+      ),
       sectionTitle: "Collaborative Integration with Enterprise Technical Teams",
       sectionDescription:
         "Supports smooth onboarding through clear documentation, aligned design, and transparent data flow mapping.",
@@ -297,18 +368,27 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-        This ensures smoother onboarding and faster time-to-value.
+          This ensures smoother onboarding and faster time-to-value.
         </p>
       ),
+      onClick: () => openModal(),
     },
-      {
+    {
       variant: "B" as const,
       ...SHARED,
       numberText: "12",
       leftHeading: "Interoperability Across the Risk Stack",
       leftSubheading: "Connecting carriers, reinsurers, and partners",
-      rightSideIcon: <ShieldIcon width={iconWidth} height={iconHeight} gradientFrom="#FD6F8E"  gradientTo="#C01048" />,
-      sectionTitle: "Interoperability Across Carriers, Reinsurers, and Partners",
+      rightSideIcon: (
+        <ShieldIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#FD6F8E"
+          gradientTo="#C01048"
+        />
+      ),
+      sectionTitle:
+        "Interoperability Across Carriers, Reinsurers, and Partners",
       sectionDescription:
         "Enables shared data, consistent artifacts, and reduced duplication across the underwriting ecosystem.",
       items: [
@@ -322,17 +402,26 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This interoperability becomes increasingly valuable in multi-party underwriting ecosystems.
+          This interoperability becomes increasingly valuable in multi-party
+          underwriting ecosystems.
         </p>
       ),
+      onClick: () => openModal(),
     },
-     {
+    {
       variant: "B" as const,
       ...SHARED,
       numberText: "13",
       leftHeading: "Future-Proof by Architecture",
       leftSubheading: "Built for evolving underwriting models",
-      rightSideIcon: <GearIcon width={iconWidth} height={iconHeight} gradientFrom="#FD6F8E"  gradientTo="#C01048"/>,
+      rightSideIcon: (
+        <GearIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#FD6F8E"
+          gradientTo="#C01048"
+        />
+      ),
       sectionTitle: "Architecture Built for Evolving Underwriting Models",
       sectionDescription:
         "Supports ongoing changes with adaptable schemas, real-time decision layers, and integration with emerging technologies.",
@@ -347,9 +436,11 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This ensures the platform remains aligned with where underwriting is going — not where it has been.
+          This ensures the platform remains aligned with where underwriting is
+          going — not where it has been.
         </p>
       ),
+      onClick: () => openModal(),
     },
   ];
 };

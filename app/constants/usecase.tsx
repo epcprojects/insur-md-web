@@ -20,6 +20,7 @@ import {
   ProcessStepItemVariantCustom,
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -38,6 +39,7 @@ const SHARED = {
 
 export const useUseCaseStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
@@ -51,22 +53,33 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "01",
       leftHeading: "Accelerated Underwriting Programs",
       leftSubheading: "Inject clinical depth into fast decisioning models",
-      rightSideIcon: <EnergyIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56"/>,
-      sectionTitle:
-        "Enhancing Accelerated Underwriting with Clinical Depth",
+      rightSideIcon: (
+        <EnergyIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
+      sectionTitle: "Enhancing Accelerated Underwriting with Clinical Depth",
       sectionDescription:
         "Adds physician-guided context to fast decisioning models, improving confidence without slowing down workflows.",
       items: [
         { icon: gp, label: "Add clinical depth to fluidless models " },
         { icon: gp, label: "Reduce reliance on APS retrieval " },
         { icon: gp, label: "Improve decision confidence in edge cases " },
-        { icon: gp, label: "Support expansion of accelerated eligibility bands" },
+        {
+          icon: gp,
+          label: "Support expansion of accelerated eligibility bands",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         The result is faster programs that remain grounded in real clinical insight.
+          The result is faster programs that remain grounded in real clinical
+          insight.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -75,7 +88,8 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       leftHeading: "High Face Value Policies",
       leftSubheading: "Strengthen rigor where it matters most",
       rightSideIcon: <DollarIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Strengthening High Face Value Underwriting with Clinical Insight",
+      sectionTitle:
+        "Strengthening High Face Value Underwriting with Clinical Insight",
       sectionDescription:
         "Provides deeper clinical clarity and physician-led interpretation for high-value cases without extending decision timelines.",
       items: [
@@ -86,9 +100,11 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This enables carriers to maintain rigor while reducing friction in high-stakes underwriting.
+          This enables carriers to maintain rigor while reducing friction in
+          high-stakes underwriting.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -96,8 +112,16 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "03",
       leftHeading: "Complex Medical Histories",
       leftSubheading: "Bringing structure to challenging cases",
-      rightSideIcon: <MedicalNotesIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56" />,
-      sectionTitle: "Simplifying Complex Medical Histories for Better Evaluation",
+      rightSideIcon: (
+        <MedicalNotesIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
+      sectionTitle:
+        "Simplifying Complex Medical Histories for Better Evaluation",
       sectionDescription:
         "Organizes fragmented data into clear clinical narratives, enabling faster and more confident assessment of complex cases.",
       items: [
@@ -108,9 +132,11 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          Physician-guided interpretation helps underwriters evaluate complexity without prolonged back-and-forth data requests.
+          Physician-guided interpretation helps underwriters evaluate complexity
+          without prolonged back-and-forth data requests.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -130,9 +156,11 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This alignment is critical for carriers investing heavily in digital growth.
+          This alignment is critical for carriers investing heavily in digital
+          growth.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -140,8 +168,16 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "05",
       leftHeading: "Reinsurance Collaboration",
       leftSubheading: "A shared clinical layer across the risk stack",
-      rightSideIcon: <HandShakeIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56"/>,
-      sectionTitle: "Streamlining Reinsurance Collaboration with Shared Clinical Insight",
+      rightSideIcon: (
+        <HandShakeIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
+      sectionTitle:
+        "Streamlining Reinsurance Collaboration with Shared Clinical Insight",
       sectionDescription:
         "Provides consistent, clinically grounded data that improves clarity, reduces duplication, and speeds alignment across stakeholders.",
       items: [
@@ -152,9 +188,11 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This creates a more cohesive underwriting dialogue across the ecosystem.
+          This creates a more cohesive underwriting dialogue across the
+          ecosystem.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -162,7 +200,14 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "06",
       leftHeading: "APS Reduction Strategies",
       leftSubheading: "Moving beyond legacy retrieval models",
-      rightSideIcon: <FileIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56" />,
+      rightSideIcon: (
+        <FileIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
       sectionTitle: "Reducing APS Dependency with Modern Clinical Workflows",
       sectionDescription:
         "Replaces slow legacy retrieval with faster, structured approaches that improve efficiency and applicant experience.",
@@ -174,9 +219,10 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This creates a pathway toward modernized underwriting infrastructure.
+          This creates a pathway toward modernized underwriting infrastructure.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -185,8 +231,7 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       leftHeading: "Fluidless Underwriting Initiatives",
       leftSubheading: "Supporting the next generation of risk models",
       rightSideIcon: <WaterIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "Supporting Fluidless Underwriting with Clinical Context",
+      sectionTitle: "Supporting Fluidless Underwriting with Clinical Context",
       sectionDescription:
         "Adds physician-guided insight to non-invasive models, improving clarity without introducing exam friction.",
       items: [
@@ -197,9 +242,10 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         InsurMD acts as a clinical safety net for fluidless expansion.
+          InsurMD acts as a clinical safety net for fluidless expansion.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -207,10 +253,9 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "08",
       leftHeading: "Applicant Experience Transformation",
       leftSubheading: "Turning a slow process into a guided journey",
-      rightSideIcon: (
-        <SmileIcon width={iconWidth} height={iconHeight} />
-      ),
-      sectionTitle: "Transforming the Applicant Experience into a Guided Journey",
+      rightSideIcon: <SmileIcon width={iconWidth} height={iconHeight} />,
+      sectionTitle:
+        "Transforming the Applicant Experience into a Guided Journey",
       sectionDescription:
         "Replaces uncertainty with clarity, delivering faster timelines, better communication, and increased applicant confidence.",
       items: [
@@ -221,9 +266,10 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This creates brand lift while accelerating underwriting outcomes.
+          This creates brand lift while accelerating underwriting outcomes.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -231,7 +277,14 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "09",
       leftHeading: "Operational Efficiency Initiatives",
       leftSubheading: "Reducing manual underwriting burden",
-      rightSideIcon: <SpeedoMeterIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56"/>,
+      rightSideIcon: (
+        <SpeedoMeterIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
       sectionTitle: "Driving Operational Efficiency in Underwriting Workflows",
       sectionDescription:
         "Reduces manual effort and speeds case progression, enabling teams to handle more volume without increasing headcount.",
@@ -239,13 +292,15 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Reduced manual chart parsing " },
         { icon: gp, label: "Fewer follow-up requests" },
         { icon: gp, label: "Faster case progression " },
-         { icon: gp, label: "Lower operational drag per file" },
+        { icon: gp, label: "Lower operational drag per file" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This enables underwriting teams to scale throughput without proportional headcount increases.
+          This enables underwriting teams to scale throughput without
+          proportional headcount increases.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -253,8 +308,16 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "10",
       leftHeading: "Medical Director Support",
       leftSubheading: "Providing clearer clinical narratives",
-      rightSideIcon: <UserDoctorIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56" />,
-      sectionTitle: "Supporting Medical Directors with Clear Clinical Narratives",
+      rightSideIcon: (
+        <UserDoctorIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
+      sectionTitle:
+        "Supporting Medical Directors with Clear Clinical Narratives",
       sectionDescription:
         "Delivers structured, physician-informed insights that improve review efficiency and strengthen decision confidence.",
       items: [
@@ -268,6 +331,7 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
           This supports faster, more confident clinical oversight.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -275,7 +339,14 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       numberText: "11",
       leftHeading: "Program Modernization",
       leftSubheading: "A bridge from legacy to next-gen underwriting",
-      rightSideIcon: <ProjectIcon width={iconWidth} height={iconHeight} gradientFrom="#15B79E" gradientTo="#125D56" />,
+      rightSideIcon: (
+        <ProjectIcon
+          width={iconWidth}
+          height={iconHeight}
+          gradientFrom="#15B79E"
+          gradientTo="#125D56"
+        />
+      ),
       sectionTitle: "Enabling Program Modernization Without Disruption",
       sectionDescription:
         "Acts as a bridge between legacy systems and modern workflows, allowing gradual transformation without major disruption.",
@@ -293,7 +364,7 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
           This enables forward movement without disruptive change management.
         </p>
       ),
+      onClick: () => openModal(),
     },
-   
   ];
 };

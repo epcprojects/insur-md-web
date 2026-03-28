@@ -20,6 +20,7 @@ import {
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { MedicalBriefcaseIcon } from "@/public/icons/MedicalBriefcaseIcon";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -38,6 +39,7 @@ const SHARED = {
 
 export const usePlatformStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
@@ -68,6 +70,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           clinical intelligence.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -90,6 +93,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           The platform does not abstract medicine away — it operationalizes it.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -114,6 +118,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           historically fragmented process into an integrated experience.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -138,6 +143,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           infrastructure rather than a single-point tool.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -162,6 +168,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           review.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -185,6 +192,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           external dependency.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -209,6 +217,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           infrastructure adoption.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -234,6 +243,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           depth.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -256,6 +266,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           infrastructure layer.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -277,6 +288,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           Each layer reinforces the others.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -302,6 +314,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           A unified layer creates systemic efficiency.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "custom" as const,
@@ -321,6 +334,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
           risk ecosystem.
         </p>
       ),
+      onClick: () => openModal(),
     },
   ];
 };

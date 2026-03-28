@@ -29,7 +29,7 @@ import {
 import { ReactNode, useState } from "react";
 import { useIsMobile } from "./hooks/useIsMobile";
 import HowItWorksAccordion2 from "./components/AccordionComponents/HowItWorksAccordion2";
-import SignInModal from "./components/modals/SignInModal";
+import { useDemoModal } from "./components/DemoModalProvider";
 
 type ListItem = {
   label: string;
@@ -62,16 +62,10 @@ const listItems: ListItem[] = [
 export default function Home() {
   const [tab, setTab] = useState("teams");
   const isMobile = useIsMobile();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { openModal } = useDemoModal();
 
   return (
     <main className="mb-8 md:mb-16 ">
-      <SignInModal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(false);
-        }}
-      />
       <div className="">
         <div className=" from-[#ACCBEE] to-[#E7F0FD] bg-linear-to-t w-full flex flex-col relative">
           <div className="py-12 md:py-24 pt-24 md:pt-49 mx-auto container px-4 md:px-8 max-w-7xl z-20">
@@ -100,7 +94,7 @@ export default function Home() {
                     label={"Request a Demo"}
                     icon={<RightUpArrow />}
                     onClick={() => {
-                      setIsModalOpen(true);
+                      openModal();
                     }}
                     variant={"primary"}
                   />
@@ -108,7 +102,7 @@ export default function Home() {
                     label={"Partner with InsurMD"}
                     icon={<RightUpArrow />}
                     onClick={() => {
-                      setIsModalOpen(true);
+                      openModal();
                     }}
                     variant={"primary"}
                   />
@@ -323,7 +317,7 @@ export default function Home() {
                 icon={<RightUpArrow />}
                 label="Request a Demo"
                 onClick={() => {
-                  setIsModalOpen(true);
+                  openModal();
                 }}
                 variant="primary"
                 borderClr="border-gray-200"
@@ -469,7 +463,7 @@ export default function Home() {
                 bodyBgClasses="text-white! bg-black/80"
                 wrapperClasses=""
                 onClick={() => {
-                  setIsModalOpen(true);
+                  openModal();
                 }}
               />
             </div>
@@ -784,7 +778,7 @@ export default function Home() {
                   icon={<RightUpArrow />}
                   variant="primary"
                   onClick={() => {
-                    setIsModalOpen(true);
+                    openModal();
                   }}
                 />
               </div>
@@ -913,10 +907,10 @@ export default function Home() {
           secondaryBtnLabel="Request Partnership"
           image={images.landingImages.underWritingMockup}
           onPrimaryClick={() => {
-            setIsModalOpen(true);
+            openModal();
           }}
           onSecondaryClick={() => {
-            setIsModalOpen(true);
+            openModal();
           }}
         />
       </div>

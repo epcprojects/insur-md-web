@@ -21,6 +21,7 @@ import {
 } from "../components/sections/ProcessStepComponent";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { MedicalBriefcaseIcon } from "@/public/icons/MedicalBriefcaseIcon";
+import { useDemoModal } from "../components/DemoModalProvider";
 
 export type ProcessStep =
   | ({ variant: "A" } & ProcessStepItemVariantA)
@@ -39,6 +40,7 @@ const SHARED = {
 
 export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
   const isMobile = useIsMobile();
+  const { openModal } = useDemoModal();
 
   const iconWidth = isMobile ? "30" : undefined;
   const iconHeight = isMobile ? "30" : undefined;
@@ -61,13 +63,18 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Physician-initiated clinical workflows" },
         { icon: gp, label: "Structured clinical review and synthesis" },
         { icon: gp, label: "Longitudinal patient understanding " },
-        { icon: gp, label: "Responsible medical interpretation of historical data" },
+        {
+          icon: gp,
+          label: "Responsible medical interpretation of historical data",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This approach aligns underwriting intelligence with real-world clinical practice — not just data aggregation.
+          This approach aligns underwriting intelligence with real-world
+          clinical practice — not just data aggregation.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -87,9 +94,11 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          The result is not simply retrieved data, but clinically grounded understanding.
+          The result is not simply retrieved data, but clinically grounded
+          understanding.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -98,20 +107,29 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       leftHeading: "Built for Regulated Environments",
       leftSubheading: "Aligning innovation with responsibility",
       rightSideIcon: <ShieldIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Designed for Regulated Healthcare and Insurance Environments",
+      sectionTitle:
+        "Designed for Regulated Healthcare and Insurance Environments",
       sectionDescription:
         "Ensures responsible clinical involvement, clear data provenance, and proper handling of sensitive health information.",
       items: [
         { icon: gp, label: "Authentic physician participation" },
-        { icon: gp, label: "Appropriate clinical context around historical data" },
+        {
+          icon: gp,
+          label: "Appropriate clinical context around historical data",
+        },
         { icon: gp, label: "Clear medical provenance across outputs" },
-        { icon: gp, label: "Responsible handling of patient health information" },
+        {
+          icon: gp,
+          label: "Responsible handling of patient health information",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This ensures the platform supports innovation while respecting the seriousness of medical workflows.
+          This ensures the platform supports innovation while respecting the
+          seriousness of medical workflows.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -134,6 +152,7 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
           Speed is achieved through orchestration — not shortcuts.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -142,7 +161,8 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       leftHeading: "A Higher-Quality Signal Layer",
       leftSubheading: "Replacing fragmented data with interpreted insight",
       rightSideIcon: <GraphIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Replacing Fragmented Data with Interpreted Clinical Signals",
+      sectionTitle:
+        "Replacing Fragmented Data with Interpreted Clinical Signals",
       sectionDescription:
         "Transforms unstructured records into clear, physician-guided insights for more accurate and meaningful risk evaluation.",
       items: [
@@ -154,9 +174,11 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          Underwriters receive insight that reflects real clinical reasoning, not just aggregated documentation.
+          Underwriters receive insight that reflects real clinical reasoning,
+          not just aggregated documentation.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -164,7 +186,9 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       numberText: "06",
       leftHeading: "Purpose-Built for Insurance Workflows",
       leftSubheading: "Designed with underwriting reality in mind",
-      rightSideIcon: <MedicalBriefcaseIcon width={iconWidth} height={iconHeight} />,
+      rightSideIcon: (
+        <MedicalBriefcaseIcon width={iconWidth} height={iconHeight} />
+      ),
       sectionTitle: "Purpose-Built for Real-World Insurance Workflows",
       sectionDescription:
         "Delivers structured, explainable clinical insights aligned with underwriting processes and integration needs.",
@@ -172,13 +196,18 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Structured clinical outputs" },
         { icon: gp, label: "Traceable medical interpretation" },
         { icon: gp, label: "Integration-ready formats" },
-        { icon: gp, label: "Clear alignment with underwriting review processes" },
+        {
+          icon: gp,
+          label: "Clear alignment with underwriting review processes",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          The result is a platform that fits insurance without diluting clinical rigor.
+          The result is a platform that fits insurance without diluting clinical
+          rigor.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -187,8 +216,7 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       leftHeading: "Enabling the Next Era of Underwriting",
       leftSubheading: "Where medicine and risk intelligence converge",
       rightSideIcon: <RobotIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle:
-        "Enabling the Next Era of Data-Driven Underwriting",
+      sectionTitle: "Enabling the Next Era of Data-Driven Underwriting",
       sectionDescription:
         "Combines clinical insight with modern platforms to support faster, more intelligent, and digitally driven decision-making.",
       items: [
@@ -199,9 +227,11 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          We are not replacing underwriting judgment — we are strengthening its clinical inputs.
+          We are not replacing underwriting judgment — we are strengthening its
+          clinical inputs.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -209,9 +239,7 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       numberText: "08",
       leftHeading: "Enterprise-Ready From Day One",
       leftSubheading: "Built for scrutiny, scale, and trust",
-      rightSideIcon: (
-        <BuildingIcon width={iconWidth} height={iconHeight} />
-      ),
+      rightSideIcon: <BuildingIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Enterprise-Ready Platform Built for Scale and Trust",
       sectionDescription:
         "Delivers secure, auditable, and configurable workflows designed to meet the demands of large, regulated organizations.",
@@ -224,9 +252,11 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This makes InsurMD viable as both a pilot solution and a long-term infrastructure layer.
+          This makes InsurMD viable as both a pilot solution and a long-term
+          infrastructure layer.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -240,16 +270,29 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
         "Enhances clarity, decision-making, and collaboration across underwriting, medical, risk, and digital teams.",
       items: [
         { icon: gp, label: "Underwriters gain clearer clinical context." },
-        { icon: gp, label: "Medical directors receive more coherent case narratives." },
-        { icon: gp, label: "Risk leadership gains defensible insight generation." },
-          { icon: gp, label: "Digital teams enable faster, more trusted journeys." },
-            { icon: gp, label: "Reinsurance partners receive clinically grounded artifacts." },
+        {
+          icon: gp,
+          label: "Medical directors receive more coherent case narratives.",
+        },
+        {
+          icon: gp,
+          label: "Risk leadership gains defensible insight generation.",
+        },
+        {
+          icon: gp,
+          label: "Digital teams enable faster, more trusted journeys.",
+        },
+        {
+          icon: gp,
+          label: "Reinsurance partners receive clinically grounded artifacts.",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
           Clinical credibility strengthens the entire risk ecosystem.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -265,13 +308,15 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Transparent consent" },
         { icon: gp, label: "Clear clinical involvement" },
         { icon: gp, label: "Faster clarity" },
-         { icon: gp, label: "Reduced administrative burden" },
+        { icon: gp, label: "Reduced administrative burden" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This balances efficiency with respect for the sensitivity of medical data.
+          This balances efficiency with respect for the sensitivity of medical
+          data.
         </p>
       ),
+      onClick: () => openModal(),
     },
     {
       variant: "B" as const,
@@ -294,11 +339,13 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         This allows carriers to continuously strengthen how clinical intelligence supports underwriting strategy.
+          This allows carriers to continuously strengthen how clinical
+          intelligence supports underwriting strategy.
         </p>
       ),
+      onClick: () => openModal(),
     },
-      {
+    {
       variant: "B" as const,
       ...SHARED,
       numberText: "12",
@@ -316,13 +363,17 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Reduce reliance on fragmented legacy workflows" },
         { icon: gp, label: "Improve applicant confidence" },
         { icon: gp, label: "Strengthen internal decision defensibility" },
-        { icon: gp, label: "Align infrastructure with the future of underwriting" },
+        {
+          icon: gp,
+          label: "Align infrastructure with the future of underwriting",
+        },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-         Clinical credibility becomes a competitive advantage.
+          Clinical credibility becomes a competitive advantage.
         </p>
       ),
+      onClick: () => openModal(),
     },
   ];
 };
