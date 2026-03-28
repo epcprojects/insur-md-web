@@ -15,5 +15,5 @@ export {
   FaqsSection,
   CTASection,
   GroupToggle,
-  ThemeButton, HeroSection, Header, Footer, FaqsSection,ProcessStepComponent
+  ProcessStepComponent,
 };

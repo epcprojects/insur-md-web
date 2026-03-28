@@ -20,6 +20,7 @@ import nationWideIcon from "../../public/images/nationWideIcon.png";
 import triangle3Icon from "../../public/images/triangle3Icon.png";
 import sRiskIcon from "../../public/images/sRiskIcon.png";
 import designMockup from "../../public/images/designMockup.png";
+import designMockup2 from "../../public/images/designMockup2.png";
 import styleMetalOne from "../../public/images/styleMetalOne.png";
 import styleMetalTwo from "../../public/images/styleMetalTwo.png";
 import styleMetalThree from "../../public/images/styleMetalThree.png";
@@ -38,6 +39,7 @@ import careIntelligenceMockup from "../../public/images/careIntelligenceMockup.p
 
 export const landingImages = {
   dashboardMockup,
+  designMockup2,
   careIntelligenceMockup,
   interpretationMockup,
   medicalRecordListMockup,
