@@ -85,23 +85,23 @@ export const headerThemeByPath: Record<string, HeaderThemeType> = {
   //     iconFill: "#FFFFFF",
   //   },
   // },
-  // "/how-it-works": {
-  //   logo: {
-  //     fill1: "#5C4A12",
-  //     fill2: "#F5C542",
-  //     fill3: "#C99700",
-  //     fill4: "#FFE8A3",
-  //   },
-  //   menuButton: {
-  //     shadow:
-  //       "inset 0 -1.441px 7.351px 0 #F5C542, 0 1.441px 8.649px 0 rgba(201,151,0,0.40)",
-  //     from: "#F5C542",
-  //     to: "#C99700",
-  //     hoverFrom: "#C99700",
-  //     hoverTo: "#F5C542",
-  //     iconFill: "#FFFFFF",
-  //   },
-  // },
+  "/security-compliance": {
+    logo: {
+      fill1: "#53389E",
+      fill2: "#B692F6",
+      fill3: "#7F56D9",
+      fill4: "#7F56D9",
+    },
+    menuButton: {
+      shadow:
+        "inset 0 -1.441px 7.351px 0 #B692F6, 0 1.441px 8.649px 0 rgba(83,56,158,0.40)",
+      from: "#B692F6",
+      to: "#53389E",
+      hoverFrom: "#53389E ",
+      hoverTo: "#B692F6",
+      iconFill: "#FFFFFF",
+    },
+  },
   "/integrations-api": {
     logo: {
       fill1: "#89123E",

@@ -61,7 +61,7 @@ const Page = () => {
               </>
             }
             descriptionOne={
-              <span className="font-normal text-lg text-black leading-[160%]">
+              <span className="font-normal lg:text-start text-center text-lg text-black leading-[160%]">
                 Insurance has modernized distribution, digitized applications,
                 and accelerated decisioning models — but one critical dependency
                 remains anchored in clinical reality:

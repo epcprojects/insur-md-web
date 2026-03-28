@@ -29,6 +29,7 @@ import {
 
 import { ReactNode, useState } from "react";
 import { useIsMobile } from "./hooks/useIsMobile";
+import HowItWorksAccordion2 from "./components/AccordionComponents/HowItWorksAccordion2";
 
 type ListItem = {
   label: string;
@@ -242,8 +243,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="  space-y-5 md:space-y-10 items-center">
-              {steps.map((step) => (
+            <div className="  items-center">
+              {/* {steps.map((step) => (
                 <div
                   key={step.id}
                   className="grid md:grid-cols-2 bg-white p-5 md:p-10 rounded-3xl gap-4 md:gap-6 items-center"
@@ -265,7 +266,9 @@ export default function Home() {
                     />
                   </div>
                 </div>
-              ))}
+              ))} */}
+
+              <HowItWorksAccordion2 />
             </div>
 
             <div className="space-y-9.5 flex flex-col items-center justify-center">

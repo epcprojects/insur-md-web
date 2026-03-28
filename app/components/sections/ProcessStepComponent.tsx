@@ -32,7 +32,7 @@ export interface ProcessStepItemVariantA {
   rightSideIcon: ReactNode;
   rightAboveDiv: RightSection;
   secondDiv: RightSection;
-  onClick: ()=>void;
+  onClick: () => void;
 }
 
 // ─── Variant B ────────────────────────────────────────────────────────────────
@@ -49,7 +49,7 @@ export interface ProcessStepItemVariantB {
   sectionDescription: string;
   items: GridItem[];
   bottomContent: ReactNode;
-  onClick: ()=>void;
+  onClick: () => void;
 }
 
 // ─── Variant C ────────────────────────────────────────────────────────────────
@@ -65,7 +65,7 @@ export interface ProcessStepItemVariantC {
   firstSection: RightSection;
   secondSection: RightSectionNoTitle;
   bottomContent: ReactNode;
-  onClick: ()=>void;
+  onClick: () => void;
 }
 
 // ─── Variant Custom ───────────────────────────────────────────────────────────
@@ -81,7 +81,7 @@ export interface ProcessStepItemVariantCustom {
   rightTitle: string;
   rightSubtitle: string;
   bottomContent: ReactNode;
-  onClick: ()=>void;
+  onClick: () => void;
 }
 
 interface ProcessStepComponentProps {
@@ -106,12 +106,12 @@ const GridItems = ({
       <div
         key={idx}
         className={`rounded-2xl flex flex-row ${item.title ? "items-start" : "items-center"} gap-4 bg-white py-4  px-4 lg:px-6 ${
-  gridClass.includes("lg:grid-cols-2") &&
-  arr.length % 2 !== 0 &&
-  idx === arr.length - 1
-    ? "lg:col-span-2"
-    : ""
-}`}
+          gridClass.includes("lg:grid-cols-2") &&
+          arr.length % 2 !== 0 &&
+          idx === arr.length - 1
+            ? "lg:col-span-2"
+            : ""
+        }`}
       >
         {item.icon}
         <div className="flex flex-col gap-2">
@@ -136,7 +136,7 @@ interface LeftSideProps {
   leftHeading: string;
   leftSubheading: string;
   buttonBgClass: string;
-  onClick: ()=>void;
+  onClick: () => void;
 }
 
 const LeftSide = ({
@@ -145,7 +145,7 @@ const LeftSide = ({
   leftHeading,
   leftSubheading,
   buttonBgClass,
-  onClick
+  onClick,
 }: LeftSideProps) => (
   <div className="flex lg:col-span-5 flex-col items-start gap-8">
     <div className="flex flex-col gap-2">
@@ -174,6 +174,7 @@ const LeftSide = ({
         bgClasses={buttonBgClass}
         wrapperClasses="border border-[#E9EAEB] bg-white backdrop-blur-[36.967px]"
         variant="custom"
+        borderClr="border-[#E9EAEB]"
         onClick={onClick}
       />
     </div>
@@ -192,52 +193,59 @@ export const VariantAStep = ({
   rightSideIcon,
   rightAboveDiv,
   secondDiv,
-  onClick
+  onClick,
 }: ProcessStepItemVariantA) => (
- 
-    <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
-      <LeftSide
-            hyphenLineFillColor={hyphenLineFillColor}
-            numberText={numberText}
-            leftHeading={leftHeading}
-            leftSubheading={leftSubheading}
-            buttonBgClass={buttonBgClass} onClick={onClick}      />
-      <div
-        className={` py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
-      >
-        <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
-          <div
-            className="absolute inset-0 rounded-full opacity-20"
-            style={{ background: iconBgClass }}
-          />
-          {rightSideIcon}
-        </div>
+  <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
+    <LeftSide
+      hyphenLineFillColor={hyphenLineFillColor}
+      numberText={numberText}
+      leftHeading={leftHeading}
+      leftSubheading={leftSubheading}
+      buttonBgClass={buttonBgClass}
+      onClick={onClick}
+    />
+    <div
+      className={` py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
+    >
+      <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
+        <div
+          className="absolute inset-0 rounded-full opacity-20"
+          style={{ background: iconBgClass }}
+        />
+        {rightSideIcon}
+      </div>
 
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <p className="font-bold text-[28px] text-black leading-[100%]">
-              {rightAboveDiv.title}
-            </p>
-            <p className="text-black font-normal text-lg leading-[160%]">
-              {rightAboveDiv.description}
-            </p>
-          </div>
-          <GridItems items={rightAboveDiv.items} gridClass="grid grid-cols-1 lg:grid-cols-2" />
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <p className="font-bold text-[28px] text-black leading-[100%]">
+            {rightAboveDiv.title}
+          </p>
+          <p className="text-black font-normal text-lg leading-[160%]">
+            {rightAboveDiv.description}
+          </p>
         </div>
+        <GridItems
+          items={rightAboveDiv.items}
+          gridClass="grid grid-cols-1 lg:grid-cols-2"
+        />
+      </div>
 
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <p className="font-bold text-[28px] text-black leading-[100%]">
-              {secondDiv.title}
-            </p>
-            <p className="text-black font-normal text-lg leading-[160%]">
-              {secondDiv.description}
-            </p>
-          </div>
-          <GridItems items={secondDiv.items} gridClass="grid grid-cols-1 lg:grid-cols-2"  />
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <p className="font-bold text-[28px] text-black leading-[100%]">
+            {secondDiv.title}
+          </p>
+          <p className="text-black font-normal text-lg leading-[160%]">
+            {secondDiv.description}
+          </p>
         </div>
+        <GridItems
+          items={secondDiv.items}
+          gridClass="grid grid-cols-1 lg:grid-cols-2"
+        />
       </div>
     </div>
+  </div>
 );
 
 // ─── Variant B Step ───────────────────────────────────────────────────────────
@@ -254,43 +262,43 @@ export const VariantBStep = ({
   sectionDescription,
   items,
   bottomContent,
-  onClick
+  onClick,
 }: ProcessStepItemVariantB) => (
-    <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
-      <LeftSide
-        hyphenLineFillColor={hyphenLineFillColor}
-        numberText={numberText}
-        leftHeading={leftHeading}
-        leftSubheading={leftSubheading}
-        buttonBgClass={buttonBgClass}
-        onClick={onClick}
-      />
-      <div
-        className={`py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
-      >
-        <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
-          <div
-            className="absolute inset-0 rounded-full opacity-20"
-            style={{ background: iconBgClass }}
-          />
-          {rightSideIcon}
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <p className="font-bold text-[28px] text-black leading-[100%]">
-              {sectionTitle}
-            </p>
-            <p className="text-black font-normal text-lg leading-[160%]">
-              {sectionDescription}
-            </p>
-          </div>
-          <GridItems items={items} gridClass="grid grid-cols-1"  />
-        </div>
-
-        <div>{bottomContent}</div>
+  <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
+    <LeftSide
+      hyphenLineFillColor={hyphenLineFillColor}
+      numberText={numberText}
+      leftHeading={leftHeading}
+      leftSubheading={leftSubheading}
+      buttonBgClass={buttonBgClass}
+      onClick={onClick}
+    />
+    <div
+      className={`py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
+    >
+      <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
+        <div
+          className="absolute inset-0 rounded-full opacity-20"
+          style={{ background: iconBgClass }}
+        />
+        {rightSideIcon}
       </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <p className="font-bold text-[28px] text-black leading-[100%]">
+            {sectionTitle}
+          </p>
+          <p className="text-black font-normal text-lg leading-[160%]">
+            {sectionDescription}
+          </p>
+        </div>
+        <GridItems items={items} gridClass="grid grid-cols-1" />
+      </div>
+
+      <div>{bottomContent}</div>
     </div>
+  </div>
 );
 
 // ─── Variant C Step ───────────────────────────────────────────────────────────
@@ -306,56 +314,62 @@ export const VariantCStep = ({
   firstSection,
   secondSection,
   bottomContent,
-  onClick
+  onClick,
 }: ProcessStepItemVariantC) => (
-    <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
-      <LeftSide
-        hyphenLineFillColor={hyphenLineFillColor}
-        numberText={numberText}
-        leftHeading={leftHeading}
-        leftSubheading={leftSubheading}
-        buttonBgClass={buttonBgClass}
-        onClick={onClick}
-      />
-      <div
-        className={`py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
-      >
-        <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
-          <div
-            className="absolute inset-0 rounded-full opacity-20"
-            style={{ background: iconBgClass }}
-          />
-          {rightSideIcon}
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <p className="font-bold text-[28px] text-black leading-[100%]">
-              {firstSection.title}
-            </p>
-            <p className="text-black font-normal text-lg leading-[160%]">
-              {firstSection.description}
-            </p>
-          </div>
-          <GridItems items={firstSection.items} gridClass="grid grid-cols-1 lg:grid-cols-2"  />
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <div>
-            <p className="text-black font-normal text-lg leading-[160%]">
-              {secondSection.description}
-            </p>
-          </div>
-          <GridItems items={secondSection.items} gridClass="grid grid-cols-1 lg:grid-cols-2"  />
-        </div>
-
-        <div>{bottomContent}</div>
+  <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
+    <LeftSide
+      hyphenLineFillColor={hyphenLineFillColor}
+      numberText={numberText}
+      leftHeading={leftHeading}
+      leftSubheading={leftSubheading}
+      buttonBgClass={buttonBgClass}
+      onClick={onClick}
+    />
+    <div
+      className={`py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
+    >
+      <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
+        <div
+          className="absolute inset-0 rounded-full opacity-20"
+          style={{ background: iconBgClass }}
+        />
+        {rightSideIcon}
       </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <p className="font-bold text-[28px] text-black leading-[100%]">
+            {firstSection.title}
+          </p>
+          <p className="text-black font-normal text-lg leading-[160%]">
+            {firstSection.description}
+          </p>
+        </div>
+        <GridItems
+          items={firstSection.items}
+          gridClass="grid grid-cols-1 lg:grid-cols-2"
+        />
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div>
+          <p className="text-black font-normal text-lg leading-[160%]">
+            {secondSection.description}
+          </p>
+        </div>
+        <GridItems
+          items={secondSection.items}
+          gridClass="grid grid-cols-1 lg:grid-cols-2"
+        />
+      </div>
+
+      <div>{bottomContent}</div>
     </div>
+  </div>
 );
 
 // ─── Variant Custom Step ──────────────────────────────────────────────────────
- const VariantCustomStep = ({
+const VariantCustomStep = ({
   hyphenLineFillColor,
   numberText,
   leftHeading,
@@ -367,44 +381,47 @@ export const VariantCStep = ({
   rightTitle,
   rightSubtitle,
   bottomContent,
-  onClick
+  onClick,
 }: ProcessStepItemVariantCustom) => (
-    <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
-      <LeftSide
-        hyphenLineFillColor={hyphenLineFillColor}
-        numberText={numberText}
-        leftHeading={leftHeading}
-        leftSubheading={leftSubheading}
-        buttonBgClass={buttonBgClass}
-        onClick={onClick}
-      />
-      <div
-        className={`py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
-      >
-        <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
-          <div
-            className="absolute inset-0 rounded-full opacity-20"
-            style={{ background: iconBgClass }}
-          />
-          {rightSideIcon}
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="font-bold text-[28px] text-black leading-[100%]">
-            {rightTitle}
-          </p>
-          <p className="text-black font-normal text-lg leading-[160%]">
-            {rightSubtitle}
-          </p>
-        </div>
-
-        <div>{bottomContent}</div>
+  <div className="container max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-12 gap-16">
+    <LeftSide
+      hyphenLineFillColor={hyphenLineFillColor}
+      numberText={numberText}
+      leftHeading={leftHeading}
+      leftSubheading={leftSubheading}
+      buttonBgClass={buttonBgClass}
+      onClick={onClick}
+    />
+    <div
+      className={`py-5 lg:py-7.5 px-5 lg:px-10 lg:col-span-7 rounded-3xl flex flex-col gap-7.5 ${rightDivBgClass}`}
+    >
+      <div className="relative h-16 w-16 lg:h-20 lg:w-20 rounded-full flex items-center justify-center">
+        <div
+          className="absolute inset-0 rounded-full opacity-20"
+          style={{ background: iconBgClass }}
+        />
+        {rightSideIcon}
       </div>
+
+      <div className="flex flex-col gap-2">
+        <p className="font-bold text-[28px] text-black leading-[100%]">
+          {rightTitle}
+        </p>
+        <p className="text-black font-normal text-lg leading-[160%]">
+          {rightSubtitle}
+        </p>
+      </div>
+
+      <div>{bottomContent}</div>
     </div>
+  </div>
 );
 
 // ─── ProcessStepList ──────────────────────────────────────────────────────────
-export const ProcessStepComponent = ({ variant, items }: ProcessStepComponentProps) => {
+export const ProcessStepComponent = ({
+  variant,
+  items,
+}: ProcessStepComponentProps) => {
   return (
     <div className="flex flex-col">
       {variant === "A"
@@ -412,16 +429,16 @@ export const ProcessStepComponent = ({ variant, items }: ProcessStepComponentPro
             <VariantAStep key={idx} {...item} />
           ))
         : variant === "B"
-        ? (items as ProcessStepItemVariantB[]).map((item, idx) => (
-            <VariantBStep key={idx} {...item} />
-          ))
-        : variant === "C"
-        ? (items as ProcessStepItemVariantC[]).map((item, idx) => (
-            <VariantCStep key={idx} {...item} />
-          ))
-        : (items as ProcessStepItemVariantCustom[]).map((item, idx) => (
-            <VariantCustomStep key={idx} {...item} />
-          ))}
+          ? (items as ProcessStepItemVariantB[]).map((item, idx) => (
+              <VariantBStep key={idx} {...item} />
+            ))
+          : variant === "C"
+            ? (items as ProcessStepItemVariantC[]).map((item, idx) => (
+                <VariantCStep key={idx} {...item} />
+              ))
+            : (items as ProcessStepItemVariantCustom[]).map((item, idx) => (
+                <VariantCustomStep key={idx} {...item} />
+              ))}
     </div>
   );
 };
