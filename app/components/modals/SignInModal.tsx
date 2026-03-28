@@ -76,6 +76,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ isOpen, onClose }) => {
           email: email.trim(),
           phone: phone.trim(),
           reason: reason.trim(),
+          sendToBoth: true,
         }),
       });
 
@@ -242,7 +243,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ isOpen, onClose }) => {
           type="button"
           className="h-10 w-full cursor-pointer rounded-full bg-linear-to-r from-teal to-dark-teal px-4 text-sm font-medium text-white hover:from-dark-teal hover:to-teal disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {loading ? "Submitting..." : "Sign In"}
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toastAlert } from "./ToastAlert";
 
 type Props = {
   theme: {
@@ -55,7 +56,7 @@ export default function SubscribeForm({ theme }: Props) {
       if (!res.ok) {
         throw new Error(data?.message || "Something went wrong.");
       }
-
+      toastAlert("Congratulations! You are subscribed!", true);
       setSuccess("Subscribed successfully.");
       setEmail("");
     } catch (err) {

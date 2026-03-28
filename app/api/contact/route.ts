@@ -14,9 +14,10 @@ export async function POST(req: Request) {
     const phone = String(body.phone ?? "").trim();
     const message = String(body.message ?? "").trim();
     const reason = String(body.reason ?? "").trim();
+    const sendToBoth = Boolean(body.sendToBoth);
 
-    // Server-side validation
     const errors: Record<string, string> = {};
+
     if (!firstName) errors.firstName = "First name is required.";
     if (!email) errors.email = "Email is required.";
     else if (!isValidEmail(email)) errors.email = "Email is invalid.";
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
       SMTP_USER,
       SMTP_PASS,
       CONTACT_TO_EMAIL,
+      SECONDARY_CONTACT_TO_EMAIL,
       CONTACT_FROM_EMAIL,
     } = process.env;
 
@@ -51,42 +53,40 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
       port: Number(SMTP_PORT),
-      secure: Number(SMTP_PORT) === 465, // 465 true, 587 false
+      secure: Number(SMTP_PORT) === 465,
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
     });
 
+    const recipients =
+      sendToBoth && SECONDARY_CONTACT_TO_EMAIL
+        ? [CONTACT_TO_EMAIL, SECONDARY_CONTACT_TO_EMAIL]
+        : [CONTACT_TO_EMAIL];
+
     const subject = `New contact form message from ${firstName}`;
+
     const text = [
       `First Name: ${firstName}`,
       `Email: ${email}`,
       `Phone: ${phone || "-"}`,
+      `Reason: ${reason || "-"}`,
       `Message: ${message || "-"}`,
     ].join("\n");
 
-    // const html = `
-    //   <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-    //     <h2>New Contact Form Submission</h2>
-    //     <p><strong>First Name:</strong> ${escapeHtml(firstName)}</p>
-    //     <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-    //     <p><strong>Phone:</strong> ${escapeHtml(phone || "-")}</p>
-    //     <p><strong>Message:</strong><br/>${escapeHtml(message || "-").replace(/\n/g, "<br/>")}</p>
-    //   </div>
-    // `;
     const html = newContactMessageTemplate({
       recipientName: firstName,
-      email: email,
-      message: message,
-      reason: reason,
-      phone: phone,
+      email,
+      message,
+      reason,
+      phone,
     });
 
     await transporter.sendMail({
       from: CONTACT_FROM_EMAIL,
-      to: CONTACT_TO_EMAIL,
-      replyTo: email, // so you can hit "Reply" directly to the user
+      to: recipients.join(", "),
+      replyTo: email,
       subject,
       text,
       html,
@@ -99,14 +99,4 @@ export async function POST(req: Request) {
       { status: 500 },
     );
   }
-}
-
-// tiny HTML escape helper (avoid injection in email HTML)
-function escapeHtml(str: string) {
-  return str
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
 }
