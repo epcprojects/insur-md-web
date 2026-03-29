@@ -111,19 +111,19 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
           </div>
         </nav>
         <div
-          className={`xl:hidden relative ${isMenuOpen ? "block" : "hidden"}`}
+          className={` relative ${isMenuOpen ? "block" : "hidden"}`}
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation menu"
         >
           <div
-            className={`fixed inset-0 z-10 bg-black opacity-50 ${
+            className={`fixed inset-0  z-10 bg-black opacity-50 ${
               isMenuOpen ? "block" : "hidden"
             }`}
             onClick={handleBackdropClick}
           />
 
-          <div className="fixed inset-y-0 gap-4 flex flex-col left-0 z-20 min-w-xs py-1.5 px-4 overflow-y-auto bg-white md:px-6 md:py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="fixed inset-y-0 gap-4 flex flex-col right-0 z-110 min-w-xs py-1.5 px-4 overflow-y-auto bg-white md:px-6 md:py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between pt-1.5">
               <Link href="/" onClick={closeMenu}>
                 <span className="sr-only">Your Company</span>
@@ -139,7 +139,7 @@ const Header: React.FC<HeaderProps> = ({ menuItems }) => {
 
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5  hover:bg-gray-200 cursor-pointer rounded-md p-2.5 text-gray-700"
                 onClick={handleCloseButtonClick}
                 aria-label="Close menu"
               >

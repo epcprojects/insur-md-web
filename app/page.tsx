@@ -276,7 +276,7 @@ export default function Home() {
               <HowItWorksAccordion2 />
             </div>
 
-            <div className="space-y-9.5 flex flex-col items-center justify-center">
+            <div className="space-y-9.5 flex flex-col z-200 relative items-center justify-center">
               <h2 className="text-center text-xl md:text-2xl text-white">
                 <span className="font-bold">The result:</span> faster
                 underwriting, higher confidence, and dramatically improved
