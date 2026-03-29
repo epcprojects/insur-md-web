@@ -160,29 +160,33 @@ export const useProcessStepsConfig = (): ProcessStep[] => {
         description:
           "Once authorization is secured, InsurMD activates its retrieval network to aggregate patient history across a distributed healthcare ecosystem.",
         items: [
-          { icon: gp, label: "Nationwide provider queries" },
-          { icon: gp, label: "Health information exchange retrieval" },
-          { icon: gp, label: "Health system record pulls" },
+          { icon: gp, label: "Integrated delivery networks" },
+          { icon: gp, label: "Independent providers" },
+          { icon: gp, label: "Specialty clinics" },
           {
             icon: gp,
-            label: "Pharmacy and medication data (where applicable)",
+            label: "Hospital systems",
+          },
+          {
+            icon: gp,
+            label: "Data exchange partners",
           },
         ],
       },
       onClick: () => openModal(),
       secondSection: {
-        description: "All consent events are:",
+        description: "Our retrieval engine is optimized for:",
         items: [
-          { icon: gp, label: "Time-stamped" },
-          { icon: gp, label: "Jurisdiction-aware" },
-          { icon: gp, label: "Audit-ready" },
-          { icon: gp, label: "Revocation-capable" },
+          { icon: gp, label: "Parallel querying across sources" },
+          { icon: gp, label: "Deduplication of overlapping charts" },
+          { icon: gp, label: "Record stitching across time" },
+          { icon: gp, label: "Identity reconciliation across systems" },
         ],
       },
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This authorization layer is the foundation that enables rapid,
-          compliant data access at scale.
+          The result is not a stack of documents — it’s a unified clinical
+          timeline.
         </p>
       ),
     },

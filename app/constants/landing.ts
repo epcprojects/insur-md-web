@@ -37,7 +37,7 @@ export const steps = [
     id: "07",
     title:
       "Records and clinical insights are delivered back to the insurance company in a clean, structured format",
-    image: images.landingImages.clarityStepSix,
+    image: images.landingImages.clarityStepSeven,
   },
 ];
 
@@ -136,15 +136,15 @@ type BulletItem = {
 export const teamBulletItems: BulletItem[] = [
   {
     label: "Longitudinal medical record aggregation",
-    color: "#2ED3B7",
+    color: "#107569",
   },
   {
     label: "Physician-led clinical summary",
-    color: "#15B79E",
+    color: "#107569",
   },
   {
     label: "Diagnoses and condition timelines",
-    color: "#0E9384",
+    color: "#107569",
   },
   {
     label: "Medication reconciliation",
@@ -152,26 +152,26 @@ export const teamBulletItems: BulletItem[] = [
   },
   {
     label: "Gaps-in-care analysis",
-    color: "#125D56",
+    color: "#107569",
   },
   {
     label: "Risk flags and structured annotations",
-    color: "#134E48",
+    color: "#107569",
   },
 ];
 
 export const securityBulletItems: BulletItem[] = [
   {
     label: "HIPAA-aligned infrastructure",
-    color: "#2ED3B7",
+    color: "#107569",
   },
   {
     label: "End-to-end encryption",
-    color: "#15B79E",
+    color: "#107569",
   },
   {
     label: "Explicit patient authorization workflows",
-    color: "#0E9384",
+    color: "#107569",
   },
   {
     label: "Full audit trails",
@@ -179,22 +179,22 @@ export const securityBulletItems: BulletItem[] = [
   },
   {
     label: "Secure data handling across retrieval and delivery",
-    color: "#125D56",
+    color: "#107569",
   },
 ];
 
 export const applicantBulletItems: BulletItem[] = [
   {
     label: "One secure mobile experience",
-    color: "#2ED3B7",
+    color: "#107569",
   },
   {
     label: "One physician interaction",
-    color: "#15B79E",
+    color: "#107569",
   },
   {
     label: "One unified medical history",
-    color: "#0E9384",
+    color: "#107569",
   },
   {
     label: "One accelerated path to coverage",

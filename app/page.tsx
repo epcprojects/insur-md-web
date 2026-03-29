@@ -283,7 +283,10 @@ export default function Home() {
                 applicant experience.
               </h2>
 
-              <button className="p-1 md:p-2 flex group cursor-pointer items-center gap-2 rounded-full bg-white border border-[#E6E6E6] ">
+              <button
+                onClick={() => openModal()}
+                className="p-1 md:p-2 flex group cursor-pointer items-center gap-2 rounded-full bg-white border border-[#E6E6E6] "
+              >
                 <span className="inline-block px-10 py-3 md:py-4 rounded-full bg-linear-[170deg] text-white font-semibold text-lg md:text-xl h-full from-teal to-dark-teal">
                   Get Started
                 </span>
