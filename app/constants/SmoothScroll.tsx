@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,7 @@ export default function SmoothScroll({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   const lenisRef = useRef<Lenis | null>(null);
   const rafIdRef = useRef<number | null>(null);
 
@@ -21,6 +23,7 @@ export default function SmoothScroll({
       lerp: 0.08,
       smoothWheel: true,
       wheelMultiplier: 1,
+      stopInertiaOnNavigate: true,
     });
 
     lenisRef.current = lenis;
@@ -63,6 +66,19 @@ export default function SmoothScroll({
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || window.location.hash) {
+      return;
+    }
+
+    lenisRef.current?.scrollTo(0, {
+      immediate: true,
+      force: true,
+    });
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    ScrollTrigger.update();
+  }, [pathname]);
 
   return <>{children}</>;
 }
