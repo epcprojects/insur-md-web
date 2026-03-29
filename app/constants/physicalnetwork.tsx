@@ -115,7 +115,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
           These guardrails help ensure the clinical layer remains credible and
-          trusted by carriers and partners alike.
+          trusted by insurance companys and partners alike.
         </p>
       ),
       onClick: () => openModal(),
@@ -262,7 +262,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This alignment supports trust across carriers, partners, and
+          This alignment supports trust across insurance companys, partners, and
           applicants.
         </p>
       ),
@@ -295,10 +295,11 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       variant: "B" as const,
       ...SHARED,
       numberText: "10",
-      leftHeading: "Collaboration With Carrier Medical Teams",
+      leftHeading: "Collaboration With Insurance companies Medical Teams",
       leftSubheading: "Complementing existing clinical leadership",
       rightSideIcon: <HandShakeIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Seamless Collaboration with Carrier Medical Leadership",
+      sectionTitle:
+        "Seamless Collaboration with Insurance companies Medical Leadership",
       sectionDescription:
         "Provides clear summaries, structured narratives, and transparent insights to support alignment with internal clinical teams.",
       items: [
@@ -310,7 +311,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
           This supports better collaboration between InsurMD physicians and
-          carrier-side medical leadership.
+          insurance company-side medical leadership.
         </p>
       ),
       onClick: () => openModal(),
@@ -328,7 +329,7 @@ export const usePhysicalNetworkStepsConfig = (): ProcessStep[] => {
       items: [
         {
           icon: gp,
-          label: "Internal carrier governance ",
+          label: "Internal insurance company governance ",
         },
         { icon: gp, label: "Clinical review processes" },
         { icon: gp, label: "Multi-stakeholder alignment " },

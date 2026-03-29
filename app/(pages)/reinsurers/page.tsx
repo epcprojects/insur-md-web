@@ -55,7 +55,7 @@ const Page = () => {
               </>
             }
             descriptionOne={
-              "Reinsurers operate at a unique vantage point — evaluating risk across carriers, products, and underwriting philosophies. Yet despite this elevated perspective, one challenge remains consistent: fragmented clinical inputs."
+              "Reinsurers operate at a unique vantage point — evaluating risk across insurance companies, products, and underwriting philosophies. Yet despite this elevated perspective, one challenge remains consistent: fragmented clinical inputs."
             }
             descriptionTwo={
               "InsurMD provides a physician-led clinical intelligence layer that helps reinsurers engage with cleaner, more coherent medical context across facultative and treaty workflows."

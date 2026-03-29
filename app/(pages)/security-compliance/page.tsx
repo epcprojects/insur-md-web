@@ -59,7 +59,7 @@ const Page = () => {
               "InsurMD operates at the intersection of healthcare data and insurance risk — two of the most regulated domains in the modern economy. Security and compliance are not layered on top of the platform; they are foundational to its architecture."
             }
             descriptionTwo={
-              "From patient authorization to data delivery, every layer of InsurMD is designed to meet the expectations of enterprise carriers, regulated partners, and clinical stakeholders."
+              "From patient authorization to data delivery, every layer of InsurMD is designed to meet the expectations of enterprise insurance companies, regulated partners, and clinical stakeholders."
             }
             buttons={[
               {

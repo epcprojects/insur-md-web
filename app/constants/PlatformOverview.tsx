@@ -129,9 +129,9 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
       rightSideIcon: <HandShakeIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Purpose-Built for the Insurance Risk Stack",
       sectionDescription:
-        "Integrates medical data with underwriting workflows, supporting carriers, MGAs, reinsurers, and medical teams as shared infrastructure.",
+        "Integrates medical data with underwriting workflows, supporting insurance companys, MGAs, reinsurers, and medical teams as shared infrastructure.",
       items: [
-        { icon: gp, label: "Carriers" },
+        { icon: gp, label: "Insurance companiess" },
         { icon: gp, label: "MGAs" },
         { icon: gp, label: "Reinsurers" },
         { icon: gp, label: "Medical directors" },
@@ -239,8 +239,8 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          The platform helps carriers modernize without sacrificing clinical
-          depth.
+          The platform helps insurance companys modernize without sacrificing
+          clinical depth.
         </p>
       ),
       onClick: () => openModal(),
@@ -299,11 +299,12 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
       rightSideIcon: <NetworkWired width={iconWidth} height={iconHeight} />,
       sectionTitle: "A Shared Clinical Layer for a Fragmented Ecosystem",
       sectionDescription:
-        "Unifies medical insight across carriers and reinsurers, reducing duplication and improving collaboration and consistency.",
+        "Unifies medical insight across insurance companys and reinsurers, reducing duplication and improving collaboration and consistency.",
       items: [
         {
           icon: gp,
-          label: "Cleaner collaboration across carriers and reinsurers",
+          label:
+            "Cleaner collaboration across insurance companys and reinsurers",
         },
         { icon: gp, label: "More consistent clinical narratives" },
         { icon: gp, label: "Reduced duplication of effort" },
@@ -326,7 +327,7 @@ export const usePlatformStepsConfig = (): ProcessStep[] => {
       rightSideIcon: <ShapesIcon width={iconWidth} height={iconHeight} />,
       rightTitle: "The Strategic Role of InsurMD in Underwriting",
       rightSubtitle:
-        "The modern life insurance ecosystem spans carriers, reinsurers, and distribution partners. InsurMD introduces a clinical layer that helps unify how medical insight flows across that stack.",
+        "The modern life insurance ecosystem spans insurance companys, reinsurers, and distribution partners. InsurMD introduces a clinical layer that helps unify how medical insight flows across that stack.",
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
           By grounding underwriting inputs in physician-led interpretation and

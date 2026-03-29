@@ -221,7 +221,7 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
         "Combines clinical insight with modern platforms to support faster, more intelligent, and digitally driven decision-making.",
       items: [
         { icon: gp, label: "Real-time underwriting environments" },
-        { icon: gp, label: "Digitally native carrier experiences" },
+        { icon: gp, label: "Digitally native insurance company experiences" },
         { icon: gp, label: "AI-assisted risk models" },
         { icon: gp, label: "More responsive underwriting ecosystems" },
       ],
@@ -339,7 +339,7 @@ export const useWhyInsurMdStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This allows carriers to continuously strengthen how clinical
+          This allows insurance companys to continuously strengthen how clinical
           intelligence supports underwriting strategy.
         </p>
       ),

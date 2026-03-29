@@ -132,7 +132,7 @@ const Page = () => {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <h2 className="text-white text-xl md:text-[28px] font-bold ">
-                    Real-World Integration Outcomes for Carrier Teams
+                    Real-World Integration Outcomes for insurance company Teams
                   </h2>
                   <p className="text-base md:text-lg font-normal text-white">
                     Enables faster deployment, smoother workflows, and improved

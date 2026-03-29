@@ -232,7 +232,10 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
         "Limits unnecessary data access and propagation through scoped retrieval, tailored outputs, and controlled data handling.",
       items: [
         { icon: gp, label: "Scoped data retrieval where appropriate" },
-        { icon: gp, label: "Output tailoring based on carrier needs" },
+        {
+          icon: gp,
+          label: "Output tailoring based on insurance company needs",
+        },
         { icon: gp, label: "Controlled downstream payload design" },
         { icon: gp, label: "Limited data persistence windows when applicable" },
       ],
@@ -248,12 +251,13 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       variant: "B" as const,
       ...SHARED,
       numberText: "08",
-      leftHeading: "Secure Data Delivery to Carriers",
+      leftHeading: "Secure Data Delivery to Insurance companiess",
       leftSubheading: "Enterprise-ready handoff mechanisms",
       rightSideIcon: <PaperPlaneIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Secure Data Delivery Aligned with Carrier Requirements",
+      sectionTitle:
+        "Secure Data Delivery Aligned with Insurance companies Requirements",
       sectionDescription:
-        "Supports encrypted APIs, secure transfers, and configurable delivery methods to match carrier security and governance needs.",
+        "Supports encrypted APIs, secure transfers, and configurable delivery methods to match insurance company security and governance needs.",
       items: [
         { icon: gp, label: "Encrypted APIs" },
         { icon: gp, label: "Secure file transfer mechanisms" },
@@ -262,8 +266,8 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          Delivery methods are configurable to match each carrier’s internal
-          security posture and data governance policies.
+          Delivery methods are configurable to match each insurance company’s
+          internal security posture and data governance policies.
         </p>
       ),
       onClick: () => openModal(),
@@ -356,7 +360,7 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       ...SHARED,
       numberText: "12",
       leftHeading: "Enterprise Governance Support",
-      leftSubheading: "Enabling carrier risk teams",
+      leftSubheading: "Enabling insurance company risk teams",
       rightSideIcon: (
         <BuildingIcon
           width={iconWidth}
@@ -371,7 +375,7 @@ export const useSecurityComplianceStepsConfig = (): ProcessStep[] => {
       items: [
         {
           icon: gp,
-          label: "Security reviews by carrier risk teams",
+          label: "Security reviews by insurance company risk teams",
         },
         {
           icon: gp,

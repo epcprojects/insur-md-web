@@ -59,7 +59,7 @@ export const useProcessStepsConfig = (): ProcessStep[] => {
       rightAboveDiv: {
         title: "Referrals can be initiated through:",
         description:
-          "Every InsurMD case starts with a clean referral from the carrier, BGA, or reinsurer.",
+          "Every InsurMD case starts with a clean referral from the insurance company, BGA, or reinsurer.",
         items: [
           { icon: gp, label: "API-based case creation" },
           { icon: gp, label: "Secure portal uploads" },
@@ -78,7 +78,7 @@ export const useProcessStepsConfig = (): ProcessStep[] => {
         items: [
           { icon: gp, label: "Identity anchors" },
           { icon: gp, label: "Consent placeholders" },
-          { icon: gp, label: "Carrier metadata" },
+          { icon: gp, label: "Insurance company metadata" },
           { icon: gp, label: "Output formatting preferences" },
           { icon: gp, label: "Jurisdictional handling rules" },
         ],
@@ -284,7 +284,7 @@ export const useProcessStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          Outputs are tailored to carrier preferences and underwriting
+          Outputs are tailored to insurance company preferences and underwriting
           workflows.
         </p>
       ),
@@ -294,7 +294,7 @@ export const useProcessStepsConfig = (): ProcessStep[] => {
       variant: "B" as const,
       ...SHARED,
       numberText: "09",
-      leftHeading: "Delivery Back to the Carrier",
+      leftHeading: "Delivery Back to the Insurance companies",
       leftSubheading: "Clean handoff into underwriting systems",
       rightSideIcon: <TruckIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Secure Case Delivery",
@@ -328,7 +328,7 @@ export const useProcessStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Reduced APS dependency" },
         { icon: gp, label: "Faster underwriting cycle times" },
         { icon: gp, label: "Lower applicant abandonment" },
-        { icon: gp, label: "Earlier risk clarity for carriers" },
+        { icon: gp, label: "Earlier risk clarity for insurance companys" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
@@ -375,7 +375,7 @@ export const useProcessStepsConfig = (): ProcessStep[] => {
         "Built to support diverse operational and enterprise needs.",
       items: [
         { icon: gp, label: "High-throughput referral volumes" },
-        { icon: gp, label: "Multi-carrier deployments" },
+        { icon: gp, label: "Multi-insurance company deployments" },
         { icon: gp, label: "Configurable output schemas" },
         { icon: gp, label: "Jurisdiction-aware compliance" },
         { icon: gp, label: "Continuous workflow optimization" },

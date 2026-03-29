@@ -40,14 +40,15 @@ const FaqsSection: React.FC = () => {
         "While timelines can vary depending on case complexity and data availability, InsurMD significantly reduces the traditional underwriting timeline — often compressing weeks or months of record gathering into a matter of days.",
     },
     {
-      question: "What type of outputs does InsurMD provide to carriers?",
+      question:
+        "What type of outputs does InsurMD provide to insurance companies?",
       answer:
         "InsurMD delivers structured, underwriting-ready outputs that may include physician summaries, condition timelines, medication reconciliation, and clinically annotated records. Outputs are designed for both human review and system integration.",
     },
     {
       question: "Can InsurMD integrate with our existing underwriting systems?",
       answer:
-        "Yes. InsurMD is built with an API-first architecture and supports flexible integration models, including direct API integration, secure data delivery, and hybrid workflows that align with existing carrier infrastructure.",
+        "Yes. InsurMD is built with an API-first architecture and supports flexible integration models, including direct API integration, secure data delivery, and hybrid workflows that align with existing insurance companies infrastructure.",
     },
     {
       question: "Is InsurMD secure and compliant?",
@@ -62,7 +63,7 @@ const FaqsSection: React.FC = () => {
     {
       question: "How does InsurMD support accelerated underwriting programs?",
       answer:
-        "InsurMD adds clinically grounded insight to accelerated models, helping carriers improve confidence in decisions while maintaining speed. It is particularly valuable in edge cases or expanded eligibility scenarios.",
+        "InsurMD adds clinically grounded insight to accelerated models, helping insurance companies improve confidence in decisions while maintaining speed. It is particularly valuable in edge cases or expanded eligibility scenarios.",
     },
     {
       question: "Can InsurMD be used for high face value or complex cases?",
@@ -72,12 +73,12 @@ const FaqsSection: React.FC = () => {
     {
       question: "How does InsurMD support reinsurers?",
       answer:
-        "InsurMD provides a shared, clinically grounded artifact that can be used across carriers and reinsurers. This reduces ambiguity, improves alignment, and accelerates facultative review processes.",
+        "InsurMD provides a shared, clinically grounded artifact that can be used across insurance companies and reinsurers. This reduces ambiguity, improves alignment, and accelerates facultative review processes.",
     },
     {
       question: "What is required to get started with InsurMD?",
       answer:
-        "Carriers can begin with a pilot program or limited deployment. InsurMD supports flexible onboarding models, allowing organizations to start quickly and expand integration over time.",
+        "Insurance companies can begin with a pilot program or limited deployment. InsurMD supports flexible onboarding models, allowing organizations to start quickly and expand integration over time.",
     },
     {
       question: "Does InsurMD require changes to our current workflows?",
@@ -109,7 +110,7 @@ const FaqsSection: React.FC = () => {
     {
       question: "Who are the primary users of InsurMD?",
       answer:
-        "InsurMD is used by life insurance carriers, MGAs, reinsurers, underwriting teams, and medical directors seeking faster, clearer, and more reliable clinical inputs.",
+        "InsurMD is used by life insurance insurance companies, MGAs, reinsurers, underwriting teams, and medical directors seeking faster, clearer, and more reliable clinical inputs.",
     },
   ];
 

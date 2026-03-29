@@ -100,8 +100,8 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This enables carriers to maintain rigor while reducing friction in
-          high-stakes underwriting.
+          This enables insurance companys to maintain rigor while reducing
+          friction in high-stakes underwriting.
         </p>
       ),
       onClick: () => openModal(),
@@ -142,7 +142,7 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       variant: "B" as const,
       ...SHARED,
       numberText: "04",
-      leftHeading: "Digital-First Carrier Experiences",
+      leftHeading: "Digital-First Insurance companies Experiences",
       leftSubheading: "Align underwriting with modern distribution",
       rightSideIcon: <LaptopIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Enabling Digital-First Underwriting Experiences",
@@ -156,8 +156,8 @@ export const useUseCaseStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This alignment is critical for carriers investing heavily in digital
-          growth.
+          This alignment is critical for insurance companys investing heavily in
+          digital growth.
         </p>
       ),
       onClick: () => openModal(),

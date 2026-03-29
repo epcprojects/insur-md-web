@@ -65,7 +65,7 @@ const Page = () => {
               </>
             }
             descriptionOne="InsurMD replaces fragmented underwriting workflows with a single, physician-led orchestration layer. Instead of relying on disconnected record requests, manual follow-ups, and partial charts, we coordinate identity, authorization, medical data retrieval, clinical interpretation, and structured delivery through one continuous system."
-            descriptionTwo="This page walks through the InsurMD lifecycle end-to-end — from carrier referral to underwriting-ready outputs."
+            descriptionTwo="This page walks through the InsurMD lifecycle end-to-end — from insurance company referral to underwriting-ready outputs."
             buttons={[
               {
                 label: "Request a Demo",

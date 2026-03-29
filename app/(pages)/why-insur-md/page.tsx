@@ -118,9 +118,10 @@ const Page = () => {
                 <p className="text-black text-base md:text-lg font-normal text-center">
                   For decades, underwriting innovation has been constrained by
                   fragmented healthcare data and disconnected workflows.
-                  Carriers have invested heavily in automation, digital
-                  journeys, and predictive models — yet decision velocity still
-                  slows when clinical insight is indirect or incomplete.
+                  Insurance companies have invested heavily in automation,
+                  digital journeys, and predictive models — yet decision
+                  velocity still slows when clinical insight is indirect or
+                  incomplete.
                 </p>
                 <p className="text-black text-base md:text-lg  font-normal text-center">
                   The industry has historically tried to accelerate around this
@@ -157,7 +158,7 @@ const Page = () => {
           title="The Bottom Line"
           highlightText="Bottom"
           description1="InsurMD exists because underwriting should not be limited by how disconnected clinical data has historically been handled."
-          description2="By anchoring the workflow in physician-guided clinical intelligence, InsurMD enables carriers to operate with the speed of modern technology and the grounding of real medical oversight."
+          description2="By anchoring the workflow in physician-guided clinical intelligence, InsurMD enables insurance companies to operate with the speed of modern technology and the grounding of real medical oversight."
           primaryBtnLabel="Schedule a Demo"
           secondaryBtnLabel="Request Partnership"
           image={images.landingImages.designMockup2}

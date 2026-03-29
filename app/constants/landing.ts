@@ -36,7 +36,7 @@ export const steps = [
   {
     id: "07",
     title:
-      "Records and clinical insights are delivered back to the insurer in a clean, structured format",
+      "Records and clinical insights are delivered back to the insurance company in a clean, structured format",
     image: images.landingImages.clarityStepSix,
   },
 ];
@@ -90,7 +90,7 @@ export const featuresList = [
     bgColor: "#99F6E040",
   },
   {
-    title: "Structured delivery to carriers",
+    title: "Structured delivery to insurance companys",
     description:
       "Receive normalized medical records, physician assessments, and risk insights in formats built for underwriting systems.",
     icon: images.landingImages.sDeliveryicon,
@@ -120,7 +120,7 @@ export const highlightCards = [
     bgColor: "#107569",
   },
   {
-    title: "Digital-first carriers",
+    title: "Digital-first insurance companys",
     description:
       "Align underwriting infrastructure with modern consumer expectations.",
     icon: images.landingImages.styleMetalFour,

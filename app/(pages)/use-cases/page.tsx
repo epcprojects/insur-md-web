@@ -59,7 +59,7 @@ const Page = () => {
               "InsurMD is designed as a flexible clinical intelligence layer that supports a wide range of underwriting models. While the platform is unified at its core, its impact varies depending on how and where it is deployed."
             }
             descriptionTwo={
-              "This page outlines the most common ways carriers, MGAs, and reinsurers use InsurMD to unlock speed, clarity, and confidence."
+              "This page outlines the most common ways insurance companies, MGAs, and reinsurers use InsurMD to unlock speed, clarity, and confidence."
             }
             buttons={[
               {

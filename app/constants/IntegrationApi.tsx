@@ -79,7 +79,8 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ...SHARED,
       numberText: "02",
       leftHeading: "Flexible Integration Models",
-      leftSubheading: "Adaptable to different carrier maturity levels",
+      leftSubheading:
+        "Adaptable to different insurance company maturity levels",
       rightSideIcon: <ExchangeIcon width={iconWidth} height={iconHeight} />,
       sectionTitle:
         "Flexible Integration Models for Different Deployment Needs",
@@ -154,7 +155,7 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Normalized clinical tables" },
         { icon: gp, label: "Metadata-rich document bundles" },
         { icon: gp, label: "Annotated medical records" },
-        { icon: gp, label: "Carrier-specific schema mappings" },
+        { icon: gp, label: "Insurance companies-specific schema mappings" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
@@ -169,7 +170,7 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ...SHARED,
       numberText: "05",
       leftHeading: "Designed for Underwriting Systems",
-      leftSubheading: "Integration with real-world carrier stacks",
+      leftSubheading: "Integration with real-world insurance company stacks",
       rightSideIcon: (
         <LayerIcon
           width={iconWidth}
@@ -222,8 +223,8 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          Event-driven integration helps carriers reduce manual coordination
-          overhead.
+          Event-driven integration helps insurance companys reduce manual
+          coordination overhead.
         </p>
       ),
       onClick: () => openModal(),
@@ -279,8 +280,8 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
-          This allows carriers to integrate confidently within regulated
-          environments.
+          This allows insurance companys to integrate confidently within
+          regulated environments.
         </p>
       ),
       onClick: () => openModal(),
@@ -378,7 +379,7 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
       ...SHARED,
       numberText: "12",
       leftHeading: "Interoperability Across the Risk Stack",
-      leftSubheading: "Connecting carriers, reinsurers, and partners",
+      leftSubheading: "Connecting insurance companys, reinsurers, and partners",
       rightSideIcon: (
         <ShieldIcon
           width={iconWidth}
@@ -388,7 +389,7 @@ export const useIntegrationApiStepsConfig = (): ProcessStep[] => {
         />
       ),
       sectionTitle:
-        "Interoperability Across Carriers, Reinsurers, and Partners",
+        "Interoperability Across Insurance companiess, Reinsurers, and Partners",
       sectionDescription:
         "Enables shared data, consistent artifacts, and reduced duplication across the underwriting ecosystem.",
       items: [

@@ -61,7 +61,7 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
         { icon: gp, label: "Raw APS documents" },
         { icon: gp, label: "Summaries with limited provenance " },
         { icon: gp, label: "Disconnected medical narratives" },
-        { icon: gp, label: "Carrier-specific formatting" },
+        { icon: gp, label: "Insurance companies-specific formatting" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
@@ -88,7 +88,7 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
       ),
       sectionTitle: "A Shared Clinical Intelligence Layer Across Stakeholders",
       sectionDescription:
-        "Delivers consistent, physician-guided insights that align carriers and reinsurers, reducing friction and improving clarity.",
+        "Delivers consistent, physician-guided insights that align insurance companys and reinsurers, reducing friction and improving clarity.",
       items: [
         { icon: gp, label: "Consistent clinical framing " },
         { icon: gp, label: "Reduced interpretation divergence " },
@@ -124,7 +124,7 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
       items: [
         { icon: gp, label: "Cleaner case narratives " },
         { icon: gp, label: "Faster clinical comprehension" },
-        { icon: gp, label: "Reduced back-and-forth with carriers " },
+        { icon: gp, label: "Reduced back-and-forth with insurance companys " },
         { icon: gp, label: "More efficient underwriting collaboration" },
       ],
       bottomContent: (
@@ -161,17 +161,18 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
       variant: "B" as const,
       ...SHARED,
       numberText: "05",
-      leftHeading: "Consistency Across Carrier Partners",
+      leftHeading: "Consistency Across Insurance companies Partners",
       leftSubheading: "Reducing variability in medical artifacts",
       rightSideIcon: <DoubleTickIcon width={iconWidth} height={iconHeight} />,
-      sectionTitle: "Driving Consistency Across Carrier Submissions",
+      sectionTitle:
+        "Driving Consistency Across Insurance companies Submissions",
       sectionDescription:
-        "Normalizes clinical inputs across carriers, enabling faster reviews, clearer comparisons, and more consistent evaluations.",
+        "Normalizes clinical inputs across insurance companys, enabling faster reviews, clearer comparisons, and more consistent evaluations.",
       items: [
         { icon: gp, label: "More comparable case evaluations " },
         { icon: gp, label: "Streamlined internal reviews " },
         { icon: gp, label: "Reduced cognitive switching costs " },
-        { icon: gp, label: "Clearer cross-carrier benchmarking" },
+        { icon: gp, label: "Clearer cross-insurance company benchmarking" },
       ],
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
@@ -197,7 +198,7 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
         {
           icon: gp,
           label:
-            "Stronger collaboration between carrier and reinsurer medical teams ",
+            "Stronger collaboration between insurance company and reinsurer medical teams ",
         },
         { icon: gp, label: "Clearer shared understanding of clinical nuance" },
       ],
@@ -235,7 +236,7 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
       variant: "B" as const,
       ...SHARED,
       numberText: "08",
-      leftHeading: "Enabling Faster Carrier Collaboration",
+      leftHeading: "Enabling Faster Insurance companies Collaboration",
       leftSubheading: "A more efficient underwriting dialogue",
       rightSideIcon: (
         <EnergyIcon
@@ -245,9 +246,9 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
           gradientTo="#0086C9"
         />
       ),
-      sectionTitle: "Enabling Faster Carrier Collaboration",
+      sectionTitle: "Enabling Faster Insurance companies Collaboration",
       sectionDescription:
-        "Introduces a shared clinical baseline that reduces friction, aligns carriers and reinsurers, and accelerates underwriting decisions.",
+        "Introduces a shared clinical baseline that reduces friction, aligns insurance companys and reinsurers, and accelerates underwriting decisions.",
       items: [
         { icon: gp, label: "Fewer clarification cycles " },
         { icon: gp, label: "Clearer clinical alignment " },
@@ -369,7 +370,7 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
       ),
       rightTitle: "Building a More Cohesive and Aligned Risk Stack",
       rightSubtitle:
-        "The modern life insurance ecosystem spans carriers, reinsurers, and distribution partners. InsurMD introduces a clinical layer that helps unify how medical insight flows across that stack.",
+        "The modern life insurance ecosystem spans insurance companys, reinsurers, and distribution partners. InsurMD introduces a clinical layer that helps unify how medical insight flows across that stack.",
 
       bottomContent: (
         <p className="text-black font-normal text-lg leading-[160%]">
@@ -396,7 +397,7 @@ export const useReinsurersStepsConfig = (): ProcessStep[] => {
           label: "Faster facultative clarity ",
         },
         { icon: gp, label: "Reduced medical ambiguity " },
-        { icon: gp, label: "Improved collaboration with carriers  " },
+        { icon: gp, label: "Improved collaboration with insurance companys  " },
         { icon: gp, label: "Stronger clinical transparency " },
         { icon: gp, label: "More consistent underwriting dialogue " },
       ],

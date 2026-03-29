@@ -53,6 +53,8 @@ export default function SubscribeForm({ theme }: Props) {
 
       const data = await res.json();
 
+      console.log("dataaaaaaaaa", data);
+
       if (!res.ok) {
         throw new Error(data?.message || "Something went wrong.");
       }

@@ -349,7 +349,7 @@ export const useUnderwritingTeamsStepsConfig = (): ProcessStep[] => {
       rightSideIcon: <UsersSettingIcon width={iconWidth} height={iconHeight} />,
       sectionTitle: "Aligned Risk Communication Across Stakeholders",
       sectionDescription:
-        "Enables faster reviews, clearer communication, and reduced back-and-forth across carrier and reinsurance teams.",
+        "Enables faster reviews, clearer communication, and reduced back-and-forth across insurance company and reinsurance teams.",
       items: [
         {
           icon: gp,

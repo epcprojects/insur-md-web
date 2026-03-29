@@ -268,7 +268,10 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
       items: [
         { icon: gp, label: "Higher completion rates " },
         { icon: gp, label: "Better applicant sentiment " },
-        { icon: gp, label: "Stronger brand perception for carriers" },
+        {
+          icon: gp,
+          label: "Stronger brand perception for insurance companies",
+        },
         { icon: gp, label: "Improved referral confidence" },
       ],
       bottomContent: (
@@ -317,7 +320,7 @@ export const useApplicantExperienceStepsConfig = (): ProcessStep[] => {
           label: "Stronger placement outcomes ",
         },
         { icon: gp, label: "Reduced applicant drop-off " },
-        { icon: gp, label: "Better carrier relationships " },
+        { icon: gp, label: "Better insurance companY relationships " },
         { icon: gp, label: "More trusted underwriting experiences" },
       ],
       bottomContent: (
