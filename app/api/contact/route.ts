@@ -1,5 +1,5 @@
 import { newContactMessageTemplate } from "@/app/lib/emailTemplates/newContactMessageTemplate";
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -27,38 +27,19 @@ export async function POST(req: Request) {
     }
 
     const {
-      SMTP_HOST,
-      SMTP_PORT,
-      SMTP_USER,
-      SMTP_PASS,
+      SENDGRID_API_KEY,
       CONTACT_TO_EMAIL,
       SECONDARY_CONTACT_TO_EMAIL,
       CONTACT_FROM_EMAIL,
     } = process.env;
 
-    if (
-      !SMTP_HOST ||
-      !SMTP_PORT ||
-      !SMTP_USER ||
-      !SMTP_PASS ||
-      !CONTACT_TO_EMAIL ||
-      !CONTACT_FROM_EMAIL
-    ) {
+    if (!SENDGRID_API_KEY || !CONTACT_TO_EMAIL || !CONTACT_FROM_EMAIL) {
       return Response.json(
         { ok: false, error: "Email server is not configured." },
         { status: 500 },
       );
     }
-
-    const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: Number(SMTP_PORT),
-      secure: Number(SMTP_PORT) === 465,
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
-      },
-    });
+    sgMail.setApiKey(SENDGRID_API_KEY);
 
     const recipients =
       sendToBoth && SECONDARY_CONTACT_TO_EMAIL
@@ -83,9 +64,9 @@ export async function POST(req: Request) {
       phone,
     });
 
-    await transporter.sendMail({
+    await sgMail.send({
       from: CONTACT_FROM_EMAIL,
-      to: recipients.join(", "),
+      to: recipients,
       replyTo: email,
       subject,
       text,
@@ -93,7 +74,7 @@ export async function POST(req: Request) {
     });
 
     return Response.json({ ok: true });
-  } catch (err) {
+  } catch {
     return Response.json(
       { ok: false, error: "Failed to send message." },
       { status: 500 },
