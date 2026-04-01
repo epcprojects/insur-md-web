@@ -854,7 +854,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="m-4 md:m-5">
+      <div className="m-4 md:m-5 overflow-hidden">
         <div className="bg-linear-to-t from-ceramic to-[#F0FDF9] rounded-[30px] w-full py-8 md:py-24 ">
           <div className="container mx-auto max-w-7xl px-4 md:px-8 space-y-5 md:space-y-10 relative">
             <Image

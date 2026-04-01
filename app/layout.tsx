@@ -97,6 +97,19 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta
+          property="og:description"
+          content="InsurMD instantly connects applicants with licensed physicians, retrieves their complete medical history, and delivers a structured clinical assessment in days — not months. Faster decisions. Better data. A radically smoother path to policy issuance."
+        ></meta>
+        <meta property="og:title" content="InsurMD"></meta>
+        <meta
+          property="og:image"
+          content="https://www.insurmd.app/images/insur-md-og-image.png"
+        ></meta>
+        <meta property="og:image:width" content="750"></meta>
+        <meta property="og:image:height" content="750"></meta>
+        <meta property="og:url" content="https://www.insurmd.app"></meta>
       </head>
       <body className="min-h-dvh flex flex-col">
         <SmoothScroll>

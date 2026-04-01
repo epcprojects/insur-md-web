@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,12 +15,60 @@ interface HeaderMenuNavItemsProps {
   activeColor?: string;
 }
 
+const MIN_MORE_ITEMS = 4;
+const LARGE_SCREEN_VISIBLE_ITEMS = 7;
+const DESKTOP_VISIBLE_ITEMS = 5;
+const LARGE_SCREEN_WIDTH = 1480;
+const DESKTOP_WIDTH = 1280;
+
 function HeaderMenuNavItems({
   items,
   activeColor = "#109383",
 }: HeaderMenuNavItemsProps) {
   const pathname = usePathname();
-  const moreItems = items.slice(7);
+  const [visibleCount, setVisibleCount] = useState(() => {
+    if (typeof window === "undefined") {
+      return Math.max(0, items.length - MIN_MORE_ITEMS);
+    }
+
+    if (window.innerWidth >= LARGE_SCREEN_WIDTH) {
+      return LARGE_SCREEN_VISIBLE_ITEMS;
+    }
+
+    if (window.innerWidth >= DESKTOP_WIDTH) {
+      return DESKTOP_VISIBLE_ITEMS;
+    }
+
+    return Math.max(0, items.length - MIN_MORE_ITEMS);
+  });
+
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      const minimumVisibleItems = Math.max(0, items.length - MIN_MORE_ITEMS);
+
+      if (window.innerWidth >= LARGE_SCREEN_WIDTH) {
+        setVisibleCount(
+          Math.min(LARGE_SCREEN_VISIBLE_ITEMS, minimumVisibleItems),
+        );
+        return;
+      }
+
+      if (window.innerWidth >= DESKTOP_WIDTH) {
+        setVisibleCount(Math.min(DESKTOP_VISIBLE_ITEMS, minimumVisibleItems));
+        return;
+      }
+
+      setVisibleCount(minimumVisibleItems);
+    };
+
+    updateVisibleCount();
+    window.addEventListener("resize", updateVisibleCount);
+
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, [items]);
+
+  const visibleItems = items.slice(0, visibleCount);
+  const moreItems = items.slice(visibleCount);
   const isMoreActive = moreItems.some(
     (item) => pathname === item.href || pathname.startsWith(`${item.href}/`),
   );
@@ -27,7 +76,7 @@ function HeaderMenuNavItems({
   return (
     <div className="relative flex items-center gap-3 md:gap-4">
       <ul className="flex-row items-center justify-center grow hidden gap-3 sm:gap-3 rtl:flex-row-reverse md:flex">
-        {items.slice(0, 7).map((item) => {
+        {visibleItems.map((item) => {
           const isActive =
             item.href === "/"
               ? pathname === "/"
@@ -62,7 +111,7 @@ function HeaderMenuNavItems({
           );
         })}
       </ul>
-      {moreItems.length > 1 && (
+      {moreItems.length > 0 && (
         <div className="z-100 flex ">
           <Menu>
             <MenuButton
@@ -93,7 +142,7 @@ function HeaderMenuNavItems({
               transition
               className={`min-w-44 border p-1 text-sm/6 origin-top-right border-white rounded-xl  top-16 drop-shadow right-0  backdrop-blur-3xl  ${true ? "md:bg-white" : " bg-gray-800"} absolute text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0`}
             >
-              {items.slice(7).map((item, index) => {
+              {moreItems.map((item, index) => {
                 // const Icon = item.icon;
 
                 return (
